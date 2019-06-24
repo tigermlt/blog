@@ -11,8 +11,8 @@
 
 __________________
 
-### Ongoing Research
+#### Ongoing Research
 1. Bigger ML models, but sparsely activated. For instance, 1000 models and only 20 activated at a certain point. Idea is MoE layer (expert) inserted into each neuron network layer as a gating network. Train the routing network to determine which network to be activated.
 2. AutoML: automated ML. Current = ML epertise + data + computation. Can we turn this into solution = data + computation? Idea is model-generating model trained via RL. For instance, we generate 10 models, train them for a few hours and use loss of the generated models as RL signal (reward). Repeat the step again and again. AutoML outperforms handcrafted models. You can get slightly more accurate model with high computation cost or much accurate model with low computation cost. **Already deployed in cloud AutoML** . It has models in vision, video intelligence, natural language, translation, tables (for structured data). But still need lots of research onging to improve performance. More computation power is needed.
-3. 
+3. **Deep learning is transforming how we design computers**. No need multiple digits of precision. Need handful of specific opertions such as matrix multiplication. Outcome is TPU (tensor processing unit) which is used on search queries, NMT, speech, image recognition, AlphaGo match etc. [Cloud TPU v2](g.co/cloudtpu). 
 
