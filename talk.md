@@ -8,6 +8,6 @@
 6. DL in health informatics such as regular screening of disease
 7. Novel scientific discoveries (e.g. predict gender, age through eye image)
 8. Tensorflow: tool to express machine learning ideas. Computation is defined as graph
-__________________
+----------
 ### Ongoing Research
 1. TODO
