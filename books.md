@@ -5,8 +5,7 @@ Chapter 1: Introduction to Web Search Engines
     1. PageRank link analysis algorithm used by Google
     2. HITs algorithm used by Teoma
 - Traditional nonlinked information retrieval
-    1. boolean model: operates by considering which keywords are present or absent in a document.
-
+    1. boolean model: operates by considering which keywords are present or absent in a document
         - pros:
             - simple to implement
             - query can be processed quickly and in parallel
@@ -14,5 +13,5 @@ Chapter 1: Introduction to Web Search Engines
         - cons:
             - no concept of a partial match (hard to deal with **synonymy** and **polysemy**)
             - sometimes require user to have knowledge about engine's specialized syntax in order to have better result
-     2. 
+     2. Vector space model: transform textual data into numeric vectors and matrices, then employ matrix analysis techniques to discover key features and connections in the document collection
             
