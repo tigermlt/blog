@@ -13,5 +13,11 @@ Chapter 1: Introduction to Web Search Engines
         - cons:
             - no concept of a partial match (hard to deal with **synonymy** and **polysemy**)
             - sometimes require user to have knowledge about engine's specialized syntax in order to have better result
-     2. Vector space model: transform textual data into numeric vectors and matrices, then employ matrix analysis techniques to discover key features and connections in the document collection
+     2. Vector space model: transform textual data into numeric vectors and matrices, then employ matrix analysis techniques to discover key features and connections in the document collection (e.g. **LSI** engine).
+        - pros:
+            - it has relevance scoring: the vector space odel allows documents to partially match a query by assigning each document a number between 0 and 1 which can be interpreted as the likelihood of relevance to the query.
+            - it has relevance feedback: information retrieval tuning technique. It allows the user to select a subset of the retrieved documents that are useful and then resubmit with this additional relevance feedback information.
+        - cons:
+            - hard to scale because need to compute distance between each document and the query.
+     3. probabilistic model: 
             
