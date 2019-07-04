@@ -6,11 +6,15 @@ Chapter 1: Introduction to Web Search Engines
     2. HITs algorithm used by Teoma
 - Traditional nonlinked information retrieval
     1. boolean model: operates by considering which keywords are present or absent in a document. <br/>
+    
         1. pros: <br/>
+        
             1. simple to implement
             2. query can be processed quickly and in parallel
             3. scale well
+            
         2. cons: <br/>
+        
             1. no concept of a partial match (hard to deal with **synonymy** and **polysemy**)
             2. sometimes require user to have knowledge about engine's specialized syntax in order to have better result
      2. 
