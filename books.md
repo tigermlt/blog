@@ -26,6 +26,15 @@ Chapter 1: Introduction to Web Search Engines
             - hard to build, hard to scale
             - unrealistic simplifying assumptions. For instance, it assumes independence between terms as well as documents
      4. Meta-search engine: a combination of several search engines and some subject-specific search engines.
- 
+- Evaluate search engines
+    - precision: the ratio of the number of relevant documents retrieved to the total number of documents retrieved.
+    - recall: the ratio of the number of relevant documents retrieved to the total number of relevant documents in the collection. Good engine has both good precision and recall.
+    - time (latency, response time)
+    - space usage
+- Web information retrieval
+    1. Challenges
+        - huge: billion of pages, PB level of data
+        - dynamic: quite different from traditional document collections which is almost staic, web changes all the time. The larger the web in size, the more often and extensively it will change. The dynamic of the web make it tough to compute relevancy scores for queries when the collection is moving. 
+        - self-organized: 
         
             
