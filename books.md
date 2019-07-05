@@ -19,5 +19,13 @@ Chapter 1: Introduction to Web Search Engines
             - it has relevance feedback: information retrieval tuning technique. It allows the user to select a subset of the retrieved documents that are useful and then resubmit with this additional relevance feedback information.
         - cons:
             - hard to scale because need to compute distance between each document and the query.
-     3. probabilistic model: 
+     3. probabilistic model: estimate the probability that the user will find a particular document relevant. It can operate recursively and update the priori preferences.
+        - pros:
+            - it can tailor search results to preferences of individual users
+        - cons:
+            - hard to build, hard to scale
+            - unrealistic simplifying assumptions. For instance, it assumes independence between terms as well as documents
+     4. Meta-search engine: a combination of several search engines and some subject-specific search engines.
+ 
+        
             
