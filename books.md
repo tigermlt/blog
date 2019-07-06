@@ -41,4 +41,16 @@ Chapter 1: Introduction to Web Search Engines
         - the evaluation of web search engine is more based on **user satisfaction**, market share, speed, storage
      2. Elements of web search:
         ![elements](https://github.com/tigermlt/blog/blob/master/elements_of_web_search_process.jpg)
+        - query independent:
+            - crawler module: collect and categorize web's documents. It creates virtual robots (**spiders**) that constantly scour the web gathering information and webpages and returning to store them in a central repository.
+            - page repository: temporarily store full, complete webpages (until sent to indexing module). And permanently store pupular pages.
+            - indexing module: takes each new uncompressed page and extracts only the vital descriptors, creating a compressed description of the page that is stored in various indexes.
+            - indexes:
+                - content index: content such as keyword, title, anchor text for each webpage is tored in a compressed form using inverted file strucutre.
+                - structure index: store hyperlink structure of pages. The crawler module can access the structure index to find uncrawled pages.
+                - special purpose indexes: For instance, indexes such as the image index, pdf index hold information that is useful for particular query tasks.
+        - query dependent: search engine must respond in real-time
+            - query module: convert natural language to a language that the search system can understand and consult various indexes in order to answer the query
+            - ranking module: takes relevant pages and ranks them according to some criterion. The outcome is an ordered list of webpages such that the pages near the top of the list are most likely to be what the user desires. The ranking combines **content score** (e.g. many web engines give pages using the query work in the tile or description a higher content score than pages using the query word in the body of the page) and **popularity score** (determined from an analysis of the web's hyperlink structure).
+Chapter 2: Crawling, indexing and query processing
             
