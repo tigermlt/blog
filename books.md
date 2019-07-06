@@ -40,7 +40,7 @@ Chapter 1: Introduction to Web Search Engines
         - Users' ability to look at documents do not grow (users rarely look beyond the first 10 to 20 documents retrieved). So search engine precision must increase just as rapidly as the number of documents is increasing.
         - the evaluation of web search engine is more based on **user satisfaction**, market share, speed, storage
      2. Elements of web search:
-        ![elements](https://github.com/tigermlt/blog/blob/master/elements_of_web_search_process.jpg)
+        ![elements](https://tigermlt.github.io/blog/elements_of_web_search_process.jpg)
         - query independent:
             - crawler module: collect and categorize web's documents. It creates virtual robots (**spiders**) that constantly scour the web gathering information and webpages and returning to store them in a central repository.
             - page repository: temporarily store full, complete webpages (until sent to indexing module). And permanently store pupular pages.
