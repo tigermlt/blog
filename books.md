@@ -40,6 +40,5 @@ Chapter 1: Introduction to Web Search Engines
         - Users' ability to look at documents do not grow (users rarely look beyond the first 10 to 20 documents retrieved). So search engine precision must increase just as rapidly as the number of documents is increasing.
         - the evaluation of web search engine is more based on **user satisfaction**, market share, speed, storage
      2. Elements of web search:
-        ![elements](/elements_of_web_search_process.jpg "elements")
-        
+        ![elements](/elements_of_web_search_process.jpg)
             
