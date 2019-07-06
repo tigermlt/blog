@@ -39,6 +39,7 @@ Chapter 1: Introduction to Web Search Engines
         - hyperlinked: it makes the new national pastime of surfing possible and make focused, effective search a reality.
         - Users' ability to look at documents do not grow (users rarely look beyond the first 10 to 20 documents retrieved). So search engine precision must increase just as rapidly as the number of documents is increasing.
         - the evaluation of web search engine is more based on **user satisfaction**, market share, speed, storage
-     2. Elements of web search
+     2. Elements of web search:
+        ![elements](/blob/master/elements_of_web_search_process.jpg "elements")
         
             
