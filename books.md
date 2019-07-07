@@ -72,7 +72,11 @@ Chapter 2: Crawling, indexing and query processing
 
 Chapter 3: Ranking webpages by popularity
 - The popularity score became a crucial complement to the content score and provided search engines with impressively accurate results for all types of queries.
-- HITS (hypertext induced topic search) by Jon Kleinberg
-- PageRank by Sergey Brin and Larry Page
+- HITS (hypertext induced topic search) by Jon Kleinberg: A page is considered a hub if it contains many outlinks. A page is called an authority if it has many inlinks. A page can be both a hub and an authority. A page is good hub if it points to good authorities, and a page is a good authority if it is pointed to by good hubs. 
+- PageRank by Sergey Brin and Larry Page: A page with more recommendations is likely to be more important than a page with a few inlinks. The status of the recommender is also important. The weight of each endorsement should be tempered by the total number of recommendations made by the recommender. 
+- A ranking is called query-independent if the popularity score for each page is determined off-line and remains constant until the next update regardless of the query. 
+
+Chapter 4: The mathematics of Google's Pagerank
+- TODO
 
     
