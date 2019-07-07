@@ -53,4 +53,4 @@ Chapter 1: Introduction to Web Search Engines
             - query module: convert natural language to a language that the search system can understand and consult various indexes in order to answer the query
             - ranking module: takes relevant pages and ranks them according to some criterion. The outcome is an ordered list of webpages such that the pages near the top of the list are most likely to be what the user desires. The ranking combines **content score** (e.g. many web engines give pages using the query work in the tile or description a higher content score than pages using the query word in the body of the page) and **popularity score** (determined from an analysis of the web's hyperlink structure).
 Chapter 2: Crawling, indexing and query processing
-            
+    
