@@ -58,5 +58,21 @@ Chapter 2: Crawling, indexing and query processing
     - which page to crawl?
     - How ofter should pages be crawled? A crawler must decide which pages to revisit and how often. Some engines make this decision demorcratically while others refresh pages in proportion to their preceived freshness or importance levels.
     - How should pages be crawled ethically? When a spider crawl a page, it consumes bandwidth and hits quotas belonging to the page's host. Robots Exclusion Protocol was developed to define proper spidering activities.
-- content index:
-        
+- content index: store the textual information for each page in compressed form
+    - valuable information is contained in title, description and anchor text as well as in bolded terms, terms in large font and hyperlinks
+    - inverted file can be built (e.g. term 1 - file 1,2,3; term 2 - file 2,3,4). But it also involves difficulty.
+        - the number of webpages using pupular broad terms is large
+        - webpage id is usually not the only descriptor for a term (other descriptor such as location of the term, apperance of the term are also important)
+        - if a page change its content, so must their compressed representation in the inverted file
+        - enormous inverted file must be stored on a distributed architecture. So strategies for optimal partitioning must be designed.
+- query processing:
+    - Google likes to keep their processing time under half a second, so the query module have to accesses **precomputed** indexes such as the content index and the structure index. 
+    - the ranking module accesses precomputed indexes to create a ranking at query-time.
+    - the content score can be computed solely from the content index and its inverted file and is query-dependent. The popularity score is computed solely from the structure index and is usually query-independent. The overall score can be computed by the multiplication of those two scores.
+
+Chapter 3: Ranking webpages by popularity
+- The popularity score became a crucial complement to the content score and provided search engines with impressively accurate results for all types of queries.
+- HITS (hypertext induced topic search) by Jon Kleinberg
+- PageRank by Sergey Brin and Larry Page
+
+    
