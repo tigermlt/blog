@@ -52,5 +52,11 @@ Chapter 1: Introduction to Web Search Engines
         - query dependent: search engine must respond in real-time
             - query module: convert natural language to a language that the search system can understand and consult various indexes in order to answer the query
             - ranking module: takes relevant pages and ranks them according to some criterion. The outcome is an ordered list of webpages such that the pages near the top of the list are most likely to be what the user desires. The ranking combines **content score** (e.g. many web engines give pages using the query work in the tile or description a higher content score than pages using the query word in the body of the page) and **popularity score** (determined from an analysis of the web's hyperlink structure).
+            
 Chapter 2: Crawling, indexing and query processing
-    
+    1. crawling module: instruct robots or spiders on how and which pages to retrieve. It returns with URLs for new or refreshed pages that need to be added to or updated in the search engine's indexes.
+        - which page to crawl?
+        - How ofter should pages be crawled? A crawler must decide which pages to revisit and how often. Some engines make this decision demorcratically while others refresh pages in proportion to their preceived freshness or importance levels.
+        - How should pages be crawled ethically? When a spider crawl a page, it consumes bandwidth and hits quotas belonging to the page's host. Robots Exclusion Protocol was developed to define proper spidering activities.
+    2. the content index:
+        
