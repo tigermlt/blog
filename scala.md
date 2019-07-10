@@ -84,5 +84,19 @@
   
   Anonymous function:
   
+    e.g. (x: Int) => x*x*x     (x: Int, y: Int) => x+y
+    Here (x: Int) is the parameter of the funciton and x*x*x is its body
+    The type of the parameter can be omitted if it can be inferred by the compiler from the context
+  
+  It is a syntactic sugar which makes writing easier
+    
+    An anonymous function (x1: T1, ... , xn: Tn) => E can always be writen as:
+    def f(x1: T1,..., xn: Tn) = E; f
+    
+    So with anonymous function, the sum function above can be rewritten as:
+    def sumInts(a: Int, b: Int) = sum(x=>x, a, b)
+    def sumCubes(a: Int, b:Int) = sum(x=>x*x*x, a, b)
 
+### Curring
+  Currying means defining functions parameters piecewise, one parameter section after the other
           
