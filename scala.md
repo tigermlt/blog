@@ -28,4 +28,16 @@
           9 + 4 * 4
           25
  ### conditions and value definitions
-  1. **def** is like CBN, its right hand side  
+  1. **def** is like CBN, its right hand side is evaluated only when it is used
+  2. **val** is like CBV, its right hand side is evaluated immediately
+          Implement and(x,y)
+          
+          Def and(x: Boolean, y:=> Boolean) = {
+            if (x) y
+            else false
+          }
+          
+          Notice that y is CBN because if we call (false, loop), the CBV version will go into infinite loop
+  
+         
+          
