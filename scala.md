@@ -49,6 +49,19 @@
     
     and then we can continue to fill isGoodEnough and improve
     side note: recursive functions need an explicit return type in scala (: Double in sqrtIter) in scala. For non-recursive functions, the return type is optional
+### Tail recursion
+  If a function **calls itself** as its last action, the function's stack frame can be reused. This is called tail recursion. Tail recursive functions are iterative processes.
+  Broadly speaking, if the last action of a function consists of calling a function (which may be the same), one stack fram would be sufficient for both functions. Such calls are called tail calls.
+  
+    def gcd(a: Int, b: Int): Int = {
+      if (b==0) a
+      else gcd(b, a%b)
+    }
+    this is tail recursion.
+    
+    Factorial is not tail recursion, because besieds calling itself, it also multiply a number: factorial(n) = n*factorial(n-1)
+### Higher-order functions
+
     
 
           
