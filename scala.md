@@ -7,9 +7,9 @@
   4. object-oriented programming (orthogonal to above 3)
 ### FP evaluation strategy
   1. call by value: not lazy, reduces variable first and then evaluate (x:Int), default use of scala
-      
-        sfsdfsd
-        dfsdf
-        sfd
+  
+          dsdfsd
+          dsfsdfs
+          sfsfs
         
   2. call by name: lazy evaluation, evaluate first and then reduce (x: => Int), less efficient than CBV
