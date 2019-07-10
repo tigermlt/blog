@@ -8,8 +8,24 @@
 ### FP evaluation strategy
   1. call by value: not lazy, reduces variable first and then evaluate (x:Int), default use of scala
   
-          dsdfsd
-          dsfsdfs
-          sfsfs
+          sumOfSqures(3, 2+2)
+          sumOfSqures(3,4)
+          squre(3) + squre(4)
+          3*3 + square(4)
+          9 + square(4)
+          9 + 4*4
+          9 + 16
+          25
         
   2. call by name: lazy evaluation, evaluate first and then reduce (x: => Int), less efficient than CBV
+  
+          sumOfSqures(3, 2+2)
+          square(3) + square(2+2)
+          3*3 + squre(2+2)
+          9 + square(2+2)
+          9 + (2+2) * (2+2)
+          9 + 4 * (2+2)
+          9 + 4 * 4
+          25
+ ### conditions and value definitions
+  1. **def** is like CBN, its right hand side  
