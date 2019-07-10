@@ -38,8 +38,11 @@
           }
           
           Notice that y is CBN because if we call (false, loop), the CBV version will go into infinite loop
+          
 ### square roots with Newton's method
+
   **A typical way to code algorithms in FP is to go step by step. So we take a small task and formulate it as a function and then probably that task will need further tasks that would be defined in their own function.**
+  
   For instance, to implement the square function using Newton's method, we can sketch as follows:
   
     def sqrtIter(guess: Double, x: Double): Double = {
@@ -67,6 +70,19 @@
 
 ### Higher-order functions
   Functions that take other functions as parameters or that return functions as results are called higher order functions.
+  For example, write a general sum function (take function as parameter)
+  
+    def sum(f: Int=>Int, a: Int, b: Int): Int = {
+      if (a>b) 0
+      else f(a) + sum(f, a+1, b)
+    }
     
+    we can then write:
+    def sumInts(a: Int, b: Int) = sum(id, a, b) where def id(x: Int): Int = x
+    def sumCubes(a: Int, b:Int) = sum(cube, a, b) where def cube(x: Int): Int = x*x*x
+    def sumFactorials(a: Int, b: Int) = sum(fact, a, b) where def fact(x: Int): Int = if(x==0) 1 else x*fact(x-1)
+  
+  Anonymous function:
+  
 
           
