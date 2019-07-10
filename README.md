@@ -1,6 +1,6 @@
 ## List of Resources
 
-1. Scala
+1. [Scala](https://tigermlt.github.io/blog/scala)
 2. Go Language
 3. Machine Learning
 4. NLP
