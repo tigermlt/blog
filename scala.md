@@ -27,7 +27,7 @@
           9 + 4 * (2+2)
           9 + 4 * 4
           25
- ### conditions and value definitions
+### conditions and value definitions
   1. **def** is like CBN, its right hand side is evaluated only when it is used
   2. **val** is like CBV, its right hand side is evaluated immediately
           Implement and(x,y)
@@ -38,6 +38,17 @@
           }
           
           Notice that y is CBN because if we call (false, loop), the CBV version will go into infinite loop
+### square roots with Newton's method
+  **A typical way to code algorithms in FP is to go step by step. So we take a small task and formulate it as a function and then probably that task will need further tasks that would be defined in their own function.**
+  For instance, to implement the square function using Newton's method, we can sketch as follows:
   
-         
+    def sqrtIter(guess: Double, x: Double): Double = {
+      if (isGoodEnough(guess, x)) guess
+      else sqrtIter(improve(guess,x), x)
+    }
+    
+    and then we can continue to fill isGoodEnough and improve
+    side note: recursive functions need an explicit return type in scala (: Double in sqrtIter) in scala. For non-recursive functions, the return type is optional
+    
+
           
