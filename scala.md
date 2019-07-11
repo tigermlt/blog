@@ -132,13 +132,26 @@
       def sum(f: Int => Int)(a: Int, b: Int): Int = 
         if (a>b) 0 else f(a) + sum(f)(a+1,b)
       
+      side note: The type of sum is (Int => Int) => ((Int, Int) => Int)
+      
    The idea here is that:
        
        if we have def f(args1)...(argsn) = E
        it is equivalent to def = (args1 => (args2 => ... (argsn => E) ...))
-       so interms of the sum function above, if I call sum(f), then it returns another function which is (a,b) => Int (where E = Int in this case)
+       so in terms of the sum function above, if I call sum(f), then it returns another function which is (a,b) => Int (where E = Int in this case)
        This is the beauty of carrying!
    
+   An interesting exercise: to write a map reduce and write product in the mapreduce form:
+        
+        // the f:Int=>Int is like a map and combine is a reduce
+        // so the idea is to map one element a time and then do the reduce
+        def mapReduce(f:Int=>Int, combine:(Int,Int)=>Int,zero:Int)(a:Int,b:Int):Int =
+          if( a>b ) zero
+          else combine(f(a),mapReduce(f,combine,zero)(a+1,b))
+        
+        // we specify the reduce as multiplication two values together
+        def product(f:Int=>Int)(a:Int,b:Int):Int= mapReduce(f,(x,y)=>(x*y),1)(a,b))
+
        
     
       
