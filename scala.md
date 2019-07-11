@@ -132,6 +132,14 @@
       def sum(f: Int => Int)(a: Int, b: Int): Int = 
         if (a>b) 0 else f(a) + sum(f)(a+1,b)
       
-      
+   The idea here is that:
+       
+       if we have def f(args1)...(argsn) = E
+       it is equivalent to def = (args1 => (args2 => ... (argsn => E) ...))
+       so interms of the sum function above, if I call sum(f), then it returns another function which is (a,b) => Int (where E = Int in this case)
+       This is the beauty of carrying!
+   
+       
+    
       
           
