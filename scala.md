@@ -100,6 +100,30 @@
     def sumInts(a: Int, b: Int) = sum(x=>x, a, b)
     def sumCubes(a: Int, b:Int) = sum(x=>x*x*x, a, b)
 
-### Curring
-  Currying means defining functions parameters piecewise, one parameter section after the other
+### Currying
+  Currying means defining functions parameters piecewise, one parameter section after the other.
+  The benefit is:
+    - less parameters to worry about when you have implicit parameters
+    - allow you to pass anonymous function to a method
+    
+      The previous example sumInts, sumCubes, sumFactorials need to pass in a, b always. We can make the code shorter by getting rid of these parameters:
+      
+      def sum(f: Int => Int): (Int, Int) => Int = {
+        def sumF(a: Int, b: Int): Int = {
+          if (a>b) 0
+          else f(a) + sumF(a+1, b)
+        }
+        sumF
+      }
+      
+      so sum now is a function that returns another function
+      
+      we can define the above functions as:
+      def sumInts = sum(x => x)
+      def sumCubes = sum (x => x*x*x)
+      def sumFactorials = sum(fact)
+      
+      to use it, we can do sumInts(1,10),   sumFactorials(10,20) . Notice, now we pass in the parameter to the inner function sumF, which is the return type of sum
+      
+      
           
