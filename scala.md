@@ -1,3 +1,6 @@
+# List:
+  - Functional Programming Principles in Scala [#Functional Programming Principles in Scala -- Martin Odersky]
+
 ## Functional Programming Principles in Scala -- Martin Odersky
 
 #### main programing paradigms:
