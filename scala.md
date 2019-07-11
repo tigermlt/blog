@@ -125,5 +125,13 @@
       
       to use it, we can do sumInts(1,10),   sumFactorials(10,20) . Notice, now we pass in the parameter to the inner function sumF, which is the return type of sum
       
+      or we can use as a whole: sum(cube)(1,10) insteading of writing separately
+   
+   An easier way to write sum (with inner function sumF) is as follows:
+   
+      def sum(f: Int => Int)(a: Int, b: Int): Int = 
+        if (a>b) 0 else f(a) + sum(f)(a+1,b)
+      
+      
       
           
