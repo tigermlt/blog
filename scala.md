@@ -167,14 +167,25 @@
   - xs contains x: same as xs indexOf x >=0
   
   ```
-  The implementation of init:
+  The implementation of init, concat, reverse:
   
   def init[T](xs: List[T]): List[T] = xs match {
     case List() => throw new Error("init of empty list")
     case List(x) => List()
     case y::ys => y::init(ys)
   }
+  
+  def concat[T](xs: List[T], ys: List[T]) = xs match {
+    case List() => ys
+    case z::zs => z::concat(zs,ys)
+  }
+  
+  // O(n^2) n to iterator, n to concat. Can do better
+  def reverse[T](xs: List[T]): List[T] = xs match {
+    case List() => xs
+    case y::ys => reverse(ys) ++ List(y) // use ++ because :: use for element and then list, no the reverse way
+  }
   ```
-    
+  
       
           
