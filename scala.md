@@ -222,5 +222,17 @@
   }
   ```
 ### implicit parameters
-
-          
+  Follow the above example, how can we parametrerize msort so that it can also be sued for lists with elements other than Int?
+  ```
+  def msort[T](xs: List[T]): List[T] = ...
+  ```
+  does not work because comparison < in merge is not defined for arbitrary types T
+  
+  The idea is to parameterize merge with the necessary comparison function:
+  ```
+  def msort[T](xs: List[T])(lt: (T,T)=>Boolean): List[T] = ...
+  so the < comparision in merge can be replaced by lt(x,y)
+  ```
+  
+  
+  
