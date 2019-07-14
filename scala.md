@@ -231,8 +231,30 @@
   The idea is to parameterize merge with the necessary comparison function:
   ```
   def msort[T](xs: List[T])(lt: (T,T)=>Boolean): List[T] = ...
-  so the < comparision in merge can be replaced by lt(x,y)
+  so the < comparison in merge can be replaced by lt(x,y)
+  
+  There is also a class in scala (scala.math.Ordering[T]) that can compare elements of type T. So we can directly parameterize with lt operation directly: def msort[T](xs: List[T])(ord: Ordering): List[T] = ...
+  we can use ord.lt(x,y) in replace of the < comparison
+  
+  when we call it, we can do msort(nums)(Ordering.Int)
   ```
+  To avoid passing lt or ord all the time, make it implicit so that compiler will figure out the right implicit to pass based on the demanded type
+  ```
+  def msort[T](xs: List[T])(implicit ord: Ordering): List[T] = ...
+  now when we call it, we only need to do msort(nums)
+  ```
+  
+  Say a function takes an implicit parameter of type T, the compiler will search an implicit definition that:
+    - is marked *implicit*
+    - has a type compatible with T
+    - is visible at the point of the function call or is defined in a companion object associated with T
+  If there is a single definition, it will be taken as actual argument for the implicit parameter
+  Otherwise, it is an error
+  
+### Higher-order list functions
+
+  
+  
   
   
   
