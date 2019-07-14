@@ -152,7 +152,29 @@
         // we specify the reduce as multiplication two values together
         def product(f:Int=>Int)(a:Int,b:Int):Int= mapReduce(f,(x,y)=>(x*y),1)(a,b))
 
-       
+
+### List methods
+  - xs.length: get the length of list xs
+  - xs.last: return xs's last element. Exception if xs is empty
+  - xs.init: return a list containing all elements of xs except the last one. Exception if xs is empty
+  - xs take n: return a list containing n prefix of xs or xs it self if it is shorter than n
+  - xs drop n: return the rest of the collection after taking n elememts
+  - xs(n): the elememt of xs at index n
+  - xs ++ ys: return the list consisting of all elements of xs followed by all elements of ys
+  - xs.reverse: the list containing all elements of xs in reversed order
+  - xs updated (n,x): return a new list that contain the same elements as xs, except at index n where it contains x
+  - xs indexOf x: the index of the first element in xs equal to x or -1 if x does not appear in xs
+  - xs contains x: same as xs indexOf x >=0
+  
+  ```
+  The implementation of init:
+  
+  def init[T](xs: List[T]): List[T] = xs match {
+    case List() => throw new Error("init of empty list")
+    case List(x) => List()
+    case y::ys => y::init(ys)
+  }
+  ```
     
       
           
