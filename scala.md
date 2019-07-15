@@ -252,7 +252,24 @@
   Otherwise, it is an error
   
 ### Higher-order list functions
-
+  used to write generic functions that implement patterns such as:
+    - transforming each element in a list in a certain way
+    - retrieving a list of all elements satisfying a criterion
+    - combining the elements of a list using an operator
+  For example, we can write a simplified map as:
+  ```
+  abstract class List[T] {
+    def map[U](f: T=>U): List[U] = this match {
+      case Nil => this
+      case x::xs => f(x) :: xs.map(f)
+    }
+  }
+  
+  Using map, scaleList can be written as:
+  def scaleList(xs: List[Double], factor: Double) = {
+    xs map (x => x*factor)
+  }
+  ```
   
   
   
