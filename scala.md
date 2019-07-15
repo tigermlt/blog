@@ -152,6 +152,28 @@
         // we specify the reduce as multiplication two values together
         def product(f:Int=>Int)(a:Int,b:Int):Int= mapReduce(f,(x,y)=>(x*y),1)(a,b))
 
+### fixed point
+  a number is called a fixed point of a function if f(x) = x
+  for some functions we can locate the fixed points by starting with an initial estimate and the apply f in a repetitive way (f(f(x)...)
+  sqrt can be computed using fixed point. sqrt(x) = y => y*y = x => y = x/y => f(y) = x/y for fixed x which matches the fixed point definition. We can code as follows:
+  ```
+  val tolerance = 0.0001
+  def isCloseEnough(x: Double, y: Double) = abs((x-y)/x)/x < tolerance
+  def fixedPoint(f: Double => Double)(firstGuess: Double) = {
+    def iterate(guess: Double): Double = {
+      val next = f(guess)
+      if (isCloseEnough(guess,next)) next
+      else iterate(next)
+    }
+    iterate(firstGuess)
+  }
+  def sqrt(x: Double) = fixedPoint(y => x/y)(1.0)
+  
+  but in this way, the program does not converge.
+  Use the idea of average damping which is to average the result we get in every iteration. So we change the pass in function f as follows:
+  def sqrt(x: Double) = fixedPoint(y => (y+x/y)/2)(1.0)
+  ```
+
 
 ### List methods
   - xs.length: get the length of list xs
