@@ -173,6 +173,39 @@
   Use the idea of average damping which is to average the result we get in every iteration. So we change the pass in function f as follows:
   def sqrt(x: Double) = fixedPoint(y => (y+x/y)/2)(1.0)
   ```
+  
+# Function and data
+  class which defines **a new type** and a constructor (the type can be passed in as argument). For example:
+  ```
+  class Rational(x: Int, y: Int) {
+    def numer = x
+    def denom = y
+  }
+  
+  to create an object:
+  we can use **new Rational(1,2)**
+  or we can do:
+  
+  object rationals {
+    val x = new Rational(1,2)
+    x.number
+    x.denom
+  }
+  ```
+  We can also implement our own way of adding rational:
+  ```
+  class Rational(x: Int, y: Int) {
+    // gcd is computed immediately so that its value can be re-used
+    private def gcd(a: Int, b: Int): Int = if (b==0) a else gcd(b, a%b)
+    private val g = gcd(x,y)
+    def number = x/g
+    def denom = y/g
+    
+    def add(that: Rational) = new Rational(number*that.denom + that.number*denom, denom*that.denom)
+    
+    override def toString = number + "/" + denom
+  }
+  ```
 
 
 ### List methods
