@@ -325,7 +325,43 @@
     xs map (x => x*factor)
   }
   ```
+  filter can be defined as follows:
+  ```
+  abstract class List[T] {
+    def filter(p: T => Boolean): List[T] = this match {
+      case Nil => this
+      case x::xs => if (p(x)) x :: xs.filter(p) else xs.filter(p)
+    }
+  }
+  ```
+  variations of Filter:
+  xs filterNot p: keep the complemet of xs filter p
+  xs partition p: create a pair which contains (xs filter p, xs filterNot p)
+  xs takeWhile p: the longest prefix of list xs consisting of elements that all satisfy the predicate p
+  xs dropWhile p: the remainder of the list xs after any leading elements satisfying p have been removed (complement of takeWhile)
+  xs span p: create a pair (xs takeWhile p, xs dropWhile p)
   
+  *Notice span stops and won't go all the way through the list if p is satisfied, but filter goes through the whole list*
+  
+  Exercise: write a function that packs consective duplicates of list elements into sublists. For instance, pack(List('a','a','b')) gives List(List('a','a'), List('b'))
+  ```
+  def pack[T](xs: List[T]): List[List[T]] = xs match {
+    case Nil => Nil
+    case x::xs1 => {
+      val (first, rest) = xs span (y => y==x)
+      first :: pack(rest)
+    }
+  }
+  ```
+  Exercise: write a function that packs consective duplicates of list elements into sublists. For instance, pack(List('a','a','b')) gives List(List('a',2), List('b',1))
+  ```
+  def encode[T](xs: List[T]): List[(T, Int)] = xs match {
+    pack(xs) map (ys => (ys.head, ys.length))
+  }
+  ```
+  
+### Reduction of Lists
+
   
   
   
