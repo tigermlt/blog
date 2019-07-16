@@ -6,6 +6,7 @@
 4. NLP
 5. CV
 6. [Books](https://tigermlt.github.io/blog/books)
+7. [miscellaneous](https://tigermlt.github.io/blog/miscellaneous)
 -------------------------
 
 7. [Talks](https://tigermlt.github.io/blog/talk)
