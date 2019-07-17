@@ -361,7 +361,30 @@
   ```
   
 ### Reduction of Lists
-
+  The purpose is to combine the elements of a list using a given operator
+  
+  **reduceLeft**: inserts a given binary operator between adjacent elements of a list
+  ```
+  def sum(xs: List[Int]) = (0::xs) reduceLeft((x,y) => x + y)
+  def product(xs: List[Int]) = (1::xs) reduceLeft((x,y) => x*y)
+  ```
+  A shorter way to write is:
+  ```
+  def sum(xs: List[Int]) = (0::xs) reduceLeft(_+_)  // every _ represents a new paramter. The parameter is defined (implicitly) at the next outer pair of parentheses
+  def product(xs: List[Int]) = (1::xs) reduceLeft(_*_)
+  ```
+  
+  **foldLeft**: similar to reduceLeft but takes an extra accumulator which is returned if foldLeft is called on an empty list
+  ```
+  def sum(xs: List[Int]) = (xs foldLeft 0) (_+_)
+  def product(xs: List[Int]) = (xs foldLeft 1) (_*_)
+  ```
+  
+  Similarly, there is also reduceRight and foldRight which unfold o trees that lean to the left
+  For operators that are associative and commutative, foldLeft and foldRight are equivalent
+  
+  
+  
   
   
   
