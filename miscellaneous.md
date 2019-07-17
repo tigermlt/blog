@@ -15,3 +15,23 @@
     - npm
     - pip
   
+ ### What is Kubernetes
+ Refer to [here](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+ 
+  - Kubernetes helps you make sure containerized applications run where and when you want and helps them find the resources and tools they need to work
+  - Kubernetes is a production-ready, open source platform designed with Google's accumulated experience in container orchestration, combined with best-of-breed ideas from the community.
+  - there is master node: handles scheduling the pds across the Nodes in the cluster
+  - Node (worker node)
+    - each node has a Kubelet which is an agent for managing the node and communicate with the Kubernetes master
+    - a worker node has multiple pods
+    - each pod has a set of containers (such as docker container)
+    - the nodes communicate with the master using the Kubernetes API
+  - end user can also use the Kubernetes API directly to interact with the cluster
+  - A kubernetes cluster can be deployed on either physical or virtual machines (using Minikube). Minikube is a lightweight imlementation that creates a VM on local machine that deploys a simple cluster containing only one node.
+  - Some commands of minikube:
+    - minikube version
+    - minikube start: start the cluster. It starts a virtual machine and a kubernetes cluster is now running in that VM
+  - Kubectl:
+    - used to interact with Kubernetes (more detail in later section)
+    - kubectl version: returns client and server version. The client version is kubectl version; the server version is Kubernetes version installed on the master
+    
