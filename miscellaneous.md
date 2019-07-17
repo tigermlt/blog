@@ -40,11 +40,11 @@
     - once you have a running Kubernetes cluster, you can deploy your containerized applications on top of it
     - Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster and provide a self-heading mechanism exists to address machine failure
     - when you create a deployment, you need to specify the container image for your application and the number of replicas that you want to run
-    - kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
+    - *kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080*
       The format is kubectl run <deployment name> <app image location> <optional port>
         - the command above searches for a suitable node where an instance of the application could run
         - schedule the application to run on that Node
         - configure the cluster to reschedule the instance on a new Node when needed
-    - kubectl get deployments: list all the deployments
+    - *kubectl get deployments*: list all the deployments
       - each deployment is running inside a Docker container on the node
     
