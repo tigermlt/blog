@@ -34,4 +34,10 @@
   - Kubectl:
     - used to interact with Kubernetes (more detail in later section)
     - kubectl version: returns client and server version. The client version is kubectl version; the server version is Kubernetes version installed on the master
+    - kubectl cluster-info: view cluster details such as where is kubernetes master and kubeDNS running
+    - kubectl get nodes: shows all nodes that can be used to host our application
+  - Kubernetes deployments:
+    - once you have a running Kubernetes cluster, you can deploy your containerized applications on top of it
+    - Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster and provide a self-heading mechanism exists to address machine failure
+    - when you create a deployment, you need to specify the container image for your application and the number of replicas that you want to run
     
