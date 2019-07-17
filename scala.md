@@ -383,8 +383,11 @@
   Similarly, there is also reduceRight and foldRight which unfold o trees that lean to the left
   For operators that are associative and commutative, foldLeft and foldRight are equivalent
   
-  
-  
+### Some proof knowledge
+  - structural induction: to prove a proerpty P(xs) for all lists xs, show that P(Nil) holds (base case), for a list xs and some element x, show the induction step: assume P(xs) holds, then P(x::xs) also holds
+
+### Other collections
+
   
   
   
