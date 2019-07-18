@@ -426,4 +426,33 @@
     - xs.max
     - xs.min
     
-    
+### Combinatorial search and for-expressions
+  - generate the sequence of all pairs of integers (i,j) such that 1<=j<i<n
+  ```
+  (1 until n) map (i=> (1 until i) map (j => (i,j)) // this generates a vector of vector
+  ```
+  - to genreate a vector of pair, we can do:
+  ```
+  ((1 until n) map (i=> (1 until i) map (j => (i,j))).flatten
+  or
+  (1 until n) flatMap (i=> (1 until i) map (j => (i,j))
+  or
+  for {
+    i <- 1 until n
+    j <- 1 until i
+    if isPrime(i+j)
+  } yield (i,j)
+  ```
+  - for comprehension: it is similar to loops in imperative languages except that it builds a list of the results of all iterations. It is of the form: for (s) yield e
+    - s is a sequence of generators and filters
+      - a generator is of the form p <- e where p is a pattern and e an expression whose value is a collection
+      - a filter is of the form if f where f is a boolean expression
+      - the sequence must start with a generator
+    - e is an expresson whose value is returned by an iteration
+  ```
+  case class Person(name: String, age: Int)
+  to obtain the names of persons over 20 years old, we can do:
+  for (p <- persons if p.age>20) yield p.name
+  it is equivalent to: persons filter (p => p.age > 20) map (p=>p.name)
+  ```
+  
