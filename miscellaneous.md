@@ -87,3 +87,7 @@
       - query list of services using the label name: ```kubectl get services -l run=<label_name>```
       - change label of a pod: ```kubectl label pod $POD_NAME app=<new_label_name>```
       - ```ubectl delete service -l run=<service_name>```: delete service
+  - scalling an application:
+    - scaling out a deployment will ensure new pods are created and scheduled to Nodes with available resources
+    - services have an integrated load-balancer that will distribute network traffic to all pods of an exposed deployment
+    - services will monitor continuously the running pods using endpoints, to ensure the traffic is sent only to available pods
