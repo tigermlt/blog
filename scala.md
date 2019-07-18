@@ -387,7 +387,19 @@
   - structural induction: to prove a proerpty P(xs) for all lists xs, show that P(Nil) holds (base case), for a list xs and some element x, show the induction step: assume P(xs) holds, then P(x::xs) also holds
 
 ### Other collections
-
+  - vector: it has more evenly balanced access patterns than List. If the length is less than 32, then it is an array. If larger it has 2 levels of storage (like file system learned in CS110), so it can store at most 32*32 = 2*10 elements so on and so forth. The time to access a number is log 32 (N). It is good for traversing (bulk operation). 
+    - usage:
+      ```
+      val nums = Vector(1,2,3)
+      
+      // it supports same operations as lists except ::
+      // instead of x :: xs, there is:
+      x +: xs: create a new vector with leading element x followed by all elements of xs
+      xs :+ x: create a new vector with trailing element x, preceded by all elements of xs
+      
+      in general: ":" always point to the sequence
+      ```
+        
   
   
   
