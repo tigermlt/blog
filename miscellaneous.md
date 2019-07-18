@@ -29,28 +29,28 @@
   - end user can also use the Kubernetes API directly to interact with the cluster
   - A kubernetes cluster can be deployed on either physical or virtual machines (using Minikube). Minikube is a lightweight imlementation that creates a VM on local machine that deploys a simple cluster containing only one node.
   - Some commands of minikube:
-    - minikube version
-    - minikube start: start the cluster. It starts a virtual machine and a kubernetes cluster is now running in that VM
+    - ```minikube version```
+    - ```minikube start```: start the cluster. It starts a virtual machine and a kubernetes cluster is now running in that VM
   - Kubectl:
     - used to interact with Kubernetes (more detail in later section)
-    - kubectl version: returns client and server version. The client version is kubectl version; the server version is Kubernetes version installed on the master
-    - kubectl cluster-info: view cluster details such as where is kubernetes master and kubeDNS running
-    - kubectl get nodes: shows all nodes that can be used to host our application
+    - ```kubectl version```: returns client and server version. The client version is kubectl version; the server version is Kubernetes version installed on the master
+    - ```kubectl cluster-info```: view cluster details such as where is kubernetes master and kubeDNS running
+    - ```kubectl get nodes```: shows all nodes that can be used to host our application
   - Kubernetes deployments:
     - once you have a running Kubernetes cluster, you can deploy your containerized applications on top of it
     - Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster and provide a self-heading mechanism exists to address machine failure
     - when you create a deployment, you need to specify the container image for your application and the number of replicas that you want to run
-    - *kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080*
+    - ```kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080```
       The format is kubectl run <deployment name> <app image location> <optional port>
         - the command above searches for a suitable node where an instance of the application could run
         - schedule the application to run on that Node
         - configure the cluster to reschedule the instance on a new Node when needed
-    - *kubectl get deployments*: list all the deployments
+    - ```kubectl get deployments```: list all the deployments
       - each deployment is running inside a Docker container on the node
     - pods running inside Kubernetes are running on a private, isolated network. They are only visible from other pods and services within the same kubernetes cluster. 
     - kubectl can create a proxy that will forward communications into a cluster-wide, private network. 
-      - *kubectl proxy*
-      - can make query to the proxy: *curl http://localhost:8001/version
+      - ```kubectl proxy```
+      - can make query to the proxy: ```curl http://localhost:8001/version```
   - Viewing pods and Nodes
     Pods:
       - A pod is a kubernetes abstraction that represents a group of one or more application containers (Docker or rkt) and some shared resources for those containers for instance:
@@ -64,8 +64,8 @@
         - Kubelet, a process responsible for communication between the Kubernetes Master and the Node. It manages the pods and the containers running on a machine
         - A container runtime (like Docker, rkt) responsible for pulling the container image from a registry, unpacking the container and running the application
       - troubleshooting with kubectl:
-        - kubectl get - list resources
-        - kubectl describe - show detailed information about a resource
-        - kubectl logs - print the logs from a container in a pod
-        - kubectl exec - execute a command on a container in a pod
+        - ```kubectl get``` - list resources
+        - ```kubectl describe``` - show detailed information about a resource
+        - ```kubectl logs``` - print the logs from a container in a pod
+        - ```kubectl exec``` - execute a command on a container in a pod
         - ```kubectl get pods``` - look for existing pods
