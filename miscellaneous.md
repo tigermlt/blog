@@ -47,6 +47,11 @@
         - configure the cluster to reschedule the instance on a new Node when needed
     - ```kubectl get deployments```: list all the deployments
       - each deployment is running inside a Docker container on the node
+      - The READY column shows the ratio of CURRENT to DESIRED replicas
+        - CURRENT is the number of replicas running now
+        - DESIRED is the configured number of replicas
+      - The UP-TO-DATE is the number of replicas that were updated to match the desired (configured) state
+      - The AVAILABLE state shows how many replicas are actually AVAILABLE to the users
     - pods running inside Kubernetes are running on a private, isolated network. They are only visible from other pods and services within the same kubernetes cluster. 
     - kubectl can create a proxy that will forward communications into a cluster-wide, private network. 
       - ```kubectl proxy```
@@ -91,3 +96,4 @@
     - scaling out a deployment will ensure new pods are created and scheduled to Nodes with available resources
     - services have an integrated load-balancer that will distribute network traffic to all pods of an exposed deployment
     - services will monitor continuously the running pods using endpoints, to ensure the traffic is sent only to available pods
+    - scale the deployment to 4 replicas: ```kubectl scale deployments/kubernetes-bootcamp --replicas=4```. If you give a smaller number of replicas than current is, it can scale down the service
