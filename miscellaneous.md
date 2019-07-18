@@ -47,4 +47,25 @@
         - configure the cluster to reschedule the instance on a new Node when needed
     - *kubectl get deployments*: list all the deployments
       - each deployment is running inside a Docker container on the node
+    - pods running inside Kubernetes are running on a private, isolated network. They are only visible from other pods and services within the same kubernetes cluster. 
+    - kubectl can create a proxy that will forward communications into a cluster-wide, private network. 
+      - *kubectl proxy*
+      - can make query to the proxy: *curl http://localhost:8001/version
+  - Viewing pods and Nodes
+    Pods:
+      - A pod is a kubernetes abstraction that represents a group of one or more application containers (Docker or rkt) and some shared resources for those containers for instance:
+        - shared storage, as Volumes
+        - networking, as a unique cluster IP address
+        - information about how to run each container
+      - each pod is tied to the Node where it is scheduled and remains there until termination or deletion. In case of Node failure, identical pods are scheduled on other available Nodes in the cluster.
+    Nodes:
+      - A Node can have many pods
+      - every Node at least run:
+        - Kubelet, a process responsible for communication between the Kubernetes Master and the Node. It manages the pods and the containers running on a machine
+        - A container runtime (like Docker, rkt) responsible for pulling the container image from a registry, unpacking the container and running the application
+      - troubleshooting with kubectl:
+        - kubectl get - list resources
+        - kubectl describe - show detailed information about a resource
+        - kubectl logs - print the logs from a container in a pod
+        - kubectl exec - execute a command on a container in a pod
     
