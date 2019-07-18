@@ -399,9 +399,31 @@
       
       in general: ":" always point to the sequence
       ```
+  - list, vector are base class of Seq; seq, set, map are base class of iterable
+  - arrays and strings support the same operation as Seq and can implicitly be converted to sequences where needed
+    ```
+    val xs: Array[Int] = Array(1,2,3)
+    xs map (x => 2*x)
     
-        
-  
-  
-  
-  
+    val ys: String = "Hello World!"
+    ys filter (_.isUpper)
+    ```
+  - Ranges: represented as single objects with three fields (lower bound, upper bound, step value)
+    ```
+    var r: Range = 1 until 5 // 1,2,3,4
+    var s: Range = 1 to 5  // 1,2,3,4,5
+    1 to 10 by 3 // 1,4,7,10
+    6 to 1 by -2 // 6,4,2
+    ```
+  - sequence operations
+    - xs exists p: check if p exists in xs
+    - xs forall p: true if p(x) holds for all elements x of xs
+    - a zip b: generate a list of pairs drawn from corresponding elements of sequences a and b
+    - xs.unzip: splits a list of pairs xs into two sequences consisting of the first and second halves of all pairs
+    - xs.flatMap f
+    - xs.sum: the sum of all elements of this numberic collection
+    - xs.product
+    - xs.max
+    - xs.min
+    
+    
