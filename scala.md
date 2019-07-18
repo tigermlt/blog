@@ -434,9 +434,13 @@
   - to genreate a vector of pair, we can do:
   ```
   ((1 until n) map (i=> (1 until i) map (j => (i,j))).flatten
+  
   or
+  
   (1 until n) flatMap (i=> (1 until i) map (j => (i,j))
+  
   or
+  
   for {
     i <- 1 until n
     j <- 1 until i
