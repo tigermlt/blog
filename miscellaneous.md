@@ -97,3 +97,11 @@
     - services have an integrated load-balancer that will distribute network traffic to all pods of an exposed deployment
     - services will monitor continuously the running pods using endpoints, to ensure the traffic is sent only to available pods
     - scale the deployment to 4 replicas: ```kubectl scale deployments/kubernetes-bootcamp --replicas=4```. If you give a smaller number of replicas than current is, it can scale down the service
+  - Rolling update:
+    - rolling updates allow deployments' update to take place with zero downtime by incrementally updating pods instances with new ones. This is good because users expect applications to be available all the time and developers are expected to deploy new versions of them several times a day
+      - it allows promote an application from one environment to another
+      - it allows rooback to previous versions
+      - it allows continuous integration and continuous delivery of applications with zero downtime
+    - scale up and down does not affect application availability
+    - if a deployment is exposed publicly, the service will load-balance the traffic only to available pods during the update
+    - ```kubectl rollout undo <deployment name or tag>```: roll back to the previous working version of the deployment
