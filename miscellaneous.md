@@ -70,4 +70,12 @@
         - ```kubectl exec``` - execute a command on a container in a pod
         - ```kubectl get pods``` - look for existing pods
         - ```kubectl describe pods``` - view what containers are inside that Pod and what images are used to build those containers
-        - 
+      - execute commands on the container
+        - ```kubectl exec $POD_NAME env```: list the environment variables in the specified pod
+        - ```kubectl exec -ti $POD_NAME bash```: start a bash session in the pod's container
+  - Kubernetes service
+    - when a worker node dies, the pods running on the Node are also lost. A replicasetmight then dynamically drive the cluster back to the desiried state via creation of new pods.
+    - A service is defined using YAML or JSON
+    - Each pod has a unique IP address, those IPs are not exposed outside the cluster without a service. Service allow your applications to receive traffic
+    - A Service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application
+    - Services match a set of pods using labels and selectors, a grouping primitive that allows logical operation on objects in Kubernetes. Labels are key/value pairs attached to objects.
