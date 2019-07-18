@@ -79,3 +79,11 @@
     - Each pod has a unique IP address, those IPs are not exposed outside the cluster without a service. Service allow your applications to receive traffic
     - A Service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application
     - Services match a set of pods using labels and selectors, a grouping primitive that allows logical operation on objects in Kubernetes. Labels are key/value pairs attached to objects.
+    - ```kubectl get services```: list the current services from our cluster
+    - ```kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080```: create a new service and expose to external traffic
+    - ```kubectl describe services/kubernetes-bootcamp```: return information about the service like port number, IP address etc
+    - ```kubectl describe deployment```: see the name of the label of a deployment
+      - query list of pods using the label name: ```kubectl get pods -l run=<label_name>```
+      - query list of services using the label name: ```kubectl get services -l run=<label_name>```
+      - change label of a pod: ```kubectl label pod $POD_NAME app=<new_label_name>```
+      - ```ubectl delete service -l run=<service_name>```: delete service
