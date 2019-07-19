@@ -174,7 +174,7 @@
   def sqrt(x: Double) = fixedPoint(y => (y+x/y)/2)(1.0)
   ```
   
-# Function and data
+### Function and data
   class which defines **a new type** and a constructor (the type can be passed in as argument). For example:
   ```
   class Rational(x: Int, y: Int) {
@@ -206,7 +206,26 @@
     override def toString = number + "/" + denom
   }
   ```
-
+  - Data abstraction: the ability to choose different implementations of the data without affecting clients
+  - Assert and precondition (require):
+    - assert is used as to check the code of the function itself
+    - require is used to enforce a precondition on the caller of a function
+  - create constructor inside a class:
+  ```
+  class Rational(x: Int, y: Int) {
+    require(y!=0, "denominator must be nonzero")
+    def this(x: Int) = this(x,1) // create a constructor
+  }
+  ```
+  - operators:
+    We can define (override) custom +,-,*,/ etc in a class
+    ```
+    def + (that Rational) = new Rational(number * that.denom + that.number * denom, denom * that.denom)
+    
+    def - (that: Rational) = this + that.neg
+    
+    def < (that: Rational) = number * that.denom < that.numer * denom
+    ```
 
 ### List methods
   - xs.length: get the length of list xs
