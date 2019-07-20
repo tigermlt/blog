@@ -257,7 +257,21 @@
   The Hello can be refered by: progfun.examples.Hello
   ```
   - traits: classes, objects and traits can inherit from at most one class but arbitrary many traits
+    - trait is similar to interface in Java but can contain both fields and concrete methods
+    - trait cannot have value parameters, only class can
+    ```
+    trait Planar {
+      def height: Int
+      def width: Int
+      def surface = height * width
+    }
+    
+    to extend trait, we can use keyword "extends" (for the first extension) and "with" (for the rest extension)
+    class Square extends Shape with Planar with Movable
+    ```
+### Types in Scala
 
+    
 ### List methods
   - xs.length: get the length of list xs
   - xs.last: return xs's last element. Exception if xs is empty
