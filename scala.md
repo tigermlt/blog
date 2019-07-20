@@ -558,4 +558,14 @@
   }
   ```
 ### Maps
+  ```
+  val romanNumerals: Map[String, Int] = Map('I'->1, 'V'->5)
+  val capitalOfCountry: Map[String,String] = Map("US"->"Washington")
+  ```
+  Maps can be iterable, maps can also be functions\
+  
+  - option type which is map get key returns
+    - None if map does not contain the given key
+    - Some(x) if map associates the given key with the value x
+    
 
