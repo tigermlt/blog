@@ -226,6 +226,37 @@
     
     def < (that: Rational) = number * that.denom < that.numer * denom
     ```
+### Class Hierarchies
+  - abstract class can contain members which are missing an implementation; no instance can be created with keyword "new"
+  ```
+  abstract class IntSet {
+    def incl(x: Int): IntSet
+    def contains(x: Int): Boolean
+  }
+  ```
+  - override: redefine an existing, non-abstract definition in a subclass
+  ```
+  abstract class Base {
+    def foo = 1
+    def bar: Int
+  }
+  
+  class Sub extends Base {
+    override def foo = 2
+    def bar = 3
+  }
+  ```
+  - object class defines a singleton class, no other instances can be created
+  - dynamic binding:
+    - the code invoked by a method call depends on the runtime type of the object that contains the method
+  - packages: classes and objects are organized in packages
+  ```
+  package progfun.examples
+  object Hello {...}
+  
+  The Hello can be refered by: progfun.examples.Hello
+  ```
+  - traits: classes, objects and traits can inherit from at most one class but arbitrary many traits
 
 ### List methods
   - xs.length: get the length of list xs
