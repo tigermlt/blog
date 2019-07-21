@@ -569,5 +569,5 @@
     - Some(x) if map associates the given key with the value x
   - orderBy on a collection can be expressed by sortWith (receive a predicate as a parameter) and sorted
   - groupBy: partitions a collection into a map of collections according to a discriminator function f
-    
+  - withDefaultValue: use the default value if the key is not in the map to avoid exception
 
