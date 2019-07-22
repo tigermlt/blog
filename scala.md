@@ -620,15 +620,18 @@
 ### Combinational Search Example
 
   - sets: basic abstraction in scala collections
+  
   ```
   val fruit = Set("apple", "banana", "pear")
   val s = (1 to 6).toSet
   ```
+  
   - sets vs sequences:
     - sets are unordered
     - sets do not have duplicate elements
     - the fundamental operation on sets is contains
   - Nqueens example
+  
   ```
   def queens(n: Int): Set[List[Int]] = {
     def placeQueens(k: Int): Set[List[Int]] = {
@@ -644,7 +647,6 @@
     }
     placeQueens(n)
   }
-  
   def isSafe(col: Int, queens: List[Int]): Boolean = {
     val row = queens.length
     // we model the solution by giving a list of columns and in the order of last row to first row
@@ -663,6 +665,7 @@
   val romanNumerals: Map[String, Int] = Map('I'->1, 'V'->5)
   val capitalOfCountry: Map[String,String] = Map("US"->"Washington")
   ```
+  
   Maps can be iterable, maps can also be functions\
   
   - option type which is map get key returns
