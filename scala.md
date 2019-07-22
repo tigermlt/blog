@@ -341,8 +341,28 @@
     - covariant type parameters can only appear in method results
     - contravariant type parameters can only appear in method parameters
     - invariant type parameters can appear anywhere
-### Decomposition
-
+### Pattern match
+  - case classes: similar to normal class defintion except that it is preceded by the modifier case
+  ```
+  trait Expr
+  case class Number(n: Int) extends Expr
+  it is also implicitly defines companion objects with apply methods:
+  object Number {
+    def apply(n: Int) = new Number(n)
+  }
+  so we can call Number(2) which is equivalent to Number.apply(2)
+  ```
+  - pattern match is a generalization of switch from C/Java to class hierarchies
+  ```
+  As an example:
+  def eval(e: Expr): Int = e match {
+    case Number(n) => n
+    case Sum(e1, e2) => eval(e1) + eval(e2)
+  }
+  ```
+  - match syntax:
+  - forms of patterns:
+  
 ### List methods
   - xs.length: get the length of list xs
   - xs.last: return xs's last element. Exception if xs is empty
