@@ -278,6 +278,12 @@
   The types hierarchy is seen as follows:
   ![types](https://tigermlt.github.io/blog/type.png)
   - generic types: type parameters written in square brackets ([T])
+  ```
+  trait List[T]
+  class Cons[T](val head: T, val tail: List[T]) extends List[T]
+  class Nil[T] extends List[T]
+  ```
+  - type erasure: all type parameters and type arguments are removed before evaluating the program. To keep the type, we can use ClassTag or TypeTag (![here](https://blog.knoldus.com/type-erasure-in-scala/))
   
   
 ### List methods
