@@ -270,7 +270,11 @@
     class Square extends Shape with Planar with Movable
     ```
 ### Types in Scala
-
+  - Any: the base type of all types
+  - AnyRef: The base type of all reference types
+  - AnyVal: The base type of all primitive types
+  - Nothing: At the bottom of scala's type hierarchy. It is a subtype of every other type. It is used to signal abnormal termination and as an element type of empty collections. 
+  - null: it is a subtype of every class that inherits from Object; it is incompatible with subtypes of AnyVal
     
 ### List methods
   - xs.length: get the length of list xs
