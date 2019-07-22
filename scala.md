@@ -195,83 +195,83 @@
   }
   ```
   We can also implement our own way of adding rational:
-  ```
-  class Rational(x: Int, y: Int) {
-    // gcd is computed immediately so that its value can be re-used
-    private def gcd(a: Int, b: Int): Int = if (b==0) a else gcd(b, a%b)
-    private val g = gcd(x,y)
-    def number = x/g
-    def denom = y/g
-    
-    def add(that: Rational) = new Rational(number*that.denom + that.number*denom, denom*that.denom)
-    
-    override def toString = number + "/" + denom
-  }
-  ```
+        
+        class Rational(x: Int, y: Int) {
+          // gcd is computed immediately so that its value can be re-used
+          private def gcd(a: Int, b: Int): Int = if (b==0) a else gcd(b, a%b)
+          private val g = gcd(x,y)
+          def number = x/g
+          def denom = y/g
+
+          def add(that: Rational) = new Rational(number*that.denom + that.number*denom, denom*that.denom)
+
+          override def toString = number + "/" + denom
+        }
+        
   - Data abstraction: the ability to choose different implementations of the data without affecting clients
   - Assert and precondition (require):
     - assert is used as to check the code of the function itself
     - require is used to enforce a precondition on the caller of a function
   - create constructor inside a class:
-  ```
-  class Rational(x: Int, y: Int) {
-    require(y!=0, "denominator must be nonzero")
-    def this(x: Int) = this(x,1) // create a constructor
-  }
-  ```
+        
+        class Rational(x: Int, y: Int) {
+          require(y!=0, "denominator must be nonzero")
+          def this(x: Int) = this(x,1) // create a constructor
+        }
+        
   - operators:
     We can define (override) custom +,-,*,/ etc in a class
-    ```
-    def + (that Rational) = new Rational(number * that.denom + that.number * denom, denom * that.denom)
-    
-    def - (that: Rational) = this + that.neg
-    
-    def < (that: Rational) = number * that.denom < that.numer * denom
-    ```
+          
+          def + (that Rational) = new Rational(number * that.denom + that.number * denom, denom * that.denom)
+
+          def - (that: Rational) = this + that.neg
+
+          def < (that: Rational) = number * that.denom < that.numer * denom
+          
     
 ### Class Hierarchies
   - abstract class can contain members which are missing an implementation; no instance can be created with keyword "new"
-  ```
-  abstract class IntSet {
-    def incl(x: Int): IntSet
-    def contains(x: Int): Boolean
-  }
-  ```
+        
+        abstract class IntSet {
+          def incl(x: Int): IntSet
+          def contains(x: Int): Boolean
+        }
+        
   - override: redefine an existing, non-abstract definition in a subclass
-  ```
-  abstract class Base {
-    def foo = 1
-    def bar: Int
-  }
-  
-  class Sub extends Base {
-    override def foo = 2
-    def bar = 3
-  }
-  ```
+        
+        abstract class Base {
+          def foo = 1
+          def bar: Int
+        }
+
+        class Sub extends Base {
+          override def foo = 2
+          def bar = 3
+        }
+        
   - object class defines a singleton class, no other instances can be created
   - dynamic binding:
     - the code invoked by a method call depends on the runtime type of the object that contains the method
   - packages: classes and objects are organized in packages
-  ```
-  package progfun.examples
-  object Hello {...}
-  
-  The Hello can be refered by: progfun.examples.Hello
-  ```
+        
+        package progfun.examples
+        object Hello {...}
+
+        The Hello can be refered by: progfun.examples.Hello
+        
   - traits: classes, objects and traits can inherit from at most one class but arbitrary many traits
     - trait is similar to interface in Java but can contain both fields and concrete methods
     - trait cannot have value parameters, only class can
-    ```
-    trait Planar {
-      def height: Int
-      def width: Int
-      def surface = height * width
-    }
-    
-    to extend trait, we can use keyword "extends" (for the first extension) and "with" (for the rest extension)
-    class Square extends Shape with Planar with Movable
-    ```
+        
+          trait Planar {
+            def height: Int
+            def width: Int
+            def surface = height * width
+          }
+
+          to extend trait, we can use keyword "extends" (for the first extension) and "with" (for the rest extension)
+          class Square extends Shape with Planar with Movable
+        
     
 ### Types in Scala
   - Any: the base type of all types
@@ -282,11 +282,11 @@
   The types hierarchy is seen as follows:
   ![types](https://tigermlt.github.io/blog/type.png)
   - generic types: type parameters written in square brackets ([T])
-  ```
-  trait List[T]
-  class Cons[T](val head: T, val tail: List[T]) extends List[T]
-  class Nil[T] extends List[T]
-  ```
+      
+        trait List[T]
+        class Cons[T](val head: T, val tail: List[T]) extends List[T]
+        class Nil[T] extends List[T]
+      
   - type erasure: all type parameters and type arguments are removed before evaluating the program. To keep the type, we can use ClassTag or TypeTag ([here](https://blog.knoldus.com/type-erasure-in-scala/))
   - polymorphism: it means that a function type comes "in many forms":
     - the function can be applied to arguments of many types
@@ -295,52 +295,52 @@
       - subtyping: instances of a subclass can be passed to a base class (comes from O-O)
       - generics: instances of a function or class are created by type parameterization (comes from FP)
   - type bounds:
-    ```
-    S <: T: S is a subtype of T (S points to T in the hierarchy diagram)
-    S >: T: S is a supertype of T
-    mixed bound: [S >: NonEmpty <: IntSet] // it is possible to mix a lower bound with an upper bound, it restricts S to be any type between NonEmpty and IntSet
-    ```
+        
+        S <: T: S is a subtype of T (S points to T in the hierarchy diagram)
+        S >: T: S is a supertype of T
+        mixed bound: [S >: NonEmpty <: IntSet] // it is possible to mix a lower bound with an upper bound, it restricts S to be any type between NonEmpty and IntSet
+        
     
 ### Functions as Objects
-  ```
-  The function type A=>B is just an abbreviation for the class scala.Function1[A,B] which is defined as follows:
-  trait Function1[A,B] {
-    def apply(x: A): B
-  }
-  ```
+      
+      The function type A=>B is just an abbreviation for the class scala.Function1[A,B] which is defined as follows:
+      trait Function1[A,B] {
+        def apply(x: A): B
+      }
+      
   Therefore functions are objects with apply methods
   
 ### Covariance
   The defintion is as follows:
-  ```
-  Given NonEmpty <: IntSet
-  if List[NonEmpty] <: List[IntSet] then we say list is covariant
-  ```
+      
+      Given NonEmpty <: IntSet
+      if List[NonEmpty] <: List[IntSet] then we say list is covariant
+      
   **Immutable type is covariant**. So list is covariant but array is not covariant
   - variance:
-  ```
-  Say C[T] is a parameterized type and A,B are types such that A <: B
-  There are three possible relationships between C[A] and C[B]:
-  C[A] <: C[B]  -> C is covariant
-  C[A] >: C[B]  -> C is contravariant
-  neither C[A] nor C[B] is a subtype of the other -> C is nonvariant
-  ```
+        
+        Say C[T] is a parameterized type and A,B are types such that A <: B
+        There are three possible relationships between C[A] and C[B]:
+        C[A] <: C[B]  -> C is covariant
+        C[A] >: C[B]  -> C is contravariant
+        neither C[A] nor C[B] is a subtype of the other -> C is nonvariant
+        
   - Scala lets you declare the variance of a type by annotating the type parameter:
-  ```
-  class C[+A] {...}  -> C is covariant
-  class C[-A] {...}  -> C is contravariant
-  class C[A] {...}  -> C is nonvariant
-  ```
+        
+        class C[+A] {...}  -> C is covariant
+        class C[-A] {...}  -> C is contravariant
+        class C[A] {...}  -> C is nonvariant
+        
   - typing rules for functions
-  ```
-  If A2 <: A1 and B1 <: B2, then A1 => B1 <: A2 => B2
-  ```
+      
+        If A2 <: A1 and B1 <: B2, then A1 => B1 <: A2 => B2
+      
   - function trait declaration: functions are contravariant in their arguments type(s) and covariant in their result type
-  ```
-  trait Function1[-T, +U] {
-    def apply(x: T): U
-  }
-  ```
+        
+        trait Function1[-T, +U] {
+          def apply(x: T): U
+        }
+        
   the compailer of Scala needs to make sure:
     - covariant type parameters can only appear in method results
     - contravariant type parameters can only appear in method parameters
@@ -348,23 +348,23 @@
     
 ### Pattern match
   - case classes: similar to normal class defintion except that it is preceded by the modifier case
-  ```
-  trait Expr
-  case class Number(n: Int) extends Expr
-  it is also implicitly defines companion objects with apply methods:
-  object Number {
-    def apply(n: Int) = new Number(n)
-  }
-  so we can call Number(2) which is equivalent to Number.apply(2)
-  ```
+      
+        trait Expr
+        case class Number(n: Int) extends Expr
+        it is also implicitly defines companion objects with apply methods:
+        object Number {
+          def apply(n: Int) = new Number(n)
+        }
+        so we can call Number(2) which is equivalent to Number.apply(2)
+      
   - pattern match is a generalization of switch from C/Java to class hierarchies
-  ```
-  As an example:
-  def eval(e: Expr): Int = e match {
-    case Number(n) => n
-    case Sum(e1, e2) => eval(e1) + eval(e2)
-  }
-  ```
+      
+        As an example:
+        def eval(e: Expr): Int = e match {
+          case Number(n) => n
+          case Sum(e1, e2) => eval(e1) + eval(e2)
+        }
+      
   - match syntax:
   - forms of patterns:
   
@@ -381,84 +381,83 @@
   - xs indexOf x: the index of the first element in xs equal to x or -1 if x does not appear in xs
   - xs contains x: same as xs indexOf x >=0
   
-  ```
-  The implementation of init, concat, reverse:
-  
-  def init[T](xs: List[T]): List[T] = xs match {
-    case List() => throw new Error("init of empty list")
-    case List(x) => List()
-    case y::ys => y::init(ys)
-  }
-  
-  def concat[T](xs: List[T], ys: List[T]) = xs match {
-    case List() => ys
-    case z::zs => z::concat(zs,ys)
-  }
-  
-  // O(n^2) n to iterator, n to concat. Can do better
-  def reverse[T](xs: List[T]): List[T] = xs match {
-    case List() => xs
-    case y::ys => reverse(ys) ++ List(y) // use ++ because :: use for element and then list, no the reverse way
-  }
-  ```
+        The implementation of init, concat, reverse:
+
+        def init[T](xs: List[T]): List[T] = xs match {
+          case List() => throw new Error("init of empty list")
+          case List(x) => List()
+          case y::ys => y::init(ys)
+        }
+
+        def concat[T](xs: List[T], ys: List[T]) = xs match {
+          case List() => ys
+          case z::zs => z::concat(zs,ys)
+        }
+
+        // O(n^2) n to iterator, n to concat. Can do better
+        def reverse[T](xs: List[T]): List[T] = xs match {
+          case List() => xs
+          case y::ys => reverse(ys) ++ List(y) // use ++ because :: use for element and then list, no the reverse way
+        }
+      
   
 ### Pair and tuples
-  ```
-  val pair = ("answer", 42) // how to create pair
-  val (label, value) = pair // how to receive pair
-  ```
+      
+      val pair = ("answer", 42) // how to create pair
+      val (label, value) = pair // how to receive pair
+      
   The above works analogously for tuples with more than two elements
   
   Mergesort:
-  ```
-  def merge(xs: List[Int], ys: List[Int]): List[Int] = {
-    (xs, ys) match {
-      case (Nil, ys) => ys
-      case (xs, Nil) => xs
-      case (x :: xs1, y :: ys1) => {
-        if (x<y) x::merge(xs1,ys)
-        else y::merge(xs, ys1)
+
+      def merge(xs: List[Int], ys: List[Int]): List[Int] = {
+        (xs, ys) match {
+          case (Nil, ys) => ys
+          case (xs, Nil) => xs
+          case (x :: xs1, y :: ys1) => {
+            if (x<y) x::merge(xs1,ys)
+            else y::merge(xs, ys1)
+          }
+        }
       }
-    }
-  }
-  
-  def msort(xs: List[Int]): List[Int] = {
-    val n = xs.length/2
-    if (n==0) xs
-    else {
-      val (fst, snd) = xs splitAt n
-      merge(msort(fst, msort(snd))
-    }
-  }
-  
-  // my own implementation, not shown in the course material and not been fully tested
-  def splitAt(x: List[Int]): (List[Int], List[Int]) = {
-    (x.take(n), x.drop(n))
-  }
-  ```
+
+      def msort(xs: List[Int]): List[Int] = {
+        val n = xs.length/2
+        if (n==0) xs
+        else {
+          val (fst, snd) = xs splitAt n
+          merge(msort(fst, msort(snd))
+        }
+      }
+
+      // my own implementation, not shown in the course material and not been fully tested
+      def splitAt(x: List[Int]): (List[Int], List[Int]) = {
+        (x.take(n), x.drop(n))
+      }
+
   
 ### implicit parameters
   Follow the above example, how can we parametrerize msort so that it can also be sued for lists with elements other than Int?
-  ```
-  def msort[T](xs: List[T]): List[T] = ...
-  ```
+      
+      def msort[T](xs: List[T]): List[T] = ...
+      
   does not work because comparison < in merge is not defined for arbitrary types T
   
   The idea is to parameterize merge with the necessary comparison function:
-  ```
-  def msort[T](xs: List[T])(lt: (T,T)=>Boolean): List[T] = ...
-  so the < comparison in merge can be replaced by lt(x,y)
-  
-  There is also a class in scala (scala.math.Ordering[T]) that can compare elements of type T. So we can directly parameterize with lt operation directly: def msort[T](xs: List[T])(ord: Ordering): List[T] = ...
-  we can use ord.lt(x,y) in replace of the < comparison
-  
-  when we call it, we can do msort(nums)(Ordering.Int)
-  ```
+      
+      def msort[T](xs: List[T])(lt: (T,T)=>Boolean): List[T] = ...
+      so the < comparison in merge can be replaced by lt(x,y)
+
+      There is also a class in scala (scala.math.Ordering[T]) that can compare elements of type T. So we can directly parameterize with lt operation directly: def msort[T](xs: List[T])(ord: Ordering): List[T] = ...
+      we can use ord.lt(x,y) in replace of the < comparison
+
+      when we call it, we can do msort(nums)(Ordering.Int)
+      
   To avoid passing lt or ord all the time, make it implicit so that compiler will figure out the right implicit to pass based on the demanded type
-  ```
-  def msort[T](xs: List[T])(implicit ord: Ordering): List[T] = ...
-  now when we call it, we only need to do msort(nums)
-  ```
+      
+      def msort[T](xs: List[T])(implicit ord: Ordering): List[T] = ...
+      now when we call it, we only need to do msort(nums)
+      
   
   Say a function takes an implicit parameter of type T, the compiler will search an implicit definition that:
     - is marked *implicit*
@@ -473,28 +472,28 @@
     - retrieving a list of all elements satisfying a criterion
     - combining the elements of a list using an operator
   For example, we can write a simplified map as:
-  ```
-  abstract class List[T] {
-    def map[U](f: T=>U): List[U] = this match {
-      case Nil => this
-      case x::xs => f(x) :: xs.map(f)
-    }
-  }
   
-  Using map, scaleList can be written as:
-  def scaleList(xs: List[Double], factor: Double) = {
-    xs map (x => x*factor)
-  }
-  ```
+      abstract class List[T] {
+        def map[U](f: T=>U): List[U] = this match {
+          case Nil => this
+          case x::xs => f(x) :: xs.map(f)
+        }
+      }
+
+      Using map, scaleList can be written as:
+      def scaleList(xs: List[Double], factor: Double) = {
+        xs map (x => x*factor)
+      }
+  
   filter can be defined as follows:
-  ```
-  abstract class List[T] {
-    def filter(p: T => Boolean): List[T] = this match {
-      case Nil => this
-      case x::xs => if (p(x)) x :: xs.filter(p) else xs.filter(p)
-    }
-  }
-  ```
+  
+      abstract class List[T] {
+        def filter(p: T => Boolean): List[T] = this match {
+          case Nil => this
+          case x::xs => if (p(x)) x :: xs.filter(p) else xs.filter(p)
+        }
+      }
+  
   variations of Filter:
   xs filterNot p: keep the complemet of xs filter p
   xs partition p: create a pair which contains (xs filter p, xs filterNot p)
@@ -505,41 +504,41 @@
   *Notice span stops and won't go all the way through the list if p is satisfied, but filter goes through the whole list*
   
   Exercise: write a function that packs consective duplicates of list elements into sublists. For instance, pack(List('a','a','b')) gives List(List('a','a'), List('b'))
-  ```
-  def pack[T](xs: List[T]): List[List[T]] = xs match {
-    case Nil => Nil
-    case x::xs1 => {
-      val (first, rest) = xs span (y => y==x)
-      first :: pack(rest)
-    }
-  }
-  ```
+  
+      def pack[T](xs: List[T]): List[List[T]] = xs match {
+        case Nil => Nil
+        case x::xs1 => {
+          val (first, rest) = xs span (y => y==x)
+          first :: pack(rest)
+        }
+      }
+  
   Exercise: write a function that packs consective duplicates of list elements into sublists. For instance, pack(List('a','a','b')) gives List(List('a',2), List('b',1))
-  ```
-  def encode[T](xs: List[T]): List[(T, Int)] = xs match {
-    pack(xs) map (ys => (ys.head, ys.length))
-  }
-  ```
+  
+      def encode[T](xs: List[T]): List[(T, Int)] = xs match {
+        pack(xs) map (ys => (ys.head, ys.length))
+      }
+  
   
 ### Reduction of Lists
   The purpose is to combine the elements of a list using a given operator
   
   **reduceLeft**: inserts a given binary operator between adjacent elements of a list
-  ```
-  def sum(xs: List[Int]) = (0::xs) reduceLeft((x,y) => x + y)
-  def product(xs: List[Int]) = (1::xs) reduceLeft((x,y) => x*y)
-  ```
+  
+      def sum(xs: List[Int]) = (0::xs) reduceLeft((x,y) => x + y)
+      def product(xs: List[Int]) = (1::xs) reduceLeft((x,y) => x*y)
+  
   A shorter way to write is:
-  ```
-  def sum(xs: List[Int]) = (0::xs) reduceLeft(_+_)  // every _ represents a new paramter. The parameter is defined (implicitly) at the next outer pair of parentheses
-  def product(xs: List[Int]) = (1::xs) reduceLeft(_*_)
-  ```
+  
+      def sum(xs: List[Int]) = (0::xs) reduceLeft(_+_)  // every _ represents a new paramter. The parameter is defined (implicitly) at the next outer pair of parentheses
+      def product(xs: List[Int]) = (1::xs) reduceLeft(_*_)
+  
   
   **foldLeft**: similar to reduceLeft but takes an extra accumulator which is returned if foldLeft is called on an empty list
-  ```
-  def sum(xs: List[Int]) = (xs foldLeft 0) (_+_)
-  def product(xs: List[Int]) = (xs foldLeft 1) (_*_)
-  ```
+  
+      def sum(xs: List[Int]) = (xs foldLeft 0) (_+_)
+      def product(xs: List[Int]) = (xs foldLeft 1) (_*_)
+  
   
   Similarly, there is also reduceRight and foldRight which unfold o trees that lean to the left
   For operators that are associative and commutative, foldLeft and foldRight are equivalent
@@ -550,32 +549,32 @@
 ### Other collections
   - vector: it has more evenly balanced access patterns than List. If the length is less than 32, then it is an array. If larger it has 2 levels of storage (like file system learned in CS110), so it can store at most 32*32 = 2*10 elements so on and so forth. The time to access a number is log 32 (N). It is good for traversing (bulk operation). 
     - usage:
-      ```
-      val nums = Vector(1,2,3)
       
-      // it supports same operations as lists except ::
-      // instead of x :: xs, there is:
-      x +: xs: create a new vector with leading element x followed by all elements of xs
-      xs :+ x: create a new vector with trailing element x, preceded by all elements of xs
+          val nums = Vector(1,2,3)
+
+          // it supports same operations as lists except ::
+          // instead of x :: xs, there is:
+          x +: xs: create a new vector with leading element x followed by all elements of xs
+          xs :+ x: create a new vector with trailing element x, preceded by all elements of xs
+
+          in general: ":" always point to the sequence
       
-      in general: ":" always point to the sequence
-      ```
   - list, vector are base class of Seq; seq, set, map are base class of iterable
   - arrays and strings support the same operation as Seq and can implicitly be converted to sequences where needed
-    ```
-    val xs: Array[Int] = Array(1,2,3)
-    xs map (x => 2*x)
     
-    val ys: String = "Hello World!"
-    ys filter (_.isUpper)
-    ```
+        val xs: Array[Int] = Array(1,2,3)
+        xs map (x => 2*x)
+
+        val ys: String = "Hello World!"
+        ys filter (_.isUpper)
+    
   - Ranges: represented as single objects with three fields (lower bound, upper bound, step value)
-    ```
-    var r: Range = 1 until 5 // 1,2,3,4
-    var s: Range = 1 to 5  // 1,2,3,4,5
-    1 to 10 by 3 // 1,4,7,10
-    6 to 1 by -2 // 6,4,2
-    ```
+    
+        var r: Range = 1 until 5 // 1,2,3,4
+        var s: Range = 1 to 5  // 1,2,3,4,5
+        1 to 10 by 3 // 1,4,7,10
+        6 to 1 by -2 // 6,4,2
+    
   - sequence operations
     - xs exists p: check if p exists in xs
     - xs forall p: true if p(x) holds for all elements x of xs
@@ -589,33 +588,33 @@
     
 ### Combinatorial search and for-expressions
   - generate the sequence of all pairs of integers (i,j) such that 1<=j<i<n
-  ```
-  (1 until n) map (i=> (1 until i) map (j => (i,j)) // this generates a vector of vector
-  ```
+  
+        (1 until n) map (i=> (1 until i) map (j => (i,j)) // this generates a vector of vector
+  
   - to genreate a vector of pair, we can do:
-  ```
-  ((1 until n) map (i=> (1 until i) map (j => (i,j))).flatten
-  or
-  (1 until n) flatMap (i=> (1 until i) map (j => (i,j))
-  or
-  for {
-    i <- 1 until n
-    j <- 1 until i
-    if isPrime(i+j)
-  } yield (i,j)
-  ```
+  
+        ((1 until n) map (i=> (1 until i) map (j => (i,j))).flatten
+        or
+        (1 until n) flatMap (i=> (1 until i) map (j => (i,j))
+        or
+        for {
+          i <- 1 until n
+          j <- 1 until i
+          if isPrime(i+j)
+        } yield (i,j)
+  
   - for comprehension: it is similar to loops in imperative languages except that it builds a list of the results of all iterations. It is of the form: for (s) yield e
     - s is a sequence of generators and filters
       - a generator is of the form p <- e where p is a pattern and e an expression whose value is a collection
       - a filter is of the form if f where f is a boolean expression
       - the sequence must start with a generator
     - e is an expresson whose value is returned by an iteration
-  ```
-  case class Person(name: String, age: Int)
-  to obtain the names of persons over 20 years old, we can do:
-  for (p <- persons if p.age>20) yield p.name
-  it is equivalent to: persons filter (p => p.age > 20) map (p=>p.name)
-  ```
+ 
+          case class Person(name: String, age: Int)
+          to obtain the names of persons over 20 years old, we can do:
+          for (p <- persons if p.age>20) yield p.name
+          it is equivalent to: persons filter (p => p.age > 20) map (p=>p.name)
+  
   
 ### Combinational Search Example
 
