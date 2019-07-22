@@ -8,6 +8,7 @@
   2. functional programming: in a restricted sense, a FP language is one which does not have mutable variables, assignments or imperative control structures; in a wider sense, a FP language enables the construction of elegant programs that focus on **functions**. Functions can be defined anywhere including inside other functions. Functions can be passed as parameters to functions and returned as results. There are a set of operators to compose functions.
   3. logic programming
   4. object-oriented programming (orthogonal to above 3)
+  
 ### FP evaluation strategy
   1. call by value: not lazy, reduces variable first and then evaluate (x:Int), default use of scala
   
@@ -30,6 +31,7 @@
           9 + 4 * (2+2)
           9 + 4 * 4
           25
+          
 ### conditions and value definitions
   1. **def** is like CBN, its right hand side is evaluated only when it is used
   2. **val** is like CBV, its right hand side is evaluated immediately
@@ -226,6 +228,7 @@
     
     def < (that: Rational) = number * that.denom < that.numer * denom
     ```
+    
 ### Class Hierarchies
   - abstract class can contain members which are missing an implementation; no instance can be created with keyword "new"
   ```
@@ -269,6 +272,7 @@
     to extend trait, we can use keyword "extends" (for the first extension) and "with" (for the rest extension)
     class Square extends Shape with Planar with Movable
     ```
+    
 ### Types in Scala
   - Any: the base type of all types
   - AnyRef: The base type of all reference types
@@ -341,6 +345,7 @@
     - covariant type parameters can only appear in method results
     - contravariant type parameters can only appear in method parameters
     - invariant type parameters can appear anywhere
+    
 ### Pattern match
   - case classes: similar to normal class defintion except that it is preceded by the modifier case
   ```
@@ -431,6 +436,7 @@
     (x.take(n), x.drop(n))
   }
   ```
+  
 ### implicit parameters
   Follow the above example, how can we parametrerize msort so that it can also be sued for lists with elements other than Int?
   ```
@@ -610,6 +616,7 @@
   for (p <- persons if p.age>20) yield p.name
   it is equivalent to: persons filter (p => p.age > 20) map (p=>p.name)
   ```
+  
 ### Combinational Search Example
   - sets: basic abstraction in scala collections
   ```
@@ -648,6 +655,7 @@
     }
   }
   ```
+  
 ### Maps
   ```
   val romanNumerals: Map[String, Int] = Map('I'->1, 'V'->5)
