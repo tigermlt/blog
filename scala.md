@@ -275,7 +275,11 @@
   - AnyVal: The base type of all primitive types
   - Nothing: At the bottom of scala's type hierarchy. It is a subtype of every other type. It is used to signal abnormal termination and as an element type of empty collections. 
   - null: it is a subtype of every class that inherits from Object; it is incompatible with subtypes of AnyVal
-    
+  The types hierarchy is seen as follows:
+  ![types](https://tigermlt.github.io/blog/elements_of_web_search_process.png)
+  - generic types: type parameters written in square brackets ([T])
+  
+  
 ### List methods
   - xs.length: get the length of list xs
   - xs.last: return xs's last element. Exception if xs is empty
