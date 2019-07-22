@@ -283,7 +283,7 @@
   class Cons[T](val head: T, val tail: List[T]) extends List[T]
   class Nil[T] extends List[T]
   ```
-  - type erasure: all type parameters and type arguments are removed before evaluating the program. To keep the type, we can use ClassTag or TypeTag (![here](https://blog.knoldus.com/type-erasure-in-scala/))
+  - type erasure: all type parameters and type arguments are removed before evaluating the program. To keep the type, we can use ClassTag or TypeTag ([here](https://blog.knoldus.com/type-erasure-in-scala/))
   
   
 ### List methods
