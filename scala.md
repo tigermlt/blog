@@ -621,51 +621,45 @@
 
   - sets: basic abstraction in scala collections
   
-  ```
-  val fruit = Set("apple", "banana", "pear")
-  val s = (1 to 6).toSet
-  ```
-  
+        val fruit = Set("apple", "banana", "pear")
+        val s = (1 to 6).toSet
+
   - sets vs sequences:
     - sets are unordered
     - sets do not have duplicate elements
     - the fundamental operation on sets is contains
   - Nqueens example
   
-  ```
-  def queens(n: Int): Set[List[Int]] = {
-    def placeQueens(k: Int): Set[List[Int]] = {
-      if (k==0) Set(List())
-      else
-        for {
-          // get the result from last step, each result is of type: List[Int]
-          queens <- placeQueens(k-1)
-          // loop all the places that could place a queen
-          col <- 0 until n
-          if isSafe(col, queens)
-        } yield col :: queens
-    }
-    placeQueens(n)
-  }
-  def isSafe(col: Int, queens: List[Int]): Boolean = {
-    val row = queens.length
-    // we model the solution by giving a list of columns and in the order of last row to first row
-    // so here we just need to get the (row, col) pair for each valid queen
-    val queensWithRow = (row - 1 to 0 by -1) zip queens
-    queensWithRow forall {
-      // the second condition is to avoid two queens in the same diagonal
-      case (r,c) => col != c && math.abs(col-c) != row - r
-    }
-  }
-  ```
-  
+        def queens(n: Int): Set[List[Int]] = {
+          def placeQueens(k: Int): Set[List[Int]] = {
+            if (k==0) Set(List())
+            else
+              for {
+                // get the result from last step, each result is of type: List[Int]
+                queens <- placeQueens(k-1)
+                // loop all the places that could place a queen
+                col <- 0 until n
+                if isSafe(col, queens)
+              } yield col :: queens
+          }
+          placeQueens(n)
+        }
+        def isSafe(col: Int, queens: List[Int]): Boolean = {
+          val row = queens.length
+          // we model the solution by giving a list of columns and in the order of last row to first row
+          // so here we just need to get the (row, col) pair for each valid queen
+          val queensWithRow = (row - 1 to 0 by -1) zip queens
+          queensWithRow forall {
+            // the second condition is to avoid two queens in the same diagonal
+            case (r,c) => col != c && math.abs(col-c) != row - r
+          }
+        }
+        
 ### Maps
 
-  ```
-  val romanNumerals: Map[String, Int] = Map('I'->1, 'V'->5)
-  val capitalOfCountry: Map[String,String] = Map("US"->"Washington")
-  ```
-  
+      val romanNumerals: Map[String, Int] = Map('I'->1, 'V'->5)
+      val capitalOfCountry: Map[String,String] = Map("US"->"Washington")
+      
   Maps can be iterable, maps can also be functions\
   
   - option type which is map get key returns
