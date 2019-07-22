@@ -618,6 +618,7 @@
   ```
   
 ### Combinational Search Example
+
   - sets: basic abstraction in scala collections
   ```
   val fruit = Set("apple", "banana", "pear")
@@ -657,6 +658,7 @@
   ```
   
 ### Maps
+
   ```
   val romanNumerals: Map[String, Int] = Map('I'->1, 'V'->5)
   val capitalOfCountry: Map[String,String] = Map("US"->"Washington")
