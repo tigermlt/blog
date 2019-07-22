@@ -284,8 +284,65 @@
   class Nil[T] extends List[T]
   ```
   - type erasure: all type parameters and type arguments are removed before evaluating the program. To keep the type, we can use ClassTag or TypeTag ([here](https://blog.knoldus.com/type-erasure-in-scala/))
+  - polymorphism: it means that a function type comes "in many forms":
+    - the function can be applied to arguments of many types
+    - the type can have instances of many types
+    - two principals:
+      - subtyping: instances of a subclass can be passed to a base class (comes from O-O)
+      - generics: instances of a function or class are created by type parameterization (comes from FP)
+  - type bounds:
+    ```
+    S <: T: S is a subtype of T (S points to T in the hierarchy diagram)
+    S >: T: S is a supertype of T
+    mixed bound: [S >: NonEmpty <: IntSet] // it is possible to mix a lower bound with an upper bound, it restricts S to be any type between NonEmpty and IntSet
+    ```
+    
+### Functions as Objects
+  ```
+  The function type A=>B is just an abbreviation for the class scala.Function1[A,B] which is defined as follows:
+  trait Function1[A,B] {
+    def apply(x: A): B
+  }
+  ```
+  Therefore functions are objects with apply methods
   
-  
+### Covariance
+  The defintion is as follows:
+  ```
+  Given NonEmpty <: IntSet
+  if List[NonEmpty] <: List[IntSet] then we say list is covariant
+  ```
+  **Immutable type is covariant**. So list is covariant but array is not covariant
+  - variance:
+  ```
+  Say C[T] is a parameterized type and A,B are types such that A <: B
+  There are three possible relationships between C[A] and C[B]:
+  C[A] <: C[B]  -> C is covariant
+  C[A] >: C[B]  -> C is contravariant
+  neither C[A] nor C[B] is a subtype of the other -> C is nonvariant
+  ```
+  - Scala lets you declare the variance of a type by annotating the type parameter:
+  ```
+  class C[+A] {...}  -> C is covariant
+  class C[-A] {...}  -> C is contravariant
+  class C[A] {...}  -> C is nonvariant
+  ```
+  - typing rules for functions
+  ```
+  If A2 <: A1 and B1 <: B2, then A1 => B1 <: A2 => B2
+  ```
+  - function trait declaration: functions are contravariant in their arguments type(s) and covariant in their result type
+  ```
+  trait Function1[-T, +U] {
+    def apply(x: T): U
+  }
+  ```
+  the compailer of Scala needs to make sure:
+    - covariant type parameters can only appear in method results
+    - contravariant type parameters can only appear in method parameters
+    - invariant type parameters can appear anywhere
+### Decomposition
+
 ### List methods
   - xs.length: get the length of list xs
   - xs.last: return xs's last element. Exception if xs is empty
