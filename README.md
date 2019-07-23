@@ -7,6 +7,7 @@
 5. CV
 6. [Books](https://tigermlt.github.io/blog/books)
 7. [miscellaneous](https://tigermlt.github.io/blog/miscellaneous)
+8. [probability](https://tigermlt.github.io/blog/probability)
 -------------------------
 
 7. [Talks](https://tigermlt.github.io/blog/talk)
