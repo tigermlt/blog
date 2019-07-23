@@ -365,8 +365,13 @@
           case Sum(e1, e2) => eval(e1) + eval(e2)
         }
       
-  - match syntax:
+  - match syntax: match is followed by a sequence of cases, pat => expr
   - forms of patterns:
+    - constructors such as Number, Sum
+    - variables such as n, e1, e2
+    - wildcard patterns "_"
+    - constants such as 1, true
+    - the same variable name can only appear once in a pattern, so sum(x,x) is not a legal pattern
   
 ### List methods
   - xs.length: get the length of list xs
