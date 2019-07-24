@@ -5,10 +5,12 @@
 3. Machine Learning
 4. NLP
 5. CV
-6. [Books](https://tigermlt.github.io/blog/books)
-7. [miscellaneous](https://tigermlt.github.io/blog/miscellaneous)
-8. [probability](https://tigermlt.github.io/blog/probability)
+6. [Information Retrieval](https://tigermlt.github.io/blog/IR)
+7. Recommender System
+8. [Books](https://tigermlt.github.io/blog/books)
+9. [miscellaneous](https://tigermlt.github.io/blog/miscellaneous)
+10. [probability](https://tigermlt.github.io/blog/probability)
 -------------------------
 
-7. [Talks](https://tigermlt.github.io/blog/talk)
+1. [Talks](https://tigermlt.github.io/blog/talk)
 
