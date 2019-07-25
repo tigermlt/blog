@@ -1,7 +1,7 @@
 ## List of Resources
 
 1. [Scala](https://tigermlt.github.io/blog/scala)
-2. Go Language
+2. [Go Language](https://tigermlt.github.io/blog/golang)
 3. Machine Learning
 4. NLP
 5. CV
