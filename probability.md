@@ -16,7 +16,9 @@ Experiments: Have events as outcomes
     then there are <img src="https://latex.codecogs.com/svg.latex?\frac{n!}{n_{1}!...n_{r}!}" title="\frac{n!}{n_{1}!...n_{r}!}" /> unique orderings (permutations)
   - choose k objects (combinations) from distinct items
     - for instance, there are n = 20 people, choose k = 5 people to get cake and the ordering of those 5 does not matter
-    - <img src="https://latex.codecogs.com/svg.latex?\binom{n}{k}&space;=&space;\frac{n!}{k!(n-k)!)}" title="\binom{n}{k} = \frac{n!}{k!(n-k)!)}" />
+    - <img src="https://latex.codecogs.com/svg.latex?\binom{n}{k}&space;=&space;\frac{n!}{k!(n-k)!}" title="\binom{n}{k} = \frac{n!}{k!(n-k)!}" />
   - put objects into r buckets
+    - items are distinct: r^n where n is number of items
+    - items are not distinct: <img src="https://latex.codecogs.com/svg.latex?\frac{(n&plus;r-1)!}{n!(r-1)!}" title="\frac{(n+r-1)!}{n!(r-1)!}" /> 
   
   
