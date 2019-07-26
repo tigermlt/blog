@@ -17,5 +17,12 @@
   var: to create a variable
   card: the name of the variable
   string: only string type will ever be assigned to this variable
+  
+  card := "hello" -> same as the definition above, but rely on the compiler to infer type, used when first defined
+  if later we want to change the value of card, just need to use "="
+  card = "hello again"
   ```
+  - Go is static typed language (java, C++ as well, assign a type when defining a variable)
+    - basic go types: bool, string, int, float64
+  - dynamic typed language: javascript, ruby, python
   
