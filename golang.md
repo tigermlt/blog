@@ -25,4 +25,11 @@
   - Go is static typed language (java, C++ as well, assign a type when defining a variable)
     - basic go types: bool, string, int, float64
   - dynamic typed language: javascript, ruby, python
+- function
+  ```
+  // string indicates that a string needs to be returned
+  func newCard() string {
+    return "hello"
+  }
+  ```
   
