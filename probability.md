@@ -20,5 +20,11 @@ Experiments: Have events as outcomes
   - put objects into r buckets
     - items are distinct: r^n where n is number of items
     - items are not distinct: <img src="https://latex.codecogs.com/svg.latex?\frac{(n&plus;r-1)!}{n!(r-1)!}" title="\frac{(n+r-1)!}{n!(r-1)!}" /> 
-  
+- Axioms of probability:
+  - 0 <= P(E) <= 1
+  - P(S) = 1
+  - P(E^c) = 1 - P(E) or P(E union F) = p(E) + p(F) if event E and F are mutually exclusive
+- conditional probability: it is the probability that E occurs given that F has already occurred
+  - written as P(E|F) : means P(E, given F already observed)
+  - <img src="https://latex.codecogs.com/svg.latex?P(E|F)&space;=&space;\frac{P(E\cap&space;F)}{P(F)}" title="P(E|F) = \frac{P(E\cap F)}{P(F)}" />
   
