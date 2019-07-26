@@ -11,4 +11,11 @@
   - executable package: generates a file that we can run
   - reusable package: code used as "helpers", used as libraries or code dependencies
   - package main -> go build -> main.exe (main is an indicator as an executable file/package). Other names are resusable package
+- variable
+  ```
+  var card string = "hello"
+  var: to create a variable
+  card: the name of the variable
+  string: only string type will ever be assigned to this variable
+  ```
   
