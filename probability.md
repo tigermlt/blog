@@ -26,5 +26,7 @@ Experiments: Have events as outcomes
   - P(E^c) = 1 - P(E) or P(E union F) = p(E) + p(F) if event E and F are mutually exclusive
 - conditional probability: it is the probability that E occurs given that F has already occurred
   - written as P(E|F) : means P(E, given F already observed)
-  - <img src="https://latex.codecogs.com/svg.latex?P(E|F)&space;=&space;\frac{P(E\cap&space;F)}{P(F)}" title="P(E|F) = \frac{P(E\cap F)}{P(F)}" />
+  - <img src="https://latex.codecogs.com/svg.latex?P(E|F)&space;=&space;\frac{P(E\cap&space;F)}{P(F)}" title="P(E|F) = \frac{P(E\cap F)}{P(F)}" />, this holds even when outcomes are not equally likely
+  - In general: <img src="https://latex.codecogs.com/svg.latex?P(E1E2...En)&space;=&space;P(E1)P(E2|E1)...P(En|E1E2...En-1)" title="P(E1E2...En) = P(E1)P(E2|E1)...P(En|E1E2...En-1)" />
+  
   
