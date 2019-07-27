@@ -1,6 +1,6 @@
-Events: A thing that can happen
+- Events: A thing that can happen
 
-Experiments: Have events as outcomes
+- Experiments: Have events as outcomes
 
 - Inclusion-Exclusion Principle:
   - If outcomes can come from set A or B, then the total number of outcomes is:
