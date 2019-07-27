@@ -39,3 +39,5 @@
   - update belief
     - we have some P(location) before observation, know P(observation|location), update P(location)
     - after observation, we want to compute P(L|O), use bayes theorem and law of total probability to compute it
+- independence
+  
