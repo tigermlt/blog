@@ -30,5 +30,7 @@ Experiments: Have events as outcomes
   - In general: <img src="https://latex.codecogs.com/svg.latex?P(E1E2...En)&space;=&space;P(E1)P(E2|E1)...P(En|E1E2...En-1)" title="P(E1E2...En) = P(E1)P(E2|E1)...P(En|E1E2...En-1)" />
   - ![paradigm](https://tigermlt.github.io/blog/conditional_paradigm.png)
   - machine learning is: probability + data + computers
-  
+- Law of total probability:
+  - <img src="https://latex.codecogs.com/svg.latex?P(E)&space;=&space;\sum&space;_{i}P(B_{i}\cap&space;E)&space;=&space;\sum&space;_{i}P(E&space;|B_{i})&space;\times&space;P(B_{i})" title="P(E) = \sum _{i}P(B_{i}\cap E) = \sum _{i}P(E |B_{i}) \times P(B_{i})" />
+  - Bi are mutually exclusive
   
