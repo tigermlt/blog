@@ -33,4 +33,6 @@ Experiments: Have events as outcomes
 - Law of total probability:
   - <img src="https://latex.codecogs.com/svg.latex?P(E)&space;=&space;\sum&space;_{i}P(B_{i}\cap&space;E)&space;=&space;\sum&space;_{i}P(E&space;|B_{i})&space;\times&space;P(B_{i})" title="P(E) = \sum _{i}P(B_{i}\cap E) = \sum _{i}P(E |B_{i}) \times P(B_{i})" />
   - Bi are mutually exclusive
+- Bayes Theorem
+  - <img src="https://latex.codecogs.com/gif.latex?P(E|F)&space;=&space;\frac{P(F|E)P(E)}{P(F)}" title="P(E|F) = \frac{P(F|E)P(E)}{P(F)}" />
   
