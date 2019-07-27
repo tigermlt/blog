@@ -36,3 +36,6 @@
 - Bayes Theorem
   - <img src="https://latex.codecogs.com/gif.latex?P(E|F)&space;=&space;\frac{P(F|E)P(E)}{P(F)}" title="P(E|F) = \frac{P(F|E)P(E)}{P(F)}" />
   - <img src="https://latex.codecogs.com/gif.latex?P(E|F)&space;=&space;\frac{P(F|E)P(E)}{P(F|E)P(E)&space;&plus;&space;P(F|E^{c})P(E^{c})}" title="P(E|F) = \frac{P(F|E)P(E)}{P(F|E)P(E) + P(F|E^{c})P(E^{c})}" /> it is also equal to the above equation after applying low of total probability
+- update belief
+  we have some P(location) before observation, know P(observation|location), update P(location)
+  after observation, we want to compute P(L|O), use bayes theorem and law of total probability to compute it
