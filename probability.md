@@ -58,4 +58,11 @@
   - <img src="https://latex.codecogs.com/gif.latex?P(A|BE)&space;=&space;\frac{P(B|AE)P(A|E)}{P(B|E)}" title="P(A|BE) = \frac{P(B|AE)P(A|E)}{P(B|E)}" />, similar to the previous equation, just add condition on E for every term
   - independence relationships can change with conditioning (if events E and F are independent, that does not mean they will still be independent given another event G)
   - two events E and F are conditionally independent given G if P(EF|G) = P(E|G)P(F|G) or P(E|FG) = P(E|G)
+- Random variables: it is a variable will have a value but there is uncertainty as to what value
+  - for instance, Y = number of "heads" on 3 coins. Y is a random variable, Y could be 0, 1, 2, 3
+  - with random variable, we can do:
+    - probability mass function P(X=a) which means the probability of a random variable take particular value. Can think of it as a function, given a value, output a probability. Notice the random variable is **discrete**
+    - expectation E[X]
+    - variance: Var(X)
+    
   
