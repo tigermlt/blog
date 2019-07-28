@@ -64,6 +64,7 @@
     - probability mass function P(X=a) which means the probability of a random variable take particular value. Can think of it as a function, given a value, output a probability. Notice the random variable is **discrete**
       - the notation could also be written as p(x) or <img src="https://latex.codecogs.com/gif.latex?P_{X}(x)" title="P_{X}(x)" />
     - expectation E[X]
+      - for discrete random variable X: <img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\sum&space;_{x:p(x)>0}x*p(x)" title="E[X] = \sum _{x:p(x)>0}x*p(x)" />
     - variance: Var(X)
     
   
