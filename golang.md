@@ -32,6 +32,15 @@
     return "hello"
   }
   ```
+  - function receiver: 
+  ```
+  // any variable of type "deck" now gets access to the "print" method, it is sort of like passing a function pointer to a function but much easier than that
+  func (d deck) print() {
+    for i, card := range d {
+      fmt.Println(i, card)
+    }
+  }
+  ```
 - Array and Slice in Go
   - Array: fixed length list of things
   - Slice: an array that can grow or shrink
