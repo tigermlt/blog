@@ -51,4 +51,7 @@
   - example, p is the probability to get head by rolling a dice, what is P(exactly k heads on n coin flips)
     - each coin flip are independent and the probablity of getting one case of k head is: <img src="https://latex.codecogs.com/gif.latex?P(F_{i})&space;=&space;p^{k}(1-p)^{n-k}" title="P(F_{i}) = p^{k}(1-p)^{n-k}" />
     - so the total probablity is: <img src="https://latex.codecogs.com/gif.latex?\binom{n}{k}p^{k}(1-p)^{n-k}" title="\binom{n}{k}p^{k}(1-p)^{n-k}" />
+- set operations
+  - DeMorgan's laws: <img src="https://latex.codecogs.com/gif.latex?(E\cup&space;F)^{c}&space;=&space;E^{c}&space;\cap&space;F^{c}" title="(E\cup F)^{c} = E^{c} \cap F^{c}" />; <img src="https://latex.codecogs.com/gif.latex?(E\cap&space;F)^{c}&space;=&space;E^{c}&space;\cup&space;F^{c}" title="(E\cap F)^{c} = E^{c} \cup F^{c}" />
+  
   
