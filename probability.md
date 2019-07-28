@@ -53,5 +53,9 @@
     - so the total probablity is: <img src="https://latex.codecogs.com/gif.latex?\binom{n}{k}p^{k}(1-p)^{n-k}" title="\binom{n}{k}p^{k}(1-p)^{n-k}" />
 - set operations
   - DeMorgan's laws: <img src="https://latex.codecogs.com/gif.latex?(E\cup&space;F)^{c}&space;=&space;E^{c}&space;\cap&space;F^{c}" title="(E\cup F)^{c} = E^{c} \cap F^{c}" />; <img src="https://latex.codecogs.com/gif.latex?(E\cap&space;F)^{c}&space;=&space;E^{c}&space;\cup&space;F^{c}" title="(E\cap F)^{c} = E^{c} \cup F^{c}" />
-  
+- conditional independence:
+  - in the conditional paradigm, the formulas of probability are preserved
+  - <img src="https://latex.codecogs.com/gif.latex?P(A|BE)&space;=&space;\frac{P(B|AE)P(A|E)}{P(B|E)}" title="P(A|BE) = \frac{P(B|AE)P(A|E)}{P(B|E)}" />, similar to the previous equation, just add condition on E for every term
+  - independence relationships can change with conditioning (if events E and F are independent, that does not mean they will still be independent given another event G)
+  - two events E and F are conditionally independent given G if P(EF|G) = P(E|G)P(F|G) or P(E|FG) = P(E|G)
   
