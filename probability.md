@@ -64,7 +64,12 @@
     - probability mass function P(X=a) which means the probability of a random variable take particular value. Can think of it as a function, given a value, output a probability. Notice the random variable is **discrete**
       - the notation could also be written as p(x) or <img src="https://latex.codecogs.com/gif.latex?P_{X}(x)" title="P_{X}(x)" />
     - expectation E[X]
-      - for discrete random variable X: <img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\sum&space;_{x:p(x)>0}x*p(x)" title="E[X] = \sum _{x:p(x)>0}x*p(x)" />
+      - for discrete random variable X: <img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\sum&space;_{x:p(x)>0}x*p(x)" title="E[X] = \sum _{x:p(x)>0}x*p(x)" />, in other words, sum over all values of x that have PMF bigger than 0
+      - other semantic meaning: mean, weighted average, center of mass, 1st moment
+      - properties:
+        - linearity: E[aX+b] = aE[x] + b
+        - expectation of a sum is the sum of expectations: E[X + Y] = E[X] = E[Y]
+        - unconscious statistician: <img src="https://latex.codecogs.com/gif.latex?E[g(x)]&space;=&space;\sum&space;_{x}&space;g(x)p(x)" title="E[g(x)] = \sum _{x} g(x)p(x)" />
     - variance: Var(X)
     
   
