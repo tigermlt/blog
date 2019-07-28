@@ -45,6 +45,7 @@
   - for three sets, P(E union F union G) = P(E) + P(F) + P(G) - p(EF) - p(EG) - P(FG) + P(EFG). So if there is no mutually exclusion, life will be hard
   - two events A and B are independent if P(AB) = P(A)P(B) otherwise they are dependent events. Another definition for indepedent is P(A|B) = P(A)
   - if events A and B are independent, prove that A and B compliment are independent
-    
+    <img src="https://latex.codecogs.com/gif.latex?P(AB^{c})&space;=&space;P(A)&space;-&space;P(AB)&space;=&space;P(A)&space;-&space;P(A)P(B)&space;=&space;P(A)[1-P(B)]&space;=&space;P(A)P(B^{c})" title="P(AB^{c}) = P(A) - P(AB) = P(A) - P(A)P(B) = P(A)[1-P(B)] = P(A)P(B^{c})" />
+    - the first equality comes from lawy of total probability, P(A) = P(ABc) + P(AB)
   
   
