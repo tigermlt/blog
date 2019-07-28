@@ -62,6 +62,7 @@
   - for instance, Y = number of "heads" on 3 coins. Y is a random variable, Y could be 0, 1, 2, 3
   - with random variable, we can do:
     - probability mass function P(X=a) which means the probability of a random variable take particular value. Can think of it as a function, given a value, output a probability. Notice the random variable is **discrete**
+      - the notation could also be written as p(x) or <img src="https://latex.codecogs.com/gif.latex?P_{X}(x)" title="P_{X}(x)" />
     - expectation E[X]
     - variance: Var(X)
     
