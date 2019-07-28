@@ -44,5 +44,7 @@
   - if two events E and F are not mutually exclusive, then P(E union F) = P(E) + P(F) - P(EF)
   - for three sets, P(E union F union G) = P(E) + P(F) + P(G) - p(EF) - p(EG) - P(FG) + P(EFG). So if there is no mutually exclusion, life will be hard
   - two events A and B are independent if P(AB) = P(A)P(B) otherwise they are dependent events. Another definition for indepedent is P(A|B) = P(A)
+  - if events A and B are independent, prove that A and B compliment are independent
+    
   
   
