@@ -37,3 +37,5 @@
   - Slice: an array that can grow or shrink
     - every element in a slice must be of same type
     - create a slice ```cards := []string{"1","2"}```
+    - add to slice: ```cards = append(cards, "3") // append does not modify the original slice ```
+    - iterate slice:  ```for i, card in range cards {fmt.Println(i, card)} // i is the index, card is the content``` 
