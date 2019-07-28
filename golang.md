@@ -32,4 +32,8 @@
     return "hello"
   }
   ```
-  
+- Array and Slice in Go
+  - Array: fixed length list of things
+  - Slice: an array that can grow or shrink
+    - every element in a slice must be of same type
+    - create a slice ```cards := []string{"1","2"}```
