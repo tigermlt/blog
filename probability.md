@@ -47,5 +47,8 @@
   - if events A and B are independent, prove that A and B compliment are independent
     <img src="https://latex.codecogs.com/gif.latex?P(AB^{c})&space;=&space;P(A)&space;-&space;P(AB)&space;=&space;P(A)&space;-&space;P(A)P(B)&space;=&space;P(A)[1-P(B)]&space;=&space;P(A)P(B^{c})" title="P(AB^{c}) = P(A) - P(AB) = P(A) - P(A)P(B) = P(A)[1-P(B)] = P(A)P(B^{c})" />
     - the first equality comes from lawy of total probability, P(A) = P(ABc) + P(AB)
-  
+  - general definition of independence is that for verey subset with r elements, P(E1...Er) = P(E1)...P(Er)
+  - example, p is the probability to get head by rolling a dice, what is P(exactly k heads on n coin flips)
+    - each coin flip are independent and the probablity of getting one case of k head is: <img src="https://latex.codecogs.com/gif.latex?P(F_{i})&space;=&space;p^{k}(1-p)^{n-k}" title="P(F_{i}) = p^{k}(1-p)^{n-k}" />
+    - so the total probablity is: <img src="https://latex.codecogs.com/gif.latex?\binom{n}{k}p^{k}(1-p)^{n-k}" title="\binom{n}{k}p^{k}(1-p)^{n-k}" />
   
