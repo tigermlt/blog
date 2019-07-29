@@ -105,12 +105,23 @@
     - scale up and down does not affect application availability
     - if a deployment is exposed publicly, the service will load-balance the traffic only to available pods during the update
     - ```kubectl rollout undo <deployment name or tag>```: roll back to the previous working version of the deployment
-### Indexing and indexing data structure
+### Indexing and index structures
   - refer to [here](https://www.inf.unibz.it/~artale/DB2/handout2.pdf)
   - indexing is the principal technique used to efficiently answering a given query (minimizing the number of disk accesses)
   - an index structure is usually defined on a single attribute of a relation, called the **search key**
     - it is | search key | pointer to a data-file record|
     - the search key values stored in the index are sorted and a binary search can be done on the index
-  
+  - indexes on sequential files: dense vs sparse indexes
+    - index on sequential file is called **primary index**, as mentioned before index points to data file and the search key that used to build index is sorted
+    - usually these indexes fit in main memory
+    - primary index can be :
+      - **dense**: for every record in the data file, there is a one entry in the index that points to it
+        - given a search key K, the index is scanned and found (binary search can be used since search key is sorted), the corresponding data file is then read into main memory
+        - it also supports range queries: the minimum value is located first and consecutive blocks are loaded in main memory until a search key greater than the maximum value is found
+        - since the index is usually kept in main memory, only 1 I/O is needed during lookup
+      - **sparse**: one entry in the index points to a block of data file (usually the first record on the data block)
+        - given a search key, search the sparse index for the greatest key <= to K using binary search; load the entire pointed block to main memory and then use binary search to look for the specific record
+        - still one disk I/O for lookup, more efficient in space at the cost of a worst computing time in main memory
+                                                                    
   
   
