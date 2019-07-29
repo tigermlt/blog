@@ -14,8 +14,10 @@
     - nuget
     - npm
     - pip
-  
+ 
+ 
  ### What is Kubernetes
+ 
  Refer to [here](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
  
   - Kubernetes helps you make sure containerized applications run where and when you want and helps them find the resources and tools they need to work
@@ -105,7 +107,10 @@
     - scale up and down does not affect application availability
     - if a deployment is exposed publicly, the service will load-balance the traffic only to available pods during the update
     - ```kubectl rollout undo <deployment name or tag>```: roll back to the previous working version of the deployment
+
+
 ### Indexing and index structures
+
   - refer to [here](https://www.inf.unibz.it/~artale/DB2/handout2.pdf)
   - indexing is the principal technique used to efficiently answering a given query (minimizing the number of disk accesses)
   - an index structure is usually defined on a single attribute of a relation, called the **search key**
@@ -125,6 +130,7 @@
         - still one disk I/O for lookup, more efficient in space at the cost of a worst computing time in main memory
     - **secondary indexes** facilitate query-answering on attributes other than primary keys (non-ordering attributes)
       - secondary indexes do not determine the placement of records in the data file
+    
                                                                                
   
   
