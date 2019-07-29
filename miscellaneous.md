@@ -129,7 +129,21 @@
       - secondary indexes do not determine the placement of records in the data file. For instance if the key of a relation is name and people want to query based on another attribute movie, then secondary index is built on movie
       - secondary indexes are dense and sorted w.r.t. the search key
       - notice the data file **is not** sorted w.r.t. the secondary index search key
-    
+      - to avoid repeating keys in secondary index, we can use a level of indirection called **Buckets**. Basically, add a middle layer that holds the repeating keys, the secondary index (without repetition now) points to the middle layer and each key in the middle layer points to the actual data file
+  - document indexing
+    - an **inverted index** is a secondary index with indirect buckets (the middle layer mentioned above) containing all the attribute names of the document relation
+      - buckets can be extended to include Type (such as title, header, anchor, text etc) and position of word
+  - B-Trees: balanced tree
+    - multilevel index with a tree structure
+    - when using as a primary index, maintains efficiency against insertion and deletion of records avoiding file reorganization
+    - it can also be used to index very-large relations when single-level indexes don't fit in main memory
+    - B-tree is usually 3 levels tree: root, intermediate level and leaves
+    - each node of B-tree has n keys and n+1 pointers (to either another block or data). The size of each node of B-tree is equal to the size of a disk block. For instance, if a disk block has 4096 bytes, each key has 4 bytes and each pointer has 8 bytes, then we have 4n + 8(n+1) <= 4096, so n = 340
+    - leaves in B-tree has one pointer to next leaf for efficient sequential processing
+    - interior nodes can use all n+1 pointers to point to inferior level (no pointer to the next node)
+    - B-tree can be used for various types of indexes: primary, secondary, dense, sparse
+    - look up: go level by level for a narrow range to find a specific search key; can also support range queries
+    - update (insertion, deletion): might need to split a node that becomes large as the result of an insertion; merge nodes if a node becomes too small as a result of deletion
                                                                                
   
   
