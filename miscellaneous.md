@@ -144,6 +144,11 @@
     - B-tree can be used for various types of indexes: primary, secondary, dense, sparse
     - look up: go level by level for a narrow range to find a specific search key; can also support range queries
     - update (insertion, deletion): might need to split a node that becomes large as the result of an insertion; merge nodes if a node becomes too small as a result of deletion
+  - efficiency of B-trees
+    - when the B-tree nodes is reasonably large (n>10), splitting and merging of nodes is rare
+    - 3 levels are typical
+    - if the root is kept in main memory, loop up requires 2 disk I/O for traversing (second level and leaves), 1 disk I/O for accessing the record. If the second level is also in main memory, only a single disk I/O is sufficient for traversing the tree
+    
                                                                                
   
   
