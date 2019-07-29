@@ -126,7 +126,9 @@
         - given a search key, search the sparse index for the greatest key <= to K using binary search; load the entire pointed block to main memory and then use binary search to look for the specific record
         - still one disk I/O for lookup, more efficient in space at the cost of a worst computing time in main memory
     - **secondary indexes** facilitate query-answering on attributes other than primary keys (non-ordering attributes)
-      - secondary indexes do not determine the placement of records in the data file
+      - secondary indexes do not determine the placement of records in the data file. For instance if the key of a relation is name and people want to query based on another attribute movie, then secondary index is built on movie
+      - secondary indexes are dense and sorted w.r.t. the search key
+      - notice the data file **is not** sorted w.r.t. the secondary index search key
     
                                                                                
   
