@@ -3,7 +3,7 @@
   - go run: compile and run
   - go fmt: format all the code in each file in the current directory
   - go install: compile and install a package
-  - go get: download th eraw source code of someone else's package
+  - go get: download the raw source code of someone else's package
   - go test: run any test associated with the current project
 - Package:
   - package == project == workspace
@@ -49,3 +49,4 @@
     - add to slice: ```cards = append(cards, "3") // append does not modify the original slice ```
     - iterate slice:  ```for i, card in range cards {fmt.Println(i, card)} // i is the index, card is the content``` 
     - slice are 0 indexed, access can be done by cards[0], cards[1], cards[0:2], cards[:2], cards[2:] etc
+    
