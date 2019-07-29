@@ -114,14 +114,17 @@
   - indexes on sequential files: dense vs sparse indexes
     - index on sequential file is called **primary index**, as mentioned before index points to data file and the search key that used to build index is sorted
     - usually these indexes fit in main memory
-    - primary index can be :
+    - primary index can be : (indexs on sequential files and hash tables are examples of primary indexes)
       - **dense**: for every record in the data file, there is a one entry in the index that points to it
         - given a search key K, the index is scanned and found (binary search can be used since search key is sorted), the corresponding data file is then read into main memory
         - it also supports range queries: the minimum value is located first and consecutive blocks are loaded in main memory until a search key greater than the maximum value is found
         - since the index is usually kept in main memory, only 1 I/O is needed during lookup
+        - if there are duplicate search keys, only point to the first record of them and during lookup, read all the duplicate block
       - **sparse**: one entry in the index points to a block of data file (usually the first record on the data block)
         - given a search key, search the sparse index for the greatest key <= to K using binary search; load the entire pointed block to main memory and then use binary search to look for the specific record
         - still one disk I/O for lookup, more efficient in space at the cost of a worst computing time in main memory
-                                                                    
+    - **secondary indexes** facilitate query-answering on attributes other than primary keys (non-ordering attributes)
+      - secondary indexes do not determine the placement of records in the data file
+                                                                               
   
   
