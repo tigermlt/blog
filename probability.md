@@ -71,5 +71,10 @@
         - expectation of a sum is the sum of expectations: E[X + Y] = E[X] = E[Y]
         - unconscious statistician: <img src="https://latex.codecogs.com/gif.latex?E[g(x)]&space;=&space;\sum&space;_{x}&space;g(x)p(x)" title="E[g(x)] = \sum _{x} g(x)p(x)" />
     - variance: Var(X)
-    
+      - think about value x and the difference to the mean E[x]. How to get the average difference, one way is to do average of the absolute value of difference (L1 norm); the other way is to average over the square of the difference (L2 norm)
+      - we use L2 norm in variance and variance is a formal representation of "spread"
+      - <img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;E[(x-\mu&space;)^{2}]" title="Var(x) = E[(x-\mu )^{2}]" /> for X being a random variable
+      - standard deviation is the square root of variance
+      
+      
   
