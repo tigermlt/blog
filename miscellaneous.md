@@ -105,3 +105,12 @@
     - scale up and down does not affect application availability
     - if a deployment is exposed publicly, the service will load-balance the traffic only to available pods during the update
     - ```kubectl rollout undo <deployment name or tag>```: roll back to the previous working version of the deployment
+### Indexing and indexing data structure
+  - refer to [here](https://www.inf.unibz.it/~artale/DB2/handout2.pdf)
+  - indexing is the principal technique used to efficiently answering a given query (minimizing the number of disk accesses)
+  - an index structure is usually defined on a single attribute of a relation, called the **search key**
+    - it is | search key | pointer to a data-file record|
+    - the search key values stored in the index are sorted and a binary search can be done on the index
+  
+  
+  
