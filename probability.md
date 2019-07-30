@@ -73,8 +73,8 @@
     - variance: Var(X)
       - think about value x and the difference to the mean E[x]. How to get the average difference, one way is to do average of the absolute value of difference (L1 norm); the other way is to average over the square of the difference (L2 norm)
       - we use L2 norm in variance and variance is a formal representation of "spread"
-      - <img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;E[(x-\mu&space;)^{2}]" title="Var(x) = E[(x-\mu )^{2}]" /> for X being a random variable
+      - <img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;E[(x-\mu&space;)^{2}]" title="Var(x) = E[(x-\mu )^{2}]" /> for X being a random variable = <img src="https://latex.codecogs.com/gif.latex?\sum&space;_{x}&space;(x-\mu&space;)^{2}p(x)" title="\sum _{x} (x-\mu )^{2}p(x)" /> = <img src="https://latex.codecogs.com/gif.latex?E[x^2]&space;-&space;(E[x])^2" title="E[x^2] - (E[x])^2" />
       - standard deviation is the square root of variance
-      
+      - also called 2nd central moment
       
   
