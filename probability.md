@@ -79,6 +79,15 @@
       - properties of variance:
         - var(aX+b) = a^2Var(x)
   - Bernoulli Random Variable
-    
+    - experiment results in either "success" or "failure"
+    - P(X=1) = p, P(X=0) = 1-p; X is a Bernoulli Random variable denoted as X ~ Ber(p)
+    - E[X] = p, Var(X) = p(1-p)
+    - some examples in the real world: coin flip, random binary digit
+  - Binomial Random Variable
+    - consider n independent trials of Ber(p) random variable, X is number of successes in n trials
+    - In this case, X is a Binomial Random Variable: X~Bin(n,p)
+    - P(X=i) = p(i) = <img src="https://latex.codecogs.com/gif.latex?\binom{n}{i}p^{i}(1-p)^{n-i}" title="\binom{n}{i}p^{i}(1-p)^{n-i}" />, i=0,1...n
+    - the summation of P(X=i) for all i is 1
+    - some examples in the real world: # of heads in n coin flips, # of 1s in randomly generated length n bit string
       
   
