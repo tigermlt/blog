@@ -89,5 +89,6 @@
     - P(X=i) = p(i) = <img src="https://latex.codecogs.com/gif.latex?\binom{n}{i}p^{i}(1-p)^{n-i}" title="\binom{n}{i}p^{i}(1-p)^{n-i}" />, i=0,1...n
     - the summation of P(X=i) for all i is 1
     - some examples in the real world: # of heads in n coin flips, # of 1s in randomly generated length n bit string
-      
+    - E[X] = np, Var(X) = np(1-p)
+    - Ber(p) = Bin(1,p)
   
