@@ -76,5 +76,9 @@
       - <img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;E[(x-\mu&space;)^{2}]" title="Var(x) = E[(x-\mu )^{2}]" /> for X being a random variable = <img src="https://latex.codecogs.com/gif.latex?\sum&space;_{x}&space;(x-\mu&space;)^{2}p(x)" title="\sum _{x} (x-\mu )^{2}p(x)" /> = <img src="https://latex.codecogs.com/gif.latex?E[x^2]&space;-&space;(E[x])^2" title="E[x^2] - (E[x])^2" />
       - standard deviation is the square root of variance
       - also called 2nd central moment
+      - properties of variance:
+        - var(aX+b) = a^2Var(x)
+  - Bernoulli Random Variable
+    
       
   
