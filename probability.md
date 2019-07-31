@@ -91,4 +91,4 @@
     - some examples in the real world: # of heads in n coin flips, # of 1s in randomly generated length n bit string
     - E[X] = np, Var(X) = np(1-p)
     - Ber(p) = Bin(1,p)
-  
+    - Galton Board, if we want to represent whether a particular marble goes right, it is a Bernoulli random variable R~Ber(0.5); if we look at what bucket a marble lands in, then it is binominal random variable B~Bin(levels, 0.5)
