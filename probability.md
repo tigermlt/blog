@@ -106,4 +106,4 @@
     - X ~ Poi(lambda)
     - lambda is the "rate"
     - X takes on values 0,1,2../
-    - it has PMF P(X=k) = \frac{\lambda^{k}e^{-\lambda}}{k!}
+    - it has PMF P(X=k) = <img src="https://latex.codecogs.com/gif.latex?\frac{\lambda^{k}e^{-\lambda}}{k!}" title="\frac{\lambda^{k}e^{-\lambda}}{k!}" />
