@@ -92,3 +92,4 @@
     - E[X] = np, Var(X) = np(1-p)
     - Ber(p) = Bin(1,p)
     - Galton Board, if we want to represent whether a particular marble goes right, it is a Bernoulli random variable R~Ber(0.5); if we look at what bucket a marble lands in, then it is binominal random variable B~Bin(levels, 0.5)
+- A formulat that is useful: <img src="https://latex.codecogs.com/gif.latex?\lim_{n&space;\to&space;\infty}&space;(1-\frac{\lambda}{n})^{n}&space;=&space;e^{-\lambda}" title="\lim_{n \to \infty} (1-\frac{\lambda}{n})^{n} = e^{-\lambda}" />
