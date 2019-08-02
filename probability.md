@@ -107,3 +107,8 @@
     - lambda is the "rate"
     - X takes on values 0,1,2../
     - it has PMF P(X=k) = <img src="https://latex.codecogs.com/gif.latex?\frac{\lambda^{k}e^{-\lambda}}{k!}" title="\frac{\lambda^{k}e^{-\lambda}}{k!}" />
+    - usage: earthquakes, radioactive decay, hits to web server; have time interval for events
+    - discrete
+    - events are independent
+    - Poisson is greate when you have a "rate" and make sure the rate has the correct unit that is asking
+    
