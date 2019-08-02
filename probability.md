@@ -111,4 +111,4 @@
     - discrete
     - events are independent
     - Poisson is greate when you have a "rate" and make sure the rate has the correct unit that is asking
-    
+    - Poisson can be used to approximate Binominal when n is large, p is small. lambda = n*p
