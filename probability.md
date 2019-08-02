@@ -111,4 +111,8 @@
     - discrete
     - events are independent
     - Poisson is greate when you have a "rate" and make sure the rate has the correct unit that is asking
-    - Poisson can be used to approximate Binominal when n is large, p is small. lambda = n*p
+    - Poisson can be used to approximate Binominal when n is large, p is small. lambda = n*p (we expect np to be moderate large, such as n>20, p<0.05)
+    - X ~ Poi(lambda) where lambda = np (n->infinity, p -> 0)
+      - E[X] = np = lambda (recall the expectation of binomial distribution)
+      - Var(x) = np(1-p) = lambda * (1-0) = lambda
+      
