@@ -105,7 +105,7 @@
   - Poisson Random variable: the number of occurrences in a fixed interval of time
     - X ~ Poi(lambda)
     - lambda is the "rate"
-    - X takes on values 0,1,2../
+    - X takes on values 0,1,2..
     - it has PMF P(X=k) = <img src="https://latex.codecogs.com/gif.latex?\frac{\lambda^{k}e^{-\lambda}}{k!}" title="\frac{\lambda^{k}e^{-\lambda}}{k!}" />
     - usage: earthquakes, radioactive decay, hits to web server; have time interval for events
     - discrete
