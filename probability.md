@@ -115,4 +115,7 @@
     - X ~ Poi(lambda) where lambda = np (n->infinity, p -> 0)
       - E[X] = np = lambda (recall the expectation of binomial distribution)
       - Var(x) = np(1-p) = lambda * (1-0) = lambda
+    - Can still apply Poisson approximation when independent assumption (or same probability p) is "mildly" violated
+      - # of entries in each bucket in large hash table
+      - average # requests to web server
       
