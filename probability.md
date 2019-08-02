@@ -93,10 +93,17 @@
     - Ber(p) = Bin(1,p)
     - Galton Board, if we want to represent whether a particular marble goes right, it is a Bernoulli random variable R~Ber(0.5); if we look at what bucket a marble lands in, then it is binominal random variable B~Bin(levels, 0.5)
 - Poisson distribution:
-  - A formulat that is useful: <img src="https://latex.codecogs.com/gif.latex?\lim_{n&space;\to&space;\infty}&space;(1-\frac{\lambda}{n})^{n}&space;=&space;e^{-\lambda}" title="\lim_{n \to \infty} (1-\frac{\lambda}{n})^{n} = e^{-\lambda}" />
-  - one usage of it is to determine the probability of lambda = k requests among a region in one minute
+  - A formulat that is about natural experssion: <img src="https://latex.codecogs.com/gif.latex?\lim_{n&space;\to&space;\infty}&space;(1-\frac{\lambda}{n})^{n}&space;=&space;e^{-\lambda}" title="\lim_{n \to \infty} (1-\frac{\lambda}{n})^{n} = e^{-\lambda}" />
+  - one usage of it is to determine the probability of haveing n requests if given lambda = k requests among a region in one minute
     - we can model this as a binominal distribution. If the granularity is second, then it can be expressed as X~Bin(60, k/60)
     - if the granularity is milisecond, it can be expressed as X~Bin(60000, k/60000)
     - if the granularity is so small, we have X~Bin(infinity, k/infinity)
   - Binomial in the limit:
     - <img src="https://latex.codecogs.com/gif.latex?P(X=k)&space;=&space;\lim_{x&space;\to&space;\infty}&space;\binom{n}{k}(\frac{\lambda}{k})^{k}(1-\frac{\lambda}{k})^{n-k}&space;=&space;\lim_{x&space;\to&space;\infty}&space;\frac{n!}{(n-k)!k!}*\frac{(\lambda)^k}{n^{k}}*\frac{(1-\lambda/n)^{n}}{(1-\lambda/n)^{k}}&space;=&space;\lim_{x&space;\to&space;\infty}&space;\frac{n!}{(n-k)!k!}*\frac{(\lambda)^k}{n^{k}}*\frac{e^{-\lambda}}{1}&space;=&space;\lim_{x&space;\to&space;\infty}&space;\frac{n!}{(n-k)!n^{k}}*\frac{(\lambda)^k}{k!}*\frac{e^{-\lambda}}{1}&space;=&space;\lim_{x&space;\to&space;\infty}&space;\frac{n^{k}}{n^{k}}*\frac{(\lambda)^k}{k!}*\frac{e^{-\lambda}}{1}&space;=&space;\frac{\lambda^{k}e^{-\lambda}}{k!}" title="P(X=k) = \lim_{x \to \infty} \binom{n}{k}(\frac{\lambda}{k})^{k}(1-\frac{\lambda}{k})^{n-k} = \lim_{x \to \infty} \frac{n!}{(n-k)!k!}*\frac{(\lambda)^k}{n^{k}}*\frac{(1-\lambda/n)^{n}}{(1-\lambda/n)^{k}} = \lim_{x \to \infty} \frac{n!}{(n-k)!k!}*\frac{(\lambda)^k}{n^{k}}*\frac{e^{-\lambda}}{1} = \lim_{x \to \infty} \frac{n!}{(n-k)!n^{k}}*\frac{(\lambda)^k}{k!}*\frac{e^{-\lambda}}{1} = \lim_{x \to \infty} \frac{n^{k}}{n^{k}}*\frac{(\lambda)^k}{k!}*\frac{e^{-\lambda}}{1} = \frac{\lambda^{k}e^{-\lambda}}{k!}" />
+    - equation 2 to 3 uses natural expression
+    - equation 4 to 5 uses limit analysis, since n is large n!/(n-k)! = n^k
+  - Poisson Random variable: the number of occurrences in a fixed interval of time
+    - X ~ Poi(lambda)
+    - lambda is the "rate"
+    - X takes on values 0,1,2../
+    - it has PMF P(X=k) = \frac{\lambda^{k}e^{-\lambda}}{k!}
