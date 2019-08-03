@@ -120,8 +120,13 @@
       - average number of requests to web server
 - Continuous random variable
   -
-    |                  | number of successes | number of time to get success |
-    |------------------|---------------------|-------------------------------|
-    | one trial        | X~Ber(p)            | X~Geo(p)                      |
-    | several trials   | X~Bin(n,p)          | X~NegBin(r,p)                 |
-    | interval of time | X~Poi(lambda)       |                               |
+      |                  | number of successes | number of time to get success |
+      |------------------|---------------------|-------------------------------|
+      | one trial        | X~Ber(p)            | X~Geo(p)                      |
+      | several trials   | X~Bin(n,p)          | X~NegBin(r,p)                 |
+      | interval of time | X~Poi(lambda)       |                               |
+  - Geometric Random Variable
+    - X is number of independent trials until first success
+    - p is probability of success on each trial
+    - <a href="https://www.codecogs.com/eqnedit.php?latex=P(X=n)&space;=&space;(1-p)^{n-1}p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X=n)&space;=&space;(1-p)^{n-1}p" title="P(X=n) = (1-p)^{n-1}p" /></a>
+    
