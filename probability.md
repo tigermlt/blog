@@ -118,15 +118,26 @@
     - Can still apply Poisson approximation when independent assumption (or same probability p) is "mildly" violated
       - number of entries in each bucket in large hash table
       - average number of requests to web server
-- Continuous random variable
+- A midpoint summary
   -
       |                  | number of successes | number of time to get success |
       |------------------|---------------------|-------------------------------|
       | one trial        | X~Ber(p)            | X~Geo(p)                      |
       | several trials   | X~Bin(n,p)          | X~NegBin(r,p)                 |
-      | interval of time | X~Poi(lambda)       |                               |
-  - Geometric Random Variable
-    - X is number of independent trials until first success
-    - p is probability of success on each trial
-    - <a href="https://www.codecogs.com/eqnedit.php?latex=P(X=n)&space;=&space;(1-p)^{n-1}p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X=n)&space;=&space;(1-p)^{n-1}p" title="P(X=n) = (1-p)^{n-1}p" /></a>
-    
+      | interval of time | X~Poi(lambda)       | X~Zipf                              |
+- Geometric Random Variable
+  - X is number of independent trials until first success
+  - p is probability of success on each trial
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=P(X=n)&space;=&space;(1-p)^{n-1}p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X=n)&space;=&space;(1-p)^{n-1}p" title="P(X=n) = (1-p)^{n-1}p" /></a>
+  - E[X] = 1/p
+  - Var(X) = (1-p)/p^2
+- Negative Binomial Random Variable
+  - X ~ NegBin(r,p)
+  - X is number of independent trials until r successes
+  - p is probability of success on each trial
+  - P(X=n) = <a href="https://www.codecogs.com/eqnedit.php?latex=P(X=n)&space;=&space;\binom{n-1}{r-1}p^{r}(1-p)^{n-r}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X=n)&space;=&space;\binom{n-1}{r-1}p^{r}(1-p)^{n-r}" title="P(X=n) = \binom{n-1}{r-1}p^{r}(1-p)^{n-r}" /></a> where n = r, r+1...
+  - E[X] = r/p
+  - Var(X) = r(1-p)/p^2
+  - Geo(p) ~ NegBin(1,p)
+  
+ 
