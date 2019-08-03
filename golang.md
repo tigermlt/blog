@@ -52,5 +52,15 @@
 - Testing in go
   - to make a test, create a new file ending in _test.go
   - to run all tests in a package, run ```go test```
+- Struct
+  ```
+  type person struct {
+    firstName string
+    lastName string
+  }
+  
+  amy := person{firstName: "Amy", lastName: "Anderson"}
+	fmt.Println(alex)
+  ```
   
     
