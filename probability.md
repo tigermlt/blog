@@ -119,9 +119,9 @@
       - number of entries in each bucket in large hash table
       - average number of requests to web server
 - Continuous random variable
--
-  |                  | number of successes | number of time to get success |
-  |------------------|---------------------|-------------------------------|
-  | one trial        | X~Ber(p)            | X~Geo(p)                      |
-  | several trials   | X~Bin(n,p)          | X~NegBin(r,p)                 |
-  | interval of time | X~Poi(lambda)       |                               |
+  -
+    |                  | number of successes | number of time to get success |
+    |------------------|---------------------|-------------------------------|
+    | one trial        | X~Ber(p)            | X~Geo(p)                      |
+    | several trials   | X~Bin(n,p)          | X~NegBin(r,p)                 |
+    | interval of time | X~Poi(lambda)       |                               |
