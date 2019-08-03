@@ -124,7 +124,7 @@
       |------------------|---------------------|-------------------------------|
       | one trial        | X~Ber(p)            | X~Geo(p)                      |
       | several trials   | X~Bin(n,p)          | X~NegBin(r,p)                 |
-      | interval of time | X~Poi(lambda)       | X~Zipf                              |
+      | interval of time | X~Poi(lambda)       | X~Zipf                        |
 - Geometric Random Variable
   - X is number of independent trials until first success
   - p is probability of success on each trial
@@ -139,5 +139,6 @@
   - E[X] = r/p
   - Var(X) = r(1-p)/p^2
   - Geo(p) ~ NegBin(1,p)
-  
+- Bit Coin Mining:
+  - You "mine a bitcoin" if for given data D, you find a number N such that Hash(D, N) produces a string that starts with g zeros.
  
