@@ -59,8 +59,8 @@
     lastName string
   }
   
-  amy := person{firstName: "Amy", lastName: "Anderson"}
-	fmt.Println(alex)
+  Amy := person{firstName: "Amy", lastName: "Anderson"}
+  fmt.Println(alex)
   ```
   
     
