@@ -141,4 +141,4 @@
   - Geo(p) ~ NegBin(1,p)
 - Bit Coin Mining:
   - You "mine a bitcoin" if for given data D, you find a number N such that Hash(D, N) produces a string that starts with g zeros.
- 
+  - 
