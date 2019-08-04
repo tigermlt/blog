@@ -202,3 +202,4 @@
   - multiple CPU core -> Go Scheduler -> multiple Go Routine. In this case, scheduler runs one thread on each "logical" core. It tries to assign each Go routine to each CPU core so we have true parallelism.
   - Concurrency - we can have multiple threads executing code. If one thread blocks, another one is picked up and worked on
   - Parallelism - Multiple threads executed at the exact same time. Requires multiple CPUs
+  - **channel** is used to communicate between go routines. With channel, the main routine can know if child routines have completed their code. Main routine -> Channel -> multiple child go routines
