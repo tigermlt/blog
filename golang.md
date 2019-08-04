@@ -88,5 +88,17 @@
 	"red":   "r",
 	"green": "g",
   }
+  // other ways to declare map
+  var colors map[string]string
+  // another way
+  colors := make(map[string]string)
+  // add value to map
+  colors["yellow"] = "y"
+  // delete key/value in map
+  delete(colors, "yellow")
+  // iterate map
+  for key, value := range mapname {
+      ......
+  }
   ```
     
