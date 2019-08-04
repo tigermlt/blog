@@ -104,7 +104,7 @@
 - Interface
   - One usage of interface is to help us reuse code (the same code can work for multiple types)
   ```
-  	package main
+  package main
 
 	import "fmt"
 
