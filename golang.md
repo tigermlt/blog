@@ -49,6 +49,7 @@
     - add to slice: ```cards = append(cards, "3") // append does not modify the original slice ```
     - iterate slice:  ```for i, card in range cards {fmt.Println(i, card)} // i is the index, card is the content``` 
     - slice are 0 indexed, access can be done by cards[0], cards[1], cards[0:2], cards[:2], cards[2:] etc
+    - slice has a slice data structure (pointer to head, capacity, length)) and an array that holds the data
 - Testing in go
   - to make a test, create a new file ending in _test.go
   - to run all tests in a package, run ```go test```
@@ -62,5 +63,22 @@
   Amy := person{firstName: "Amy", lastName: "Anderson"}
   fmt.Println(alex)
   ```
+- Pointer
+  - go is pass-by-value language
+  ```
+  Use pointer in struct
+  jimP := &jim
+	jimP.updateName("Amy")
+  // or we can do a simplification in go to write as:
+  jim.updateName("Amy")  // go will infer the pointer based on the type of receiver
+  
+  func (p *person) updateName(newFirstName string) {
+	  (*p).firstName = newFirstName
+  }
+  ```
+  - Notice that if we pass slice to function, since slice holds a pointer to data (array), the copied pointer points to the same array. So if we update the data inside the function, the modification persists
+    - value types: int, float, string, bool, structs
+    - reference types: slices, maps, channels, pointers, functions (can be passed around as argument to another function)
+  
   
     
