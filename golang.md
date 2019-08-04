@@ -175,7 +175,7 @@
     ```
     We can also write our own interface. The logWriter has the Write function so it implements Write interface implicitly
     ```
-    	type logWriter struct{}
+      type logWriter struct{}
 
 	func main() {
 		resp, err := http.Get("http://www.google.com")
