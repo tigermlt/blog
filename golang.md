@@ -101,4 +101,40 @@
       ......
   }
   ```
-    
+- Interface
+  - One usage of interface is to help us reuse code (the same code can work for multiple types)
+  ```
+  	package main
+
+	import "fmt"
+
+	type englishBot struct{}
+	type spanishBot struct{}
+
+	type bot interface {
+		// if you are a type in this program with a function called 'getGreeting' and return a string
+		// then you are now an member of type 'bot'
+		// you can also call this 'getGreeting' function
+		getGreeting() string
+	}
+
+	func main() {
+		eb := englishBot{}
+		sb := spanishBot{}
+
+		printGreeting(eb)
+		printGreeting(sb)
+	}
+
+	func (eb englishBot) getGreeting() string {
+		return "Hi!"
+	}
+
+	func (sb spanishBot) getGreeting() string {
+		return "H"
+	}
+
+	func printGreeting(b bot) {
+		fmt.Println(b.getGreeting())
+	}
+  ```
