@@ -79,6 +79,14 @@
   - Notice that if we pass slice to function, since slice holds a pointer to data (array), the copied pointer points to the same array. So if we update the data inside the function, the modification persists
     - value types: int, float, string, bool, structs
     - reference types: slices, maps, channels, pointers, functions (can be passed around as argument to another function)
-  
-  
+- Map
+  - a collection of key value pairs
+  - all keys have to be the same type, all values have to be the same type
+  ```
+  // declare a map
+  colors := map[string]string{
+	"red":   "r",
+	"green": "g",
+  }
+  ```
     
