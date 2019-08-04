@@ -138,3 +138,7 @@
 		fmt.Println(b.getGreeting())
 	}
   ```
+  - interfaces are not generic types
+  - interfaces are 'implicit'. We don't write any manual code to link code with interface (like implements in java)
+  - interfaces are a contract to help manage types
+  
