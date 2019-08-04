@@ -175,7 +175,7 @@
     ```
     We can also write our own interface. The logWriter has the Write function so it implements Write interface implicitly
     ```
-      type logWriter struct{}
+    type logWriter struct{}
 
 	func main() {
 		resp, err := http.Get("http://www.google.com")
@@ -193,3 +193,12 @@
 		return len(bs), nil
 	}
     ```
+- Concurrency
+  - Every running program (a process) has at least a Go Routine (engine that executes code)
+  - add ```go``` to a function which would launch a new Go routine to execute the function
+  - Main Routine, Go Routine will interact with each other, if a Go Routine blocks, it will go back to Main Routine and Main Routine will let another Go Routine run
+  - each go routine is a thread
+  - one CPU core -> Go Scheduler -> multiple Go Routine. Scheduler runs one routile until it finishes or making a blocking call (such as HTTP Get)
+  - multiple CPU core -> Go Scheduler -> multiple Go Routine. In this case, scheduler runs one thread on each "logical" core. It tries to assign each Go routine to each CPU core so we have true parallelism.
+  - Concurrency - we can have multiple threads executing code. If one thread blocks, another one is picked up and worked on
+  - Parallelism - Multiple threads executed at the exact same time. Requires multiple CPUs
