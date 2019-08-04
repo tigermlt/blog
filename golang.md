@@ -141,4 +141,35 @@
   - interfaces are not generic types
   - interfaces are 'implicit'. We don't write any manual code to link code with interface (like implements in java)
   - interfaces are a contract to help manage types
-  
+  - An example in http
+    - The body in response of get is an interface that groups Reader and Closer
+    - Reader and Closer are also interface (interface can embed into antoher)
+    - Interface is like an adapter that accepts different sources of inputs (such as http request body, text file on hard drive etc) and output data that anyone can work with
+    ```
+    func main() {
+	resp, err := http.Get("http://www.google.com")
+	if err != nil {
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+	// Read function will take a buffer and fill it of response. If the buffer
+	// is full, the Read function will not write data to it. We use Reader interface in this example
+	bs := make([]byte, 99999)
+	resp.Body.Read(bs)
+	fmt.Println(string(bs))
+    }
+    ```
+    We can also make use of the built-in library to avoid hacky buffer
+    ```
+    func main() {
+	resp, err := http.Get("http://www.google.com")
+	if err != nil {
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+	// this make uses of Writer interface
+	// io.Copy(dst Writer, src Reader) (wirtten int64, err error), it copies data from src to dst
+	// resp.Body implements the Reader interface and os.Stdout implements the Writer interface
+	io.Copy(os.Stdout, resp.Body)
+    }
+    ```
