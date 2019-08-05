@@ -2,9 +2,18 @@
   - Apache Cassandra is a highly scalable, high-performance distributed database
   - It is a column-oriented database
   - Its destribution design is based on Amazon's Dynamo and its data model on Google's Bigtable
+  - The design goal of Cassandra is to handle big data workloads across multiple nodes iwthout any single point of failure
   - It is NoSQL database
     - store and retrieve data other than the tabular relations used in relational databases
     - schema-free
     - easy replication
     - eventually consistent
     - can handle huge amounts of data
+  - Users can access Cassandra through its nodes using Cassandra Query Language (CQL)
+- Data Model
+  - every node has a replica
+  - keyspace is the outermost container for data in Cassandra. It contains:
+    - replication factor: determine the number of machines in the cluster that will receive copies of the same data
+    - replica placement strategy
+    - column families: represent the structure of your data
+      - the schema is not fixed. Cassandra does not force individual rows to have all the columns
