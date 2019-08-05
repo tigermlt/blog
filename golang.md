@@ -203,3 +203,10 @@
   - Concurrency - we can have multiple threads executing code. If one thread blocks, another one is picked up and worked on
   - Parallelism - Multiple threads executed at the exact same time. Requires multiple CPUs
   - **channel** is used to communicate between go routines. With channel, the main routine can know if child routines have completed their code. Main routine -> Channel -> multiple child go routines
+  ```
+  // send message into channel
+  channel <- 5
+  // wait for a value to be sent into this channel
+  myNumber <- channel
+  // normally we let function (child go routine) send value and let main function (main routine) wait for the value
+  ```
