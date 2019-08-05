@@ -27,3 +27,8 @@
     - each message within a partition gets an incremental id called **offset** (each partition has its own offset)
     - Data is kept only for a limited time (default is one week)
     - Once the data is written to a partition, it can't be changed (immutability)
+  - Brokers
+    - A akfka cluster is composed of multiple brokers (servers)
+    - Each broker is identified with its ID (integer)
+    - Each broker contains certain topic partitions
+    - After connecting to any broker, you will be connected to the entire cluster
