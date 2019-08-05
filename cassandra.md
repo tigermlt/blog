@@ -17,3 +17,4 @@
     - replica placement strategy
     - column families: represent the structure of your data
       - the schema is not fixed. Cassandra does not force individual rows to have all the columns
+      
