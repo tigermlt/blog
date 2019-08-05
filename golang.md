@@ -210,3 +210,10 @@
   myNumber <- channel
   // normally we let function (child go routine) send value and let main function (main routine) wait for the value
   ```
+  - function literal in go is like lambda or anonymous function in java
+  ```
+  go func() {
+    ....
+  }() // () is used to execute the function
+  ```
+  - never ever try to access the same variable from different child routines. Use pass by value to avoid it
