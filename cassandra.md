@@ -1,0 +1,10 @@
+- Introduction
+  - Apache Cassandra is a highly scalable, high-performance distributed database
+  - It is a column-oriented database
+  - Its destribution design is based on Amazon's Dynamo and its data model on Google's Bigtable
+  - It is NoSQL database
+    - store and retrieve data other than the tabular relations used in relational databases
+    - schema-free
+    - easy replication
+    - eventually consistent
+    - can handle huge amounts of data
