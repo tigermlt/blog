@@ -1,0 +1,27 @@
+- Architecture that cause problem
+  - if you have 4 source systems and 6 target systems, you need to write 24 integrations
+  - Each integration comes with difficulties around
+    - protocol - how data is transported (TCP, HTTP etc)
+    - Data format - how data is parsed (binary, CSV, JSON etc)
+    - Data schema & evolution - how the data is shaped and may change
+  - each source system will have an increasesd load from the connections
+  - Apache Kafka comes in: source systems -> kafka -> target systems
+    - Kafka is a high-throughput distributed messaging system
+    - can scale to 100s of brokers, can scale to millions of messages per second
+    - high performance (latency of less than 10ms) - real time
+    - usage cases:
+      - messaging system
+      - activity tracking
+      - gather metrics from many different locations
+      - application logs gathering
+      - stream processing
+      - De-coupling of system dependencies
+      - Integration with Spark, Flink, Storm, Hadoop and many other big data technologies
+- Kafka theory
+  - Topics: a particular stream of data
+    - similar to a table in database (without all the constraints)
+    - you can haev as many topics as you want
+    - A topic is identified by its name
+  - partitions: topics are split in partitions
+    - each partition is ordered
+    - each message within a partition gets an incremental id called **offset**
