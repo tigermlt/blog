@@ -23,5 +23,7 @@
     - you can haev as many topics as you want
     - A topic is identified by its name
   - partitions: topics are split in partitions
-    - each partition is ordered
-    - each message within a partition gets an incremental id called **offset**
+    - each partition is ordered (order is guaranteed only within a partition not across partitions)
+    - each message within a partition gets an incremental id called **offset** (each partition has its own offset)
+    - Data is kept only for a limited time (default is one week)
+    - Once the data is written to a partition, it can't be changed (immutability)
