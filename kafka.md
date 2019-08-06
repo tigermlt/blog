@@ -100,4 +100,8 @@
       - check the status of consumer group:
         - list all consumer groups: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092  --list```
         - see more detail of consumer group: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092  --describe --group <group_name>```
-          - it will show PARTITION, CURRENT-OFFSET, LOG-END-OFFSET, LAG. LAG means the number of messages that have not been read by this consumer group (it is equal to LOG-END-OFFSET - CURRENT-OFFSET)
+          - it will show PARTITION, CURRENT-OFFSET, LOG-END-OFFSET, LAG. LAG means the number of offsets that have not been read by this consumer group (it is equal to LOG-END-OFFSET - CURRENT-OFFSET)
+      - reset offset for consumer group: 
+        - reset to the earlist offset: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group <group_name>  --reset-offsets --to-earliest  --execute  --topic <topic_name>```
+        - rest to some offsets: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group <group_name> --reset-offsets --shift-by 2  --execute  --topic <topic_name>``` it will shift left 2 offsets of every partition. Ideally when I launch the consumer again, I should get 6 messages (3 partiions and each have 2 offsets left). But I didn't. I found the LOG-END-OFFSET also got shift by 2, so the lag is still 0 rather 2 for each partiion. Not sure if this is a bug or new feature of kafka.
+        
