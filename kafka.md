@@ -83,3 +83,18 @@
   - Topics:
     - create topic: ```kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 1```
     - view topic: ```kafka-topics.sh --zookeeper 127.0.0.1:2181 --list```
+    - view more detail of a specific topic: ```kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic <topic_name> --describe```
+    - delete topic: ``` kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic <topic_name> --delete```
+  - Producer
+    - send to kafka topic: ```kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic <topic_name>```
+    - can also specify properties while launching producer: ```kafka-console-producer.sh --broker-list 127.0.0.1:9092 --to <topic_name> --producer-property acks=all```
+    - producer to a topic that not exist before will create the topic with default setting (partitioncount=1, replicationfactor=1 etc). The default value can be set in server.properties
+  - Consumer
+    - consume a topic for the new message: ```kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic <topic_name>```
+    - consume a topic from the beginning (including old message): ```kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic <topic_name> --from-beginning```
+    - like mentioned before since message goes into different partitions, if I do the above consume command multiple times, the order I read might not be the same as the order I sent. But the order I read each time seems to be consistent.
+    - consumer group:
+      - start the consumer group and read: ```kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic <topic_name> --group <group_name>```
+      - If I use multiple screen (process) locally and read as the same consumer group, the message I produced will be split among groups (appear only in one screen)
+      - After I close the consumer group, it will commit and increase offset so I will not be able to read old message anymore using the same consumer group even if I do ```--from-beginning```
+      
