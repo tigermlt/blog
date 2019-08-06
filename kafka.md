@@ -28,7 +28,32 @@
     - Data is kept only for a limited time (default is one week)
     - Once the data is written to a partition, it can't be changed (immutability)
   - Brokers
-    - A akfka cluster is composed of multiple brokers (servers)
+    - A kafka cluster is composed of multiple brokers (servers)
     - Each broker is identified with its ID (integer)
     - Each broker contains certain topic partitions
     - After connecting to any broker, you will be connected to the entire cluster
+  - Topic replication factor
+    - topics should have a replication factor > 1
+    - if a broker is down, another broker can serve the data
+    - At any time, only one broker can be a leader for a given partition. Only that leader can receive and serve data for a partition. The other brokers will synchronize the data. Therefore each partition has one leader and multiple ISR (in-sync replica)
+  - Producers
+    - Producers write data to topics
+    - Producers automatically know to which broker and partition to write to
+    - In case of broker failures, producers will automatically recover
+    - Producers can choose to receive acknowledgement of data writes:
+      - acks=0: producer won't wait for acknowledgement
+      - acks=1: producer will wait for leader acknowledgement
+      - acks=all: leader + replicas acknowledgement
+    - message keys:
+      - producers can choose to send a key with the message
+      - if key=null, data is sent round robin
+      - if a key is sent, then all messages for that key will always go to the same partition
+  - Consumers
+    - Consumers read data from a topic
+    - consumers know which broker to read from
+    - In case of broker failures, consumers know how to recover
+    - Data is read in order **within each partitions**, but no specific order across partitions
+    - Consumer groups:
+      - consumers read data in consumer groups
+      - each consumer within a group reads from exclusive partitions
+      - if you have more consumers than partitions, some consumers will be inactive
