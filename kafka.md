@@ -57,3 +57,13 @@
       - consumers read data in consumer groups
       - each consumer within a group reads from exclusive partitions
       - if you have more consumers than partitions, some consumers will be inactive
+  - Consumer offsets
+    - kafka stores the offsets at which a consumer group has been reading (like a checkpoint)
+    - the offsets committed live in a kafka topic named __consumer_offsets
+    - when a consumer in a group has processed data received from kafka, it should committing the offsets
+    - if a consumer dies, it will be able to read back from where it left off based on the offsets
+    - consumers choose when to commit offsets
+    - 3 delivery semantics:
+      - At most once: offsets are commited as soon as the message is received; if the processing goes wrong, the message will be lost
+      - At least once (preferred): offsets are commited after the message is processed. If the processing goes wrong, the message will be read again. This could result in duplicate processing of messages. Make sure the processing is idempotent (ie.e. processing again the messages won't impact your system
+      - Exactly once: can only be achieved for kafka => kafka workflows using afka streams API
