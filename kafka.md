@@ -97,4 +97,7 @@
       - start the consumer group and read: ```kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic <topic_name> --group <group_name>```
       - If I use multiple screen (process) locally and read as the same consumer group, the message I produced will be split among groups (appear only in one screen)
       - After I close the consumer group, it will commit and increase offset so I will not be able to read old message anymore using the same consumer group even if I do ```--from-beginning```
-      
+      - check the status of consumer group:
+        - list all consumer groups: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092  --list```
+        - see more detail of consumer group: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092  --describe --group <group_name>```
+          - it will show PARTITION, CURRENT-OFFSET, LOG-END-OFFSET, LAG. LAG means the number of messages that have not been read by this consumer group (it is equal to LOG-END-OFFSET - CURRENT-OFFSET)
