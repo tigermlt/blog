@@ -20,7 +20,7 @@
 - Kafka theory
   - Topics: a particular stream of data
     - similar to a table in database (without all the constraints)
-    - you can haev as many topics as you want
+    - you can have as many topics as you want
     - A topic is identified by its name
   - partitions: topics are split in partitions
     - each partition is ordered (order is guaranteed only within a partition not across partitions)
@@ -67,3 +67,16 @@
       - At most once: offsets are commited as soon as the message is received; if the processing goes wrong, the message will be lost
       - At least once (preferred): offsets are commited after the message is processed. If the processing goes wrong, the message will be read again. This could result in duplicate processing of messages. Make sure the processing is idempotent (ie.e. processing again the messages won't impact your system
       - Exactly once: can only be achieved for kafka => kafka workflows using afka streams API
+  - Kafka Broker Discovery
+    - Every kafka broker is also called "bootstrap server" which means you only need to connct to one broker and you will be connected to the entire cluster
+    - Each broker knows about all brokers, topics and partitions (metadata)
+    - kafka client sends connection + metadata request, broker gives back list of all brokers, client can connect to the needed brokers
+  - Zookeeper
+    - it manages brokers (keeps a list of them) (connects to kafka broker)
+    - it helps in performing leader election for partitions
+    - it sends notifications to kafka in case of changes (e.g. new topic, broker dies etc)
+    - kafka can't work without zookeeper
+    - zookeeper by design operates with an odd number of servers
+    - zookeeper has a leader (handle writes), the rest of the servers are followers (handle reads)
+    - zookeeper does not store consumer offsets with kafka
+    
