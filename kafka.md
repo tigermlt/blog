@@ -79,4 +79,7 @@
     - zookeeper by design operates with an odd number of servers
     - zookeeper has a leader (handle writes), the rest of the servers are followers (handle reads)
     - zookeeper does not store consumer offsets with kafka
-    
+- CLI
+  - Topics:
+    - create topic: ```kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 1```
+    - view topic: ```kafka-topics.sh --zookeeper 127.0.0.1:2181 --list```
