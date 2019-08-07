@@ -140,4 +140,4 @@
   - Var(X) = r(1-p)/p^2
   - Geo(p) ~ NegBin(1,p)
 - Bit Coin Mining:
-  - You "mine a bitcoin" if for given data D, you find a number N such that Hash(D, N) produces a string that starts with g zeros.
+  - You "mine a bitcoin" if for given data D, you find a number N such that Hash(D, N) produces a string that starts with g zeros.  Solve using geometric random variable equation.
