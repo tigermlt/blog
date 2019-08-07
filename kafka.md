@@ -218,7 +218,7 @@
         producer.close();
     }
   ```
-  - consumer, even though I set the autoreset to earlist, it seems like I can only read the message once
+  - consumer, even the autoreset to earlist, the same consumer group can only read data once
   ```
       public static void main(String[] args) {
 
@@ -251,4 +251,7 @@
         }
     }
   ```
+  - consumer group
+    - if started multiple consumer in the same consumer group, each consumer will rebalance (each deal with some part of partitions)
+    - rebalance happens when the number of consumer changes
   
