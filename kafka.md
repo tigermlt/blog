@@ -397,3 +397,8 @@
         logger.info("Exit application");
     }
   ```
+  - client Bi-Directional Compatibility:
+    - clients & kafka brokers have a capability called bi-directional compatibility
+      - An older client can talk to a newer broker
+      - a newer client can talk to an older broker
+    - bottom line: always use the latest client library version if you can
