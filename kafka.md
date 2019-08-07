@@ -254,4 +254,97 @@
   - consumer group
     - if started multiple consumer in the same consumer group, each consumer will rebalance (each deal with some part of partitions)
     - rebalance happens when the number of consumer changes
-  
+  - consumer with thread
+  ```
+    public static void main(String[] args) {
+        new ConsumerDemo().run();
+    }
+
+    private ConsumerDemo() {
+
+    }
+
+    private void run() {
+        Logger logger = LoggerFactory.getLogger(ConsumerDemo.class.getName());
+
+        String bootstrapServers = "127.0.0.1:9092";
+        String groupId = "my-first-application";
+        String topic = "first_topic";
+        CountDownLatch latch = new CountDownLatch(1);
+
+        Runnable myConsumerThread = new ConsumerThread(bootstrapServers, groupId, topic, latch);
+
+        Thread myThread = new Thread(myConsumerThread);
+        myThread.start();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(()-> {
+            logger.info("Caught shuntdown hook");
+            ((ConsumerThread)myConsumerThread).shutdown();
+            try {
+                latch.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }));
+
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            logger.error("Application got interrupted", e);
+        } finally {
+            logger.info("Application is closing");
+        }
+    }
+
+
+    public class ConsumerThread implements Runnable {
+
+        private CountDownLatch latch;
+        private KafkaConsumer<String, String> consumer;
+        private Logger logger = LoggerFactory.getLogger(ConsumerThread.class.getName());
+
+        public ConsumerThread(String bootstrapServers, String groupId, String topic, CountDownLatch latch) {
+            this.latch = latch;
+
+            // create consumer configs
+            Properties properties = new Properties();
+            properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+            properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+            properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+            properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "my-first-application");
+            // can also be latest -> read only new message, none -> throw an error if there is no message has been saved
+            properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+
+            consumer = new KafkaConsumer<String, String>(properties);
+            // subscribe consumer to out topics
+            // .singleton means only subscribe to one topic. If multiple, we can do Arrays.asList("topic1", "topic2" ...)
+            consumer.subscribe(Collections.singleton("first_topic"));
+        }
+
+        @Override
+        public void run() {
+            try {
+                while (true) {
+                    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+
+                    for (ConsumerRecord<String, String> record : records) {
+                        logger.info("Key: "+ record.key() + ", value: " + record.value());
+                        logger.info("Partition: " + record.partition() + ", Offset: " + record.offset());
+                    }
+                }
+            } catch (WakeupException e) {
+                logger.info("Received shutdown signal!");
+            } finally {
+                consumer.close();
+                latch.countDown();
+            }
+
+        }
+
+        public void shutdown() {
+            // a special method to interrupt consumer.poll()
+            // it will throw the wakeupexception
+            consumer.wakeup();
+        }
+    }
+  ```
