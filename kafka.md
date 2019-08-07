@@ -104,4 +104,70 @@
       - reset offset for consumer group: 
         - reset to the earlist offset: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group <group_name>  --reset-offsets --to-earliest  --execute  --topic <topic_name>```
         - rest to some offsets: ```kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group <group_name> --reset-offsets --shift-by 2  --execute  --topic <topic_name>``` it will shift left 2 offsets of every partition. Ideally when I launch the consumer again, I should get 6 messages (3 partiions and each have 2 offsets left). But I didn't. I found the LOG-END-OFFSET also got shift by 2, so the lag is still 0 rather 2 for each partiion. Not sure if this is a bug or new feature of kafka.
-        
+- Kafka Java programming:
+  - producer without key: Notice the send data is asynchronous so need to flush or close 
+  ```
+      // psvm short hand for main method
+      public static void main(String[] args) {
+
+          // create producer propertis
+          Properties properties = new Properties();
+          properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+          properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+          properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+
+          // create the producer
+          KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
+
+          // create a producer record
+          ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic", "hello world");
+
+          // send data - asynchronous
+          producer.send(record);
+          // flush data
+          producer.flush();
+          // flush and close producer
+          producer.close();
+      }
+    ```
+  - add callback and logger to monitor the status after sending message to kafka
+  ```
+      public static void main(String[] args) {
+        final Logger logger = LoggerFactory.getLogger(ProducerDemo.class);
+
+        // create producer propertis
+        Properties properties = new Properties();
+        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+
+        // create the producer
+        KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
+
+        // create a producer record
+        ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic", "hello world");
+
+
+        // send data - asynchronous
+        producer.send(record, new Callback() {
+            // execute every time a record is successfully sent or an exception is thrown
+            public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+                if (e == null) {
+                    // the record was successfully sent
+                    logger.info("Received new metadata. \n" +
+                                "Topic: " + recordMetadata.topic() + "\n" +
+                                "Partition: " + recordMetadata.partition() + "\n" +
+                                "Offset: " + recordMetadata.offset() + "\n" +
+                                "Timestamp: " + recordMetadata.timestamp());
+                } else {
+                    logger.error("Error while producing", e);
+                }
+            }
+        });
+
+        // flush data
+        producer.flush();
+        // flush and close producer
+        producer.close();
+  ```
+  - 
