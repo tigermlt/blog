@@ -348,3 +348,52 @@
         }
     }
   ```
+  - consumer with seek and assign: read from specific offset and partition
+  ```
+     public static void main(String[] args) {
+
+        Logger logger = LoggerFactory.getLogger(ConsumerDemo.class.getName());
+
+        // create consumer configs
+        Properties properties = new Properties();
+        properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        // can also be latest -> read only new message, none -> throw an error if there is no message has been saved
+        properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+
+        // create consumer
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(properties);
+
+        // assign and seek are mostly used to replay data or fetch a specific message
+
+        // assign
+        TopicPartition partitionToReadFrom = new TopicPartition("first_topic", 0);
+        long offsetToReadFrom = 5L;
+        consumer.assign(Arrays.asList(partitionToReadFrom));
+
+        // seek
+        consumer.seek(partitionToReadFrom, offsetToReadFrom);
+
+        int numberOfMessagesToRead = 10;
+        boolean keepOnReading = true;
+        int numberOfMessagesReadSoFar = 0;
+
+        // poll for new data
+        while (keepOnReading) {
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+
+            for (ConsumerRecord<String, String> record : records) {
+                numberOfMessagesReadSoFar += 1;
+                logger.info("Key: "+ record.key() + ", value: " + record.value());
+                logger.info("Partition: " + record.partition() + ", Offset: " + record.offset());
+                if (numberOfMessagesReadSoFar >= numberOfMessagesToRead) {
+                    keepOnReading = false;
+                    break;
+                }
+            }
+        }
+
+        logger.info("Exit application");
+    }
+  ```
