@@ -141,3 +141,10 @@
   - Geo(p) ~ NegBin(1,p)
 - Bit Coin Mining:
   - You "mine a bitcoin" if for given data D, you find a number N such that Hash(D, N) produces a string that starts with g zeros.  Solve using geometric random variable equation.
+- Continuous Random Variable
+  - The **probability density function (PDF)** of a continous random variable represents the relative likelihood of various values. <a href="https://www.codecogs.com/eqnedit.php?latex=P(a<X<b)&space;=&space;\int_{x=a}^{b}f(X=x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(a<X<b)&space;=&space;\int_{x=a}^{b}f(X=x)dx" title="P(a<X<b) = \int_{x=a}^{b}f(X=x)dx" /></a> or <a href="https://www.codecogs.com/eqnedit.php?latex=P(a<X<b)&space;=&space;\int_{x=a}^{b}f_{X}(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(a<X<b)&space;=&space;\int_{x=a}^{b}f_{X}(x)dx" title="P(a<X<b) = \int_{x=a}^{b}f_{X}(x)dx" /></a> in a different notation
+  - Properties of PDF:
+    - the value is >=0, <=1
+    - integrate from -infinity to +infinity is 1
+    
+  
