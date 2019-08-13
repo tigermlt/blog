@@ -146,5 +146,10 @@
   - Properties of PDF:
     - the value is >=0, <=1
     - integrate from -infinity to +infinity is 1
+    - PDF articulate relative belief, the integration of it is a probability
+    - f(X=x) is not a probability, it could be greater than 1
+  - Uniform Random Variable
+    - X ~ <a href="https://www.codecogs.com/eqnedit.php?latex=Uni(\alpha&space;,&space;\beta&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Uni(\alpha&space;,&space;\beta&space;)" title="Uni(\alpha , \beta )" /></a>
+    - PDF: <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x)&space;=&space;\frac{1}{\beta&space;-&space;\alpha&space;}&space;if&space;\alpha&space;<=x&space;<=&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x)&space;=&space;\frac{1}{\beta&space;-&space;\alpha&space;}&space;if&space;\alpha&space;<=x&space;<=&space;\beta" title="f(X=x) = \frac{1}{\beta - \alpha } if \alpha <=x <= \beta" /></a>  otherwise f(X=x) is 0
     
   
