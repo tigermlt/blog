@@ -150,11 +150,13 @@
     - f(X=x) is not a probability, it could be greater than 1
   - Expectation: <a href="https://www.codecogs.com/eqnedit.php?latex=E[X]&space;=&space;\int_{-&space;\infty}^{\infty}xf_{X}(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\int_{-&space;\infty}^{\infty}xf_{X}(x)dx" title="E[X] = \int_{- \infty}^{\infty}xf_{X}(x)dx" /></a>
     - The properties of expectation of discrete RV still hold
-  - Variance
+  - Variance: <a href="https://www.codecogs.com/eqnedit.php?latex=Var(X)&space;=&space;\int_{-&space;\infty}^{\infty}(x-\mu&space;)^{2}p(x)dx&space;=&space;E[X^2]&space;-&space;(E[X])^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Var(X)&space;=&space;\int_{-&space;\infty}^{\infty}(x-\mu&space;)^{2}p(x)dx&space;=&space;E[X^2]&space;-&space;(E[X])^{2}" title="Var(X) = \int_{- \infty}^{\infty}(x-\mu )^{2}p(x)dx = E[X^2] - (E[X])^{2}" /></a>
   - Uniform Random Variable
     - X ~ <a href="https://www.codecogs.com/eqnedit.php?latex=Uni(\alpha&space;,&space;\beta&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Uni(\alpha&space;,&space;\beta&space;)" title="Uni(\alpha , \beta )" /></a>
     - PDF: <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x)&space;=&space;\frac{1}{\beta&space;-&space;\alpha&space;}&space;if&space;\alpha&space;<=x&space;<=&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x)&space;=&space;\frac{1}{\beta&space;-&space;\alpha&space;}&space;if&space;\alpha&space;<=x&space;<=&space;\beta" title="f(X=x) = \frac{1}{\beta - \alpha } if \alpha <=x <= \beta" /></a>  otherwise f(X=x) is 0
       - <a href="https://www.codecogs.com/eqnedit.php?latex=E[X]&space;=&space;\frac{\beta&space;-&space;\alpha}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\frac{\beta&space;-&space;\alpha}{2}" title="E[X] = \frac{\beta - \alpha}{2}" /></a>
       - <a href="https://www.codecogs.com/eqnedit.php?latex=Var(x)&space;=&space;\frac{(\beta&space;-&space;\alpha)^2}{12}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;\frac{(\beta&space;-&space;\alpha)^2}{12}" title="Var(x) = \frac{(\beta - \alpha)^2}{12}" /></a>
+  - Exponential Random Variable
+    - continuous equivalent of possion distribution, how long until the next success (next event occur)
     
   
