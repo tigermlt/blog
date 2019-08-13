@@ -157,8 +157,17 @@
       - <a href="https://www.codecogs.com/eqnedit.php?latex=E[X]&space;=&space;\frac{\beta&space;-&space;\alpha}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\frac{\beta&space;-&space;\alpha}{2}" title="E[X] = \frac{\beta - \alpha}{2}" /></a>
       - <a href="https://www.codecogs.com/eqnedit.php?latex=Var(x)&space;=&space;\frac{(\beta&space;-&space;\alpha)^2}{12}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;\frac{(\beta&space;-&space;\alpha)^2}{12}" title="Var(x) = \frac{(\beta - \alpha)^2}{12}" /></a>
   - Exponential Random Variable
-    - continuous equivalent of Poisson distribution, how long until the next success (next event occur)
+    - continuous equivalent of Poisson distribution, it represents time we need to wait until some event (such as eqrthquake, request to web server, end cell phone contract etc) given constant rate
     - X ~ <a href="https://www.codecogs.com/eqnedit.php?latex=Exp(\lambda)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Exp(\lambda)" title="Exp(\lambda)" /></a>, rate \lambda > 0
-    - PDF: <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x)&space;=&space;\lambda&space;e^{-\lambda&space;x}&space;x&space;>0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x)&space;=&space;\lambda&space;e^{-\lambda&space;x}&space;x&space;>0" title="f(X=x) = \lambda e^{-\lambda x} x >0" /></a> otherwise f(X=x) = 0
+    - PDF: <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x)&space;=&space;\lambda&space;e^{-\lambda&space;x}&space;x&space;>=0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x)&space;=&space;\lambda&space;e^{-\lambda&space;x}&space;x&space;>=0" title="f(X=x) = \lambda e^{-\lambda x} x >=0" /></a> otherwise f(X=x) = 0
+    - E[X] = 1/lambda
+    - Var(X) = 1/(lambda)^2 
+    - support: X>=0
+    - for instance if given the rate of earthquick per year, ask what is the probability of having zero major earthquake next year, use poisson; if ask what is the probability of a marjor earthquake in the next 30 years, use exponential RV
+  - Cumulative Density Function: it is a "closed form" equation for the probability that a random variable is less than a given value F(x) = P(X<x). It can be used to avoid integrals
+    - Short hand notation: <a href="https://www.codecogs.com/eqnedit.php?latex=F_{X}x" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{X}x" title="F_{X}x" /></a>
+    - the CDF of exponential RV is: <a href="https://www.codecogs.com/eqnedit.php?latex=F_{X}x&space;=&space;1&space;-&space;e^{-\lambda&space;x}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{X}x&space;=&space;1&space;-&space;e^{-\lambda&space;x}" title="F_{X}x = 1 - e^{-\lambda x}" /></a>
+  
+    
     
   
