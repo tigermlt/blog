@@ -157,6 +157,8 @@
       - <a href="https://www.codecogs.com/eqnedit.php?latex=E[X]&space;=&space;\frac{\beta&space;-&space;\alpha}{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\frac{\beta&space;-&space;\alpha}{2}" title="E[X] = \frac{\beta - \alpha}{2}" /></a>
       - <a href="https://www.codecogs.com/eqnedit.php?latex=Var(x)&space;=&space;\frac{(\beta&space;-&space;\alpha)^2}{12}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Var(x)&space;=&space;\frac{(\beta&space;-&space;\alpha)^2}{12}" title="Var(x) = \frac{(\beta - \alpha)^2}{12}" /></a>
   - Exponential Random Variable
-    - continuous equivalent of possion distribution, how long until the next success (next event occur)
+    - continuous equivalent of Poisson distribution, how long until the next success (next event occur)
+    - X ~ <a href="https://www.codecogs.com/eqnedit.php?latex=Exp(\lambda)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Exp(\lambda)" title="Exp(\lambda)" /></a>, rate \lambda > 0
+    - PDF: <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x)&space;=&space;\lambda&space;e^{-\lambda&space;x}&space;x&space;>0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x)&space;=&space;\lambda&space;e^{-\lambda&space;x}&space;x&space;>0" title="f(X=x) = \lambda e^{-\lambda x} x >0" /></a> otherwise f(X=x) = 0
     
   
