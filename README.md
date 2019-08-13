@@ -12,6 +12,7 @@
 10. [probability](https://tigermlt.github.io/blog/probability)
 11. [Kafka](https://tigermlt.github.io/blog/kafka)
 12. [Cassandra](https://tigermlt.github.io/blog/cassandra)
+13. [Probabilistic Graphical Model](https://tigermlt.github.io/blog/PGM)
 -------------------------
 
 1. [Talks](https://tigermlt.github.io/blog/talk)
