@@ -17,4 +17,5 @@
     - factor product: it is like join two tables and multiply the corresponding factor value
     - factor marginalization: sum over one RV and reduce the table
     - factor reduction: eliminate a specific value of a RV or eliminate a RV (the difference betwee this and above is that one is elimination, the other is sum)
-    
+- Semantics & Factorization
+  - Construct Bayesian network for a student example, conditional probability distribution is used in a node that is linked by other nodes. For instance, we have P(D), P(I), P(G|I,D), P(S|I), P(L|G)
