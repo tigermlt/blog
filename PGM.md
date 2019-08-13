@@ -9,4 +9,12 @@
     - Conditioning: Reduction and renormalization
     - Marginalization: sum over one RV of a joint probability: <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{I}P(I,D)&space;=&space;P(D)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{I}P(I,D)&space;=&space;P(D)" title="\sum _{I}P(I,D) = P(D)" /></a>
   - Factor:
+    - fundamental building block for defining distributions in high-dimentional spaces
+    - set of basic operations for manipulating these probability distributions
     - A factor really is a function, or a table. It takes a bunch of arguments. In this case, a set of random variables X1 up to XK, and just like any function it gives us a value for every assignment to those random variables.
+    - the scope of a factor is the RV it can take
+    - one factor we will use is conditional probability distribution (CPD) such as P(G|I,D)
+    - factor product: it is like join two tables and multiply the corresponding factor value
+    - factor marginalization: sum over one RV and reduce the table
+    - factor reduction: eliminate a specific value of a RV or eliminate a RV (the difference betwee this and above is that one is elimination, the other is sum)
+    
