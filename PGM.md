@@ -4,4 +4,9 @@
   - probabilistic -> uncertainty
   - think of the world as a bunch of random variables and each capture some facet of the world. Goal is to capture the uncertainty of the world in terms of the probability distribution (joint distribution)
   - Graphical models such as Bayesian networks (directed graph), Markov networks (undirected graph)
-  
+  - Distribution:
+    - Joint probability, independent (if there are 12 cases then 11 of them are independent because they sum to 1)
+    - Conditioning: Reduction and renormalization
+    - Marginalization: sum over one RV of a joint probability: <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{I}P(I,D)&space;=&space;P(D)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{I}P(I,D)&space;=&space;P(D)" title="\sum _{I}P(I,D) = P(D)" /></a>
+  - Factor:
+    - A factor really is a function, or a table. It takes a bunch of arguments. In this case, a set of random variables X1 up to XK, and just like any function it gives us a value for every assignment to those random variables.
