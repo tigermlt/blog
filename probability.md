@@ -148,6 +148,9 @@
     - integrate from -infinity to +infinity is 1
     - PDF articulate relative belief, the integration of it is a probability
     - f(X=x) is not a probability, it could be greater than 1
+  - Expectation: <a href="https://www.codecogs.com/eqnedit.php?latex=E[X]&space;=&space;\int_{-&space;\infty}^{\infty}xf_{X}(x)dx" target="_blank"><img src="https://latex.codecogs.com/gif.latex?E[X]&space;=&space;\int_{-&space;\infty}^{\infty}xf_{X}(x)dx" title="E[X] = \int_{- \infty}^{\infty}xf_{X}(x)dx" /></a>
+    - The properties of expectation of discrete RV still hold
+  - Variance
   - Uniform Random Variable
     - X ~ <a href="https://www.codecogs.com/eqnedit.php?latex=Uni(\alpha&space;,&space;\beta&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Uni(\alpha&space;,&space;\beta&space;)" title="Uni(\alpha , \beta )" /></a>
     - PDF: <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x)&space;=&space;\frac{1}{\beta&space;-&space;\alpha&space;}&space;if&space;\alpha&space;<=x&space;<=&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x)&space;=&space;\frac{1}{\beta&space;-&space;\alpha&space;}&space;if&space;\alpha&space;<=x&space;<=&space;\beta" title="f(X=x) = \frac{1}{\beta - \alpha } if \alpha <=x <= \beta" /></a>  otherwise f(X=x) is 0
