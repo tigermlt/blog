@@ -118,6 +118,8 @@
     - Can still apply Poisson approximation when independent assumption (or same probability p) is "mildly" violated
       - number of entries in each bucket in large hash table
       - average number of requests to web server
+      - Notice that the PMF can be adapted if, instead of the average number of events {\displaystyle \lambda } \lambda , we are given a time rate {\displaystyle r} r for the events to happen. Then {\displaystyle \lambda =rt} {\displaystyle \lambda =rt} (with {\displaystyle r}  r in units of 1/time), and {\displaystyle P(k{\text{ events in interval }}t)=e^{-rt}{\frac {(rt)^{k}}{k!}}} {\displaystyle P(k{\text{ events in interval }}t)=e^{-rt}{\frac {(rt)^{k}}{k!}}}
+
 - A midpoint summary
   -
       |                  | number of successes | number of time to get success |
