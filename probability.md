@@ -118,7 +118,7 @@
     - Can still apply Poisson approximation when independent assumption (or same probability p) is "mildly" violated
       - number of entries in each bucket in large hash table
       - average number of requests to web server
-      - Notice that the PMF can be adapted if, instead of the average number of events {\displaystyle \lambda } \lambda , we are given a time rate {\displaystyle r} r for the events to happen. Then {\displaystyle \lambda =rt} {\displaystyle \lambda =rt} (with {\displaystyle r}  r in units of 1/time), and {\displaystyle P(k{\text{ events in interval }}t)=e^{-rt}{\frac {(rt)^{k}}{k!}}} {\displaystyle P(k{\text{ events in interval }}t)=e^{-rt}{\frac {(rt)^{k}}{k!}}}
+      - Notice that the PMF can be adapted if, instead of the average number of events \lambda , we are given a time rate r for the events to happen. Then lambda =rt with r in units of 1/time, and <a href="https://www.codecogs.com/eqnedit.php?latex=P(k&space;\hspace{1mm}&space;events&space;\hspace{1mm}&space;in&space;\hspace{1mm}&space;interval\hspace{1mm}&space;t)&space;=&space;e^{-rt}\frac{(rt)^k}{k!}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(k&space;\hspace{1mm}&space;events&space;\hspace{1mm}&space;in&space;\hspace{1mm}&space;interval\hspace{1mm}&space;t)&space;=&space;e^{-rt}\frac{(rt)^k}{k!}" title="P(k \hspace{1mm} events \hspace{1mm} in \hspace{1mm} interval\hspace{1mm} t) = e^{-rt}\frac{(rt)^k}{k!}" /></a>
 
 - A midpoint summary
   -
