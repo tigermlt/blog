@@ -27,4 +27,19 @@
     - Causual reasoning: reason from top to down (condition on parent)
     - evidence reasoning: reason from bottom to top (condition on child)
     - intercausal reasoning: condition on both parent and child
-  
+  - Flow of probabilistic influence
+    - when can X influence Y
+      - X -> Y yes
+      - Y -> X yes
+      - X -> W -> Y yes
+      - X <- W <- Y yes
+      - X <- W -> Y yes
+      - X -> W <- Y (v structure) No
+    - A trail X1 ... Xn is active if it has no v-structure
+    - When can X incluence Y given evidence about Z
+      - X -> Y yes
+      - Y -> X yes
+      - X -> W -> Y yes if W is not in Z; otherwise no
+      - X <- W <- Y yes if W is not in Z; otherwise no
+      - X <- W -> Y yes if W is not in Z; otherwise no
+      - X -> W <- Y (v structure) No if W and its descendant are not observed; otherwise yes
