@@ -50,5 +50,13 @@
     - conditioning can both give and lose independence
   - independencies in Bayesian networks
     - d-separation: X and Y are d-separated in G given Z if there is no active trail in G between X and Y given Z. Notation is d-sep_{G}(X,Y|Z). Theorem if p factorizes over G, and d-sep_{G}(X,Y|Z) then p satisfies (X \perpendicular Y | Z)
+    - Any node is d-separated from its non-descendants given its parents -> if P factorizes over G, then in P, any variable is independent of its non-descendants given its parents
+    - I-maps: independency map 
+      - d-separation in G -> P satisfies corresponding independence statment I(G) = {(X \perpendicular Y | Z) : d-sep_{G}(X,Y|Z)}. independence corresponds to d-separation
+      - If P satisfies I(G), we say that G is an I-map of P. Notice G represents the whole graph (not some nodes)
+        - As an example G1: D I; in this case I(G1) = {D \perpendicular I} since D and I are independent
+        - G2: D->I; I(G2) = none
+      - Theorem: If P factorizes over G, then G is an I-map for P (can read from G independencies in P regardless of parameters)
+      - Theorem: If G is an I-map for P, then P factorizes over G
     
     
