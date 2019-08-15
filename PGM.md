@@ -58,5 +58,10 @@
         - G2: D->I; I(G2) = none
       - Theorem: If P factorizes over G, then G is an I-map for P (can read from G independencies in P regardless of parameters)
       - Theorem: If G is an I-map for P, then P factorizes over G
+    - Naive Bayes
+      - observe features (x1...xn) and infer class (C)
+      - assumption: (xi \perpendicular xj | C) for all xi, xj
+      - P(C, X1, ..., Xn) = <a href="https://www.codecogs.com/eqnedit.php?latex=P(C)\prod&space;_{i}^{n}P(X_{i}|C)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(C)\prod&space;_{i}^{n}P(X_{i}|C)" title="P(C)\prod _{i}^{n}P(X_{i}|C)" /></a> where P(C) is the prior probability
+      
     
     
