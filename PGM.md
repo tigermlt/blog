@@ -47,4 +47,6 @@
   - independence: P(a,b) = P(a)P(b); P(a|b) = P(a); P(b|a) = P(b). This applies for both a,b as events and RV
   - conditional independence:
     - For random variables X,Y,Z, P |= (satisfy) <a href="https://www.codecogs.com/eqnedit.php?latex=(X&space;\bot&space;Y&space;|&space;Z)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(X&space;\bot&space;Y&space;|&space;Z)" title="(X \bot Y | Z)" /></a> if P(X,Y|Z) = P(X|Z)P(Y|Z); or P(X|Y,Z) = P(X|Z); or P(Y|X,Z) = P(Y|Z)
+    - conditioning can both give and lose independence
+  - independencies in Bayesian networks
     
