@@ -43,3 +43,8 @@
       - X <- W <- Y yes if W is not in Z; otherwise no
       - X <- W -> Y yes if W is not in Z; otherwise no
       - X -> W <- Y (v structure) No if W and its descendant are not observed; otherwise yes
+- Bayesian networks independence
+  - independence: P(a,b) = P(a)P(b); P(a|b) = P(a); P(b|a) = P(b). This applies for both a,b as events and RV
+  - conditional independence:
+    - For random variables X,Y,Z, P |= (satisfy) <a href="https://www.codecogs.com/eqnedit.php?latex=(X&space;\bot&space;Y&space;|&space;Z)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(X&space;\bot&space;Y&space;|&space;Z)" title="(X \bot Y | Z)" /></a> if P(X,Y|Z) = P(X|Z)P(Y|Z); or P(X|Y,Z) = P(X|Z); or P(Y|X,Z) = P(Y|Z)
+    
