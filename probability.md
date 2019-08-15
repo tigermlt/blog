@@ -169,6 +169,10 @@
   - Cumulative Density Function: it is a "closed form" equation for the probability that a random variable is less than a given value F(x) = P(X<x). It can be used to avoid integrals
     - Short hand notation: <a href="https://www.codecogs.com/eqnedit.php?latex=F_{X}x" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{X}x" title="F_{X}x" /></a>
     - the CDF of exponential RV is: <a href="https://www.codecogs.com/eqnedit.php?latex=F_{X}x&space;=&space;1&space;-&space;e^{-\lambda&space;x}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{X}x&space;=&space;1&space;-&space;e^{-\lambda&space;x}" title="F_{X}x = 1 - e^{-\lambda x}" /></a>
+  - A quick notation summary:
+    - p(a) or p_{X}(a): probability mass function (discrete) P(X=a)
+    - f(a) or f_{X}(a): probability density function (continuous) f(X=a)
+    - F(a) or F_{X}(a): cumulative distribution function P(X<=a)
   
     
     
