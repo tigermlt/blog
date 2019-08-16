@@ -173,7 +173,17 @@
     - p(a) or p_{X}(a): probability mass function (discrete) P(X=a)
     - f(a) or f_{X}(a): probability density function (continuous) f(X=a)
     - F(a) or F_{X}(a): cumulative distribution function P(X<=a)
-  
+  - Normal distribution
+    - X ~ <a href="https://www.codecogs.com/eqnedit.php?latex=N(\mu&space;,&space;\sigma&space;^2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?N(\mu&space;,&space;\sigma&space;^2)" title="N(\mu , \sigma ^2)" /></a>
+    - PDF: f(x) = <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{\sigma&space;\sqrt{2&space;\pi}}e^{-(x-\mu)^2/2&space;\sigma&space;^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{\sigma&space;\sqrt{2&space;\pi}}e^{-(x-\mu)^2/2&space;\sigma&space;^2}" title="\frac{1}{\sigma \sqrt{2 \pi}}e^{-(x-\mu)^2/2 \sigma ^2}" /></a> where -\infinity < x < \inifinity
+    - E[X] = \mu
+    - Var(X) = \signma ^2
+    - Also called Gaussian, f(x) is symmetric about \mu
+    - why use normal distribution:
+      - common for natural phenomena (such as heights, weights) (it is log-normal in reality)
+      - often results from the equally weighted sum of multiple variables
+      - most noise is normal (at least assumed to be normal)
+      - means of samples are distributed normally
     
     
   
