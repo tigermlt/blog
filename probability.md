@@ -184,6 +184,14 @@
       - often results from the equally weighted sum of multiple variables
       - most noise is normal (at least assumed to be normal)
       - means of samples are distributed normally
-    
+      - more importantly, it is the least assuming distribution (simple and will generalize). It maximizes entropy (measures mathematical disorder) for a given mean and variance
+     - No colosed form for CDF
+     - Look up table method: F(x) = <a href="https://www.codecogs.com/eqnedit.php?latex=\Phi&space;(\frac{x&space;-&space;\mu}{\sigma})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Phi&space;(\frac{x&space;-&space;\mu}{\sigma})" title="\Phi (\frac{x - \mu}{\sigma})" /></a> where \phi is a function that has been solved for numerically for \mu = 0, \sigma = 1 (standard normal)
+     - Linear Transformation of normal is normal. Y = aX + b is also normal if X is normal. E[Y] = aE[X] + b; Var[Y] = a^2 \sigma ^2. So Y ~ N(a \mu + b, a^2 \sigma ^ 2)
+        - a special case of linear transform: Z = (X - \mu)/(\sigma) ~ N(0,1). This is called the standard normal distribution. 
+          - \phi (-a) = 1 - \phi(a)
+          - P(c < Z < d) = \phi (d) - \phi (c)
+     
+      
     
   
