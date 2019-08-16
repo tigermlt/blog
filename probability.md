@@ -191,7 +191,7 @@
         - a special case of linear transform: Z = (X - \mu)/(\sigma) ~ N(0,1). This is called the standard normal distribution. 
           - \phi (-a) = 1 - \phi(a)
           - P(c < Z < d) = \phi (d) - \phi (c)
-     
+     - So for X ~ N(\mu, \sigma ^2), it is equal to \phi((x-\mu)/ \sigma)
       
     
   
