@@ -192,6 +192,7 @@
           - \phi (-a) = 1 - \phi(a)
           - P(c < Z < d) = \phi (d) - \phi (c)
      - So for X ~ N(\mu, \sigma ^2), it is equal to \phi((x-\mu)/ \sigma)
-      
+- Binomial approximation and joint distributions
+  
     
   
