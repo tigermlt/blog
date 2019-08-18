@@ -196,5 +196,7 @@
   - relative probability: ratio of probability. For instance P(X=10)/P(X=5) = delta*f(X=10)/delta*f(X=5) = f(X=10)/f(X=5) and use the PDF formula to get the ratio. The delta technique is used here to simulate integration
   - Normal approximations binomial. For instance Bin(100, 0.5) ~ Normal(50,25) since E[X] = np, Var(X) = np(1-p)
     - one nuance about the approximation is about continuity correction. Discrete think about decimals but continous are not. Think about how it is around and where to start to integrate. For instance to get P(X>=65), we might need to integrate from 64.5 if using continuous approximation.
+    - can approximate binomial when n large (>20), p is mid-ranged (np(1-p)>10)
+    - recall poisson can also approximate binomial when n large (>20), p small (<0.05)
     
   
