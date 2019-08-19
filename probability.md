@@ -198,5 +198,5 @@
     - one nuance about the approximation is about continuity correction. Discrete think about decimals but continous are not. Think about how it is around and where to start to integrate. For instance to get P(X>=65), we might need to integrate from 64.5 if using continuous approximation.
     - can approximate binomial when n large (>20), p is mid-ranged (np(1-p)>10)
     - recall poisson can also approximate binomial when n large (>20), p small (<0.05)
-    
+    - general idea: if there is a choice, go with the normal approximation
   
