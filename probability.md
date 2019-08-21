@@ -209,4 +209,8 @@
     - can approximate binomial when n large (>20), p is mid-ranged (np(1-p)>10)
     - recall poisson can also approximate binomial when n large (>20), p small (<0.05)
     - general idea: if there is a choice, go with the normal approximation
-  
+- Joint Distributions
+  - RV interact with each other
+  - notation P(A=1, B=1): probability that A takes value 1 **and** B takes value 1
+  - For two discrete random variables X and Y, the joint probability mass function is: <a href="https://www.codecogs.com/eqnedit.php?latex=p_{X,Y}(a,b)&space;=&space;P(X=a,&space;Y=b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{X,Y}(a,b)&space;=&space;P(X=a,&space;Y=b)" title="p_{X,Y}(a,b) = P(X=a, Y=b)" /></a>
+  - Marginal distributions: <a href="https://www.codecogs.com/eqnedit.php?latex=p_X&space;(a)&space;=&space;P(X=a)&space;=&space;\sum&space;_y&space;p_{X,Y}(a,y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_X&space;(a)&space;=&space;P(X=a)&space;=&space;\sum&space;_y&space;p_{X,Y}(a,y)" title="p_X (a) = P(X=a) = \sum _y p_{X,Y}(a,y)" /></a>; <a href="https://www.codecogs.com/eqnedit.php?latex=p_Y&space;(b)&space;=&space;P(Y=b)&space;=&space;\sum&space;_x&space;p_{X,Y}(x,b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_Y&space;(b)&space;=&space;P(Y=b)&space;=&space;\sum&space;_x&space;p_{X,Y}(x,b)" title="p_Y (b) = P(Y=b) = \sum _x p_{X,Y}(x,b)" /></a>
