@@ -224,3 +224,8 @@
 - continuous joint distribution
   - A joint probability density function gives the relative likelihood of more than one continuous random variable each taking on a specific value
   - Marginal probabilities give the distribution of a subset of the variables (often just one) of a joint distribution
+  - notation summary:
+    - joint probability: <a href="https://www.codecogs.com/eqnedit.php?latex=P_{X,Y}(a,b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_{X,Y}(a,b)" title="P_{X,Y}(a,b)" /></a> or P(X=a, Y=b)
+    - continuous joint probability density: <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)" title="f_{X,Y}(a,b)" /></a> or f(X=a, Y=b)
+    - single (marginal) probability density function: <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X}(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X}(a)" title="f_{X}(a)" /></a> or f(X=a)
+    - single probability mass function: <a href="https://www.codecogs.com/eqnedit.php?latex=p_{X}(a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{X}(a)" title="p_{X}(a)" /></a> or P(X=a)
