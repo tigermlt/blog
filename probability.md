@@ -25,7 +25,7 @@
   - P(S) = 1
   - P(E^c) = 1 - P(E) or P(E union F) = p(E) + p(F) if event E and F are mutually exclusive
 - conditional probability: it is the probability that E occurs given that F has already occurred
-  - written as P(E|F) : means P(E, given F already observed)
+  - written as ```P(E|F)``` : means P(E, given F already observed)
   - the definition of conditional probability: <img src="https://latex.codecogs.com/svg.latex?P(E|F)&space;=&space;\frac{P(E\cap&space;F)}{P(F)}" title="P(E|F) = \frac{P(E\cap F)}{P(F)}" />, this holds even when outcomes are not equally likely
   - In general: <img src="https://latex.codecogs.com/svg.latex?P(E1E2...En)&space;=&space;P(E1)P(E2|E1)...P(En|E1E2...En-1)" title="P(E1E2...En) = P(E1)P(E2|E1)...P(En|E1E2...En-1)" />
   - ![paradigm](https://tigermlt.github.io/blog/conditional_paradigm.png)
@@ -37,13 +37,13 @@
   - <img src="https://latex.codecogs.com/gif.latex?P(E|F)&space;=&space;\frac{P(F|E)P(E)}{P(F)}" title="P(E|F) = \frac{P(F|E)P(E)}{P(F)}" />
   - <img src="https://latex.codecogs.com/gif.latex?P(E|F)&space;=&space;\frac{P(F|E)P(E)}{P(F|E)P(E)&space;&plus;&space;P(F|E^{c})P(E^{c})}" title="P(E|F) = \frac{P(F|E)P(E)}{P(F|E)P(E) + P(F|E^{c})P(E^{c})}" /> it is also equal to the above equation after applying low of total probability
   - update belief
-    - we have some P(location) before observation, know P(observation|location), update P(location)
-    - after observation, we want to compute P(L|O), use bayes theorem and law of total probability to compute it
+    - we have some P(location) before observation, know ```P(observation|location)```, update P(location)
+    - after observation, we want to compute ```P(L|O)```, use bayes theorem and law of total probability to compute it
 - independence
   - if two events E and F are mutually exclusive, then P(E union F) = P(E) + P(F)
   - if two events E and F are not mutually exclusive, then P(E union F) = P(E) + P(F) - P(EF)
   - for three sets, P(E union F union G) = P(E) + P(F) + P(G) - p(EF) - p(EG) - P(FG) + P(EFG). So if there is no mutually exclusion, life will be hard
-  - two events A and B are independent if P(AB) = P(A)P(B) otherwise they are dependent events. Another definition for indepedent is P(A|B) = P(A)
+  - two events A and B are independent if P(AB) = P(A)P(B) otherwise they are dependent events. Another definition for indepedent is ```P(A|B)``` = P(A)
   - if events A and B are independent, prove that A and B compliment are independent
     <img src="https://latex.codecogs.com/gif.latex?P(AB^{c})&space;=&space;P(A)&space;-&space;P(AB)&space;=&space;P(A)&space;-&space;P(A)P(B)&space;=&space;P(A)[1-P(B)]&space;=&space;P(A)P(B^{c})" title="P(AB^{c}) = P(A) - P(AB) = P(A) - P(A)P(B) = P(A)[1-P(B)] = P(A)P(B^{c})" />
     - the first equality comes from lawy of total probability, P(A) = P(ABc) + P(AB)
@@ -57,7 +57,7 @@
   - in the conditional paradigm, the formulas of probability are preserved
   - <img src="https://latex.codecogs.com/gif.latex?P(A|BE)&space;=&space;\frac{P(B|AE)P(A|E)}{P(B|E)}" title="P(A|BE) = \frac{P(B|AE)P(A|E)}{P(B|E)}" />, similar to the previous equation, just add condition on E for every term
   - independence relationships can change with conditioning (if events E and F are independent, that does not mean they will still be independent given another event G)
-  - two events E and F are conditionally independent given G if P(EF|G) = P(E|G)P(F|G) or P(E|FG) = P(E|G)
+  - two events E and F are conditionally independent given G if ```P(EF|G) = P(E|G)P(F|G) or P(E|FG) = P(E|G)```
 - Random variables: it is a variable will have a value but there is uncertainty as to what value
   - for instance, Y = number of "heads" on 3 coins. Y is a random variable, Y could be 0, 1, 2, 3
   - with random variable, we can do:
@@ -235,7 +235,7 @@
   - from articles of B, we can get mi = probability that B writes word i
   - we compare P(A|C) and P(B|C) which every is larger, then C is written by whom
   - <a href="https://www.codecogs.com/eqnedit.php?latex=P(A|C)&space;=&space;\frac{P(C|A)P(A)}{P(C)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(A|C)&space;=&space;\frac{P(C|A)P(A)}{P(C)}" title="P(A|C) = \frac{P(C|A)P(A)}{P(C)}" /></a>, P(A) is our prior belief. Since we don't have prior knowledge about A and B, we set P(A) = P(B) = 1/2
-    - P(C|A) can be think of as a multinomial distribution, A is like a bag of words, C is a distrubtion of some of its words. So P(C|A) = <a href="https://www.codecogs.com/eqnedit.php?latex=\binom{n}{n_1...n_m}\prod&space;h_1^{n_1}...h_m^{n_m}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\binom{n}{n_1...n_m}\prod&space;h_1^{n_1}...h_m^{n_m}" title="\binom{n}{n_1...n_m}\prod h_1^{n_1}...h_m^{n_m}" /></a> where ni is the number of times wordi appears in document C
+    - ```P(C|A)``` can be think of as a multinomial distribution, A is like a bag of words, C is a distrubtion of some of its words. So ```P(C|A)``` = <a href="https://www.codecogs.com/eqnedit.php?latex=\binom{n}{n_1...n_m}\prod&space;h_1^{n_1}...h_m^{n_m}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\binom{n}{n_1...n_m}\prod&space;h_1^{n_1}...h_m^{n_m}" title="\binom{n}{n_1...n_m}\prod h_1^{n_1}...h_m^{n_m}" /></a> where ni is the number of times wordi appears in document C
     - P(C) is hard to manipulate but if we take the ratio of P(A|C) and P(B|C), it will be canceld
   - <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{P(A|C)}{P(B|C)}&space;=&space;\frac{\prod&space;_i&space;h_i&space;^{n_i}}{\prod&space;_i&space;m_i^{n_i}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{P(A|C)}{P(B|C)}&space;=&space;\frac{\prod&space;_i&space;h_i&space;^{n_i}}{\prod&space;_i&space;m_i^{n_i}}" title="\frac{P(A|C)}{P(B|C)} = \frac{\prod _i h_i ^{n_i}}{\prod _i m_i^{n_i}}" /></a>
   - to avoid the number being too small, we can take the log and do: <a href="https://www.codecogs.com/eqnedit.php?latex=log(\frac{P(A|C)}{P(B|C)})&space;=&space;log(\frac{\prod&space;_i&space;h_i&space;^{n_i}}{\prod&space;_i&space;m_i^{n_i}})&space;=&space;\sum&space;_i&space;n_i&space;log(h_i)&space;-&space;\sum&space;_i&space;n_i&space;log(m_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?log(\frac{P(A|C)}{P(B|C)})&space;=&space;log(\frac{\prod&space;_i&space;h_i&space;^{n_i}}{\prod&space;_i&space;m_i^{n_i}})&space;=&space;\sum&space;_i&space;n_i&space;log(h_i)&space;-&space;\sum&space;_i&space;n_i&space;log(m_i)" title="log(\frac{P(A|C)}{P(B|C)}) = log(\frac{\prod _i h_i ^{n_i}}{\prod _i m_i^{n_i}}) = \sum _i n_i log(h_i) - \sum _i n_i log(m_i)" /></a>
@@ -249,7 +249,7 @@
   - continuous conditional distributions
     - let X and Y be continuous random variables, use PDF to compute conditional joint probability. The idea is that we can turn PDF to probability by multiply a small distance epsilon and it will cancel out. So <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X|Y}(x|y)&space;=&space;\frac{f_{X,Y}(x,y)}{f_Y(y)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X|Y}(x|y)&space;=&space;\frac{f_{X,Y}(x,y)}{f_Y(y)}" title="f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}" /></a>
   - Bayes revisited: <a href="https://www.codecogs.com/eqnedit.php?latex=P(B|E)&space;=&space;\frac{P(E|B)P(B)}{P(E)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(B|E)&space;=&space;\frac{P(E|B)P(B)}{P(E)}" title="P(B|E) = \frac{P(E|B)P(B)}{P(E)}" /></a>
-    - ```P(B|E)``` is called posterior belief; P(E|B) is the likelihood of evidence; P(B) is prior belief; P(E) is normalization constant.
+    - ```P(B|E)``` is called posterior belief; ```P(E|B)``` is the likelihood of evidence; P(B) is prior belief; P(E) is normalization constant.
   - Mixing discrete and continuous:
     - Let X be a continuous random variable, let N be a discrete random variable, consider <a href="https://www.codecogs.com/eqnedit.php?latex=P(X=x|N=n)&space;=&space;\frac{P(N=n|X=x)P(X=x)}{P(N=n)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X=x|N=n)&space;=&space;\frac{P(N=n|X=x)P(X=x)}{P(N=n)}" title="P(X=x|N=n) = \frac{P(N=n|X=x)P(X=x)}{P(N=n)}" /></a>
     -  We have <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X|N}(x|n)\epsilon&space;_x&space;=&space;\frac{P_{N|X}(n|x)f_X(x)\epsilon&space;_x}{P_N(n)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X|N}(x|n)\epsilon&space;_x&space;=&space;\frac{P_{N|X}(n|x)f_X(x)\epsilon&space;_x}{P_N(n)}" title="f_{X|N}(x|n)\epsilon _x = \frac{P_{N|X}(n|x)f_X(x)\epsilon _x}{P_N(n)}" /></a>
