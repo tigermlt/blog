@@ -6,7 +6,7 @@
 4. NLP
 5. CV
 6. [Information Retrieval](https://tigermlt.github.io/blog/IR)
-7. Recommender System
+7. [Recommender System](https://tigermlt.github.io/blog/RecSys)
 8. [Books](https://tigermlt.github.io/blog/books)
 9. [miscellaneous](https://tigermlt.github.io/blog/miscellaneous)
 10. [probability](https://tigermlt.github.io/blog/probability)
