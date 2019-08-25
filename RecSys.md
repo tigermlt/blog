@@ -4,4 +4,12 @@
   - recommend music (such as pandora music genome project)
   - recommend people (such as online dating system)
   - recommend search results (personalize search result rather than just information retrieval)
-  
+- Some terminology
+  - top-N recommenders
+    - individual interests store-> condidate generation -> <- item similarities store
+                                           |
+                                     candidate ranking
+                                           |
+                                       filtering
+    
+  - 
