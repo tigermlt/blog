@@ -19,6 +19,17 @@
     - ideally we should measure how people react when giving a recommendation that people have never seen before. But this cannot be done offline
       - some metric that achieve are: hit rate. hits/users
       - leave-one-out cross validation
-      - average reciprocal hit rate (ARHR): <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;_{i=1}&space;^&space;n&space;\frac{1}{rank_i}&space;hit_i}{Users}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;_{i=1}&space;^&space;n&space;\frac{1}{rank_i}&space;hit_i}{Users}" title="\frac{\sum _{i=1} ^ n \frac{1}{rank_i} hit_i}{Users}" /></a>
+      - average reciprocal hit rate (ARHR): <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;_{i=1}&space;^&space;n&space;\frac{1}{rank_i}&space;hit_i}{Users}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;_{i=1}&space;^&space;n&space;\frac{1}{rank_i}&space;hit_i}{Users}" title="\frac{\sum _{i=1} ^ n \frac{1}{rank_i} hit_i}{Users}" /></a>. It measures the system's ability to recommend top items in users' point of view.
       - cumulative hit rate (cHR): throw away results if our predicted rating is below some threshold
       - rating hit rate (rHR): split hit rate by different rating score
+  - converage metric
+    - percentage of <user, item> pairs that can be predicted
+  - diversity metric
+    - 1-S where S is average similarity between recommendation pairs
+  - novelty
+    - popularity rank of recommended items
+  - churn
+    - how often do recommemdataions change
+  - responsiveness
+    - how quickly does new user behavior influence your recommendations
+  - use online A/B test to see which metric is more important
