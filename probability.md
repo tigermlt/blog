@@ -254,3 +254,8 @@
     - Let X be a continuous random variable, let N be a discrete random variable, consider <a href="https://www.codecogs.com/eqnedit.php?latex=P(X=x|N=n)&space;=&space;\frac{P(N=n|X=x)P(X=x)}{P(N=n)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X=x|N=n)&space;=&space;\frac{P(N=n|X=x)P(X=x)}{P(N=n)}" title="P(X=x|N=n) = \frac{P(N=n|X=x)P(X=x)}{P(N=n)}" /></a>
     -  We have <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X|N}(x|n)\epsilon&space;_x&space;=&space;\frac{P_{N|X}(n|x)f_X(x)\epsilon&space;_x}{P_N(n)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X|N}(x|n)\epsilon&space;_x&space;=&space;\frac{P_{N|X}(n|x)f_X(x)\epsilon&space;_x}{P_N(n)}" title="f_{X|N}(x|n)\epsilon _x = \frac{P_{N|X}(n|x)f_X(x)\epsilon _x}{P_N(n)}" /></a>
     - Again the idea is the same, for continuous RV, we use PDF times epsilon; for discrete RV, we use PMF directly
+    - Similarly, the LHS can also be PMF and RHS has PDF. Or it can all be continuous, all have PDF
+  - Bivariate normal:
+    - X,Y follow a symmetric bivariate normal distribution if they have joint PDF:
+      - <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(x,y)&space;=&space;\frac{1}{2&space;\pi&space;\sigma^2}e^{-\frac{[(x-\mu_x)^2&space;&plus;&space;(y-\mu_y)^2]}{2&space;\sigma^2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(x,y)&space;=&space;\frac{1}{2&space;\pi&space;\sigma^2}e^{-\frac{[(x-\mu_x)^2&space;&plus;&space;(y-\mu_y)^2]}{2&space;\sigma^2}}" title="f_{X,Y}(x,y) = \frac{1}{2 \pi \sigma^2}e^{-\frac{[(x-\mu_x)^2 + (y-\mu_y)^2]}{2 \sigma^2}}" /></a>
+      - it is a 2D Gaussian
