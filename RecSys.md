@@ -6,10 +6,7 @@
   - recommend search results (personalize search result rather than just information retrieval)
 - Some terminology
   - top-N recommenders
-    - individual interests store-> condidate generation -> <- item similarities store
-    -                                      |
-    -                                candidate ranking
-    -                                      |
-    -                                  filtering
-    
+    - for example, content-based recommender has individual interests store -> candidate generation module -> <- item similarities store
+    - candidate generation -> candidate ranking module -> filtering module -> recommend results
+    - item similarities store is where all the magic happens
   - 
