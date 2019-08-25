@@ -10,4 +10,13 @@
       - candidate generation -> candidate ranking module -> filtering module -> recommend results
       - item similarities store is where all the magic happens
     - candidate generation, candidate ranking, filtering will live in some distributed web-service. Web front-end will talk to the while rendering a page for specific user
-
+- Recommendation system evaluation
+  - split data into training set. Train recommender system only using the training data and use test set to measure accuracy
+  - k-fold cross validation
+  - accuracy metric:
+    - mean absolute error (MAE): <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;_{i=1}^n&space;|y_i&space;-&space;x_i|}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;_{i=1}^n&space;|y_i&space;-&space;x_i|}{n}" title="\frac{\sum _{i=1}^n |y_i - x_i|}{n}" /></a> where yi is the rating predicted by system and xi is the actual rating user gives. The low the better
+    - root mean square error (RMSE): penalize more when the predicted rating is too off, penalize less when the predicted rating is similar to the actual rating. <a href="https://www.codecogs.com/eqnedit.php?latex=\sqrt{\frac{\sum&space;_{i=1}^n&space;(y_i&space;-&space;x_i)^2}{n}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sqrt{\frac{\sum&space;_{i=1}^n&space;(y_i&space;-&space;x_i)^2}{n}}" title="\sqrt{\frac{\sum _{i=1}^n (y_i - x_i)^2}{n}}" /></a>. The low the better
+    - ideally we should measure how people react when giving a recommendation that people have never seen before. But this cannot be done offline
+      - some metric that achieve are: hit rate. hits/users
+      - leave-one-out cross validation
+      - average reciprocal hit rate (ARHR): <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;_{i=1}&space;^&space;n&space;\frac{1}{rank_i}}{Users}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;_{i=1}&space;^&space;n&space;\frac{1}{rank_i}}{Users}" title="\frac{\sum _{i=1} ^ n \frac{1}{rank_i}}{Users}" /></a>
