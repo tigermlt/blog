@@ -2,7 +2,7 @@
   - Apache Cassandra is a highly scalable, high-performance distributed database
   - It is a column-oriented database
   - Its destribution design is based on Amazon's Dynamo and its data model on Google's Bigtable
-  - The design goal of Cassandra is to handle big data workloads across multiple nodes iwthout any single point of failure
+  - The design goal of Cassandra is to handle big data workloads across multiple nodes without any single point of failure
   - It is NoSQL database
     - store and retrieve data other than the tabular relations used in relational databases
     - schema-free
@@ -10,6 +10,19 @@
     - eventually consistent
     - can handle huge amounts of data
   - Users can access Cassandra through its nodes using Cassandra Query Language (CQL)
+  - documentation [doc](https://docs.datastax.com/en/archived/cassandra/3.0/index.html)
+  - **snitch** is how the nodes in a cluster know about the topology of the cluster
+    - ways to define snitch:
+      - SimpleSnitch: used with cluster only in one data center
+      - PropertyFileSnitch: For example 130.77.100.147 =DC1:RAC1; LHS is IP address, RHS is data center number : RAC number
+   - **data distribution** is done through consistent hashing, to strive for even distribution of data across the nodes in a cluster
+    - to distribute the rows across the nodes, a **partitioner** is used. The partitioner uses an algorithm to determine which node a given row of data will go. The default partitioner in Cassandra is **Murmur3**.
+      - Murmur3 takes the value in the first column of the row to generate a unique number between -2^63 and 2^63
+      - each node also has a value and is responsible for storing the token(data) values between its endpoint and the endpoint of the previous node (the value of each node can be calculated through Murmur 3 calculator)
+  - A **replication factor** specifies how many instances of the data there will be within a given database
+  - **Virtual nodes** are an alternative way to assign token ranges to nodes and are now the default in Cassandra
+    - With virtual nodes, insteading of a node being responsible for only one token range, it is instead responsible for many small token ranges (by default, 256 of them). 
+    - One advantage of virtual node is that the computation power of each node is different. Node with powerful computation can take more ranges.
 - Data Model
   - every node has a replica
   - keyspace is the outermost container for data in Cassandra. It contains:
@@ -17,4 +30,4 @@
     - replica placement strategy
     - column families: represent the structure of your data
       - the schema is not fixed. Cassandra does not force individual rows to have all the columns
-      
+
