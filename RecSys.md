@@ -7,9 +7,9 @@
 - Some terminology
   - top-N recommenders
     - individual interests store-> condidate generation -> <- item similarities store
-                                           |
-                                     candidate ranking
-                                           |
-                                       filtering
+    -                                      |
+    -                                candidate ranking
+    -                                      |
+    -                                  filtering
     
   - 
