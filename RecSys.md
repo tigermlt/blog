@@ -7,6 +7,7 @@
 - Some terminology
   - top-N recommenders
     - for example, content-based recommender has individual interests store -> candidate generation module -> <- item similarities store
-    - candidate generation -> candidate ranking module -> filtering module -> recommend results
-    - item similarities store is where all the magic happens
-  - 
+      - candidate generation -> candidate ranking module -> filtering module -> recommend results
+      - item similarities store is where all the magic happens
+    - candidate generation, candidate ranking, filtering will live in some distributed web-service. Web front-end will talk to the while rendering a page for specific user
+
