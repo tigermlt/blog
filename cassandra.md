@@ -23,6 +23,12 @@
   - **Virtual nodes** are an alternative way to assign token ranges to nodes and are now the default in Cassandra
     - With virtual nodes, insteading of a node being responsible for only one token range, it is instead responsible for many small token ranges (by default, 256 of them). 
     - One advantage of virtual node is that the computation power of each node is different. Node with powerful computation can take more ranges.
+  - start cassandra in background mode: ```./cassandra```
+  - start cassandra in foreground mode: ```./cassandra -f```
+  - ```nodetool status``` check node status, can get information such as address, load etc
+  - ```nodetool info``` check the general information of this node
+  - ```nodetool ring``` check the token range
+  
 - Data Model
   - every node has a replica
   - keyspace is the outermost container for data in Cassandra. It contains:
