@@ -28,7 +28,10 @@
   - ```nodetool status``` check node status, can get information such as address, load etc
   - ```nodetool info``` check the general information of this node
   - ```nodetool ring``` check the token range
-  
+  - CQL (Cassandra Query Language) is a SQL-like query language for communicating with Cassandra.
+  - Foradministrative activities, such as cluster monitoring and management tasks, tools built on JMX (java management extensions) are commonly used
+- Create a database
+  - a database is defined as a keysapce. Within the keysapce tables can be defined
 - Data Model
   - every node has a replica
   - keyspace is the outermost container for data in Cassandra. It contains:
