@@ -32,6 +32,11 @@
   - Foradministrative activities, such as cluster monitoring and management tasks, tools built on JMX (java management extensions) are commonly used
 - Create a database
   - a database is defined as a keysapce. Within the keysapce tables can be defined
+  - in cqlsh, type ```describe keyspaces``` can list all the keyspaces
+  - type ```describe keyspace <name>``` can list tables in a specific keyspace
+  - keyspace can be defined/added by ```create keysapce <name> with replication = {'class':<strategy>, 'dc1': <number of replica>}```. To run locally we can do ```create keyspace <name> with replication = {'class':'SimpleStrategy', 'replication_factor':1}
+  - delete keyspace: ```drop keyspace <name>```
+  
 - Data Model
   - every node has a replica
   - keyspace is the outermost container for data in Cassandra. It contains:
