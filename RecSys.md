@@ -33,3 +33,11 @@
   - responsiveness
     - how quickly does new user behavior influence your recommendations
   - use online A/B test to see which metric is more important
+- Content-based filtering
+  - consine similarity
+    - convert movie genres to dimensions
+  - k nearest neighbors
+    - get similarity scores between this movie and all others the user rated
+    - sort
+    - select top k nearest movies
+    - use similarity score to do the weighted average in order to get final rating prediction
