@@ -278,4 +278,5 @@
       - two continuous RVs X and Y are **independent** if:
         - P(X<=a, Y<=b) = P(X<=a)P(Y<=b) for any a,b
         - or for any a,b <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)&space;=&space;f_X(a)f_Y(b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)&space;=&space;f_X(a)f_Y(b)" title="f_{X,Y}(a,b) = f_X(a)f_Y(b)" /></a>
+        - or factorize CDF: <a href="https://www.codecogs.com/eqnedit.php?latex=F_{X,Y}(a,b)&space;=&space;F_X(a)F_Y(b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{X,Y}(a,b)&space;=&space;F_X(a)F_Y(b)" title="F_{X,Y}(a,b) = F_X(a)F_Y(b)" /></a>
         - more generally joint density factors separately <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)&space;=&space;h(x)g(y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)&space;=&space;h(x)g(y)" title="f_{X,Y}(a,b) = h(x)g(y)" /></a> where x>-\infinity y<\infinity
