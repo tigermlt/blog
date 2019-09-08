@@ -263,4 +263,9 @@
     - goal f(X=x, Y=y | D=d)
     - X and Y are Gaussian, we have f(X=x, Y=y) which is prior
     - we have f(D=d | X=x, Y=y), D is observation
-    - <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x,&space;Y=y&space;|&space;D=d)&space;=&space;\frac{f(D=d|X=x,&space;Y=y)f(X=x,&space;Y=y)}{f(D=d)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x,&space;Y=y&space;|&space;D=d)&space;=&space;\frac{f(D=d|X=x,&space;Y=y)f(X=x,&space;Y=y)}{f(D=d)}" title="f(X=x, Y=y | D=d) = \frac{f(D=d|X=x, Y=y)f(X=x, Y=y)}{f(D=d)}" /></a> where f(D=d) is just a constant because it is not based on x and y
+    - <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x,&space;Y=y&space;|&space;D=d)&space;=&space;\frac{f(D=d|X=x,&space;Y=y)f(X=x,&space;Y=y)}{f(D=d)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x,&space;Y=y&space;|&space;D=d)&space;=&space;\frac{f(D=d|X=x,&space;Y=y)f(X=x,&space;Y=y)}{f(D=d)}" title="f(X=x, Y=y | D=d) = \frac{f(D=d|X=x, Y=y)f(X=x, Y=y)}{f(D=d)}" /></a> where f(D=d) is just a constant for a given d because it is not based on x and y
+  - expectation of multiple RVs
+    - expectation over a joint isn't nicely defined because it is not clear how to compose the multiple variables
+    - lemma: for a function g(X,Y) we can calculate the expectation of that function:
+      - E[g(X,Y)] = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{x,y}&space;g(x,y)p(x,y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{x,y}&space;g(x,y)p(x,y)" title="\sum _{x,y} g(x,y)p(x,y)" /></a>
+      - recall for a single RV: E[g(X)] = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{x}&space;g(x)p(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{x}&space;g(x)p(x)" title="\sum _{x} g(x)p(x)" /></a>
