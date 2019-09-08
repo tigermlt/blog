@@ -280,3 +280,10 @@
         - or for any a,b <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)&space;=&space;f_X(a)f_Y(b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)&space;=&space;f_X(a)f_Y(b)" title="f_{X,Y}(a,b) = f_X(a)f_Y(b)" /></a>
         - or factorize CDF: <a href="https://www.codecogs.com/eqnedit.php?latex=F_{X,Y}(a,b)&space;=&space;F_X(a)F_Y(b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{X,Y}(a,b)&space;=&space;F_X(a)F_Y(b)" title="F_{X,Y}(a,b) = F_X(a)F_Y(b)" /></a>
         - more generally joint density factors separately <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)&space;=&space;h(x)g(y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)&space;=&space;h(x)g(y)" title="f_{X,Y}(a,b) = h(x)g(y)" /></a> where x>-\infinity y<\infinity
+  - Insight to convolution which is the interaction (such as addition, subtraction) of RVs
+    - Let X be the amount of points you score, let Y be the amount of points your opponent socres
+      - Say you know P(X=x) and P(Y=y)
+      - what is the probability of a tie?
+        - P(tie) = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{i=0}^{...}&space;P(X=i,&space;Y=i)&space;=&space;\sum&space;_{i=0}^{...}&space;P(X=i)P(Y=i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{...}&space;P(X=i,&space;Y=i)&space;=&space;\sum&space;_{i=0}^{...}&space;P(X=i)P(Y=i)" title="\sum _{i=0}^{...} P(X=i, Y=i) = \sum _{i=0}^{...} P(X=i)P(Y=i)" /></a>
+     - what about X+Y=n?
+       - similar idea: P(X+Y=n) = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{i=0}^{n}&space;P(X=i,&space;Y=n-i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{n}&space;P(X=i,&space;Y=n-i)" title="\sum _{i=0}^{n} P(X=i, Y=n-i)" /></a>
