@@ -259,5 +259,4 @@
     - X,Y follow a symmetric bivariate normal distribution if they have joint PDF:
       - <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(x,y)&space;=&space;\frac{1}{2&space;\pi&space;\sigma^2}e^{-\frac{[(x-\mu_x)^2&space;&plus;&space;(y-\mu_y)^2]}{2&space;\sigma^2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(x,y)&space;=&space;\frac{1}{2&space;\pi&space;\sigma^2}e^{-\frac{[(x-\mu_x)^2&space;&plus;&space;(y-\mu_y)^2]}{2&space;\sigma^2}}" title="f_{X,Y}(x,y) = \frac{1}{2 \pi \sigma^2}e^{-\frac{[(x-\mu_x)^2 + (y-\mu_y)^2]}{2 \sigma^2}}" /></a>
       - it is a 2D Gaussian
-- Counting
-  - sample space: it is a set of all possible outcomes of an experiment
+  
