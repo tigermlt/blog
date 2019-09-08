@@ -269,3 +269,13 @@
     - lemma: for a function g(X,Y) we can calculate the expectation of that function:
       - E[g(X,Y)] = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{x,y}&space;g(x,y)p(x,y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{x,y}&space;g(x,y)p(x,y)" title="\sum _{x,y} g(x,y)p(x,y)" /></a>
       - recall for a single RV: E[g(X)] = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{x}&space;g(x)p(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{x}&space;g(x)p(x)" title="\sum _{x} g(x)p(x)" /></a>
+  - independence of RVs
+    - two discrete random variables X and Y are **independent** if: P(X=x, Y=y) = P(X=x)P(Y=y)
+    - to check independent of RVs, the above equation need to hold for all combinations of RVs
+      - but for an event, it just need to hold for one combination
+    - intuitively: knowing the value of X tells us nothing about the distribution of Y (and vice versa)
+    - for continuous variables
+      - two continuous RVs X and Y are **independent** if:
+        - P(X<=a, Y<=b) = P(X<=a)P(Y<=b) for any a,b
+        - or for any a,b <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)&space;=&space;f_X(a)f_Y(b)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)&space;=&space;f_X(a)f_Y(b)" title="f_{X,Y}(a,b) = f_X(a)f_Y(b)" /></a>
+        - more generally joint density factors separately <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(a,b)&space;=&space;h(x)g(y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(a,b)&space;=&space;h(x)g(y)" title="f_{X,Y}(a,b) = h(x)g(y)" /></a> where x>-\infinity y<\infinity
