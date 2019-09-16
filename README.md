@@ -13,6 +13,7 @@
 11. [Kafka](https://tigermlt.github.io/blog/kafka)
 12. [Cassandra](https://tigermlt.github.io/blog/cassandra)
 13. [Probabilistic Graphical Model](https://tigermlt.github.io/blog/PGM)
+14. [data scientist](https://tigermlt.github.io/blog/dataScientist)
 -------------------------
 
 1. [Talks](https://tigermlt.github.io/blog/talk)
