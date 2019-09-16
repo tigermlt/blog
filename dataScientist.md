@@ -16,4 +16,15 @@
         
         # conditional selection
         data[data['Column1']<500]
+  - drop column and row
         
+        # check type of data
+        type(data)
+        # convert to dataframe
+        df = pd.DataFrame(data)
+        # remove first row
+        df.drop(df.index[0], inplace=True)
+        # remove first two rows
+        df.drop(df.index[:2], inplace=True)
+        # drop column by name
+        df.drop(['Column1'], axis=1, inplace=True)
