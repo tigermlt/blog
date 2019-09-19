@@ -50,4 +50,19 @@
         df = data[:] # copy data
         df.rename(columns={'old name' : 'new name'}, inplace = True)
         
-        
+  - Data grouping based on qualitative attributes
+  
+        # sort in descending order by an attribute
+        large = data.sort_values(by='Number of speakers', ascending=False)
+        # group data
+        data.groupby(['Column1', 'Column2'])  # not the same as gorup by in MR, but while doing stats it shows the stats for grouped data
+        # get the grouped stats
+        data.groupby(['Column1']).count()
+        # group one column by anther column
+        # the result is column2_1 column1_1
+        #               column2_2 column1_2 etc
+        x = data['Column1'].groupby(data['Column2'])
+        # lambda functions
+        # identify which of the languages have fewer than 5k speakers
+        # create a new column, if Number of speakers is less than 5000, it will be true, otherwise false
+        data['view'] = data['Number of speakers'].apply(lambda x: x<= 5000)
