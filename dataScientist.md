@@ -59,10 +59,21 @@
         # get the grouped stats
         data.groupby(['Column1']).count()
         # group one column by anther column
-        # the result is column2_1 column1_1
-        #               column2_2 column1_2 etc
+        # the result is row_number1 column1_1
+        #               row_number2 column1_2 etc
         x = data['Column1'].groupby(data['Column2'])
         # lambda functions
         # identify which of the languages have fewer than 5k speakers
         # create a new column, if Number of speakers is less than 5000, it will be true, otherwise false
         data['view'] = data['Number of speakers'].apply(lambda x: x<= 5000)
+  
+  - cross-tab
+        
+        # tabulate data on basis of two columns
+        # something like the horizontal are attributes of column1, vertical are attributes of columm2, each cell is the count
+        # of number of joint count
+        x = pd.crosstab(data['Column1'], data['Column2'], margins=True)
+  
+  - reshape
+        
+        
