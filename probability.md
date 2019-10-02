@@ -296,4 +296,7 @@
        - X + Y ~ Bin(n1+n2, p)
     - for X ~ Poi(lambda1), Y ~ Poi(lambda2)
        - X + Y ~ Poi(lambda1 + lambda2)
+    - for normal distribution X ~ N(u1, sigma1^2),  Y ~ N(u2, sigma2^2)
+       - X + Y ~ N(u1+u2, sigma1^2 + sigma2^2) notice this hold only if X and Y are independent
+       - X is dependent on X, so 2X is not N(2u1, 2sigma1^2), instead it is N(2u1, 4sigma1^2)
        
