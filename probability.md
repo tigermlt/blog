@@ -308,5 +308,21 @@
     - simplify Cov(X,Y) = E[XY - E[X]Y - XE[Y] + E[Y]E[X]] = E[XY] - E[X]E[Y] - E[X]E[Y] + E[X]E[Y] = E[XY] - E[X]E[Y]
     - if X and Y are independent, E[XY] = E[X]E[Y], so Cov(X,Y) = 0
     - but **Cov(X,Y) = 0 does not mean X and Y are independent**
-    
+    - properties
+      - Cov(X,Y) = Cov(Y,X)
+      - Cov(X,X) = E[X^2] - E[X]E[X] - Var(X)
+      - Cov(aX+b, Y) = aCov(X,Y)
+      - <a href="https://www.codecogs.com/eqnedit.php?latex=Cov(\sum&space;_{i=1}&space;^n&space;X_i,&space;\sum&space;_{j=1}&space;^m&space;Y_j)&space;=&space;\sum_i^n&space;\sum_j^m&space;Cov(X_i,&space;Y_j)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Cov(\sum&space;_{i=1}&space;^n&space;X_i,&space;\sum&space;_{j=1}&space;^m&space;Y_j)&space;=&space;\sum_i^n&space;\sum_j^m&space;Cov(X_i,&space;Y_j)" title="Cov(\sum _{i=1} ^n X_i, \sum _{j=1} ^m Y_j) = \sum_i^n \sum_j^m Cov(X_i, Y_j)" /></a>
+  - Correlation
+    - Cauchy-Schwarz inequality
+      - -std(X)std(Y) <= Cov(X,Y) <= std(X)std(Y)
+    - say X and Y are arbitrary RVs
+      - the correlation of X and Y is defined as: <a href="https://www.codecogs.com/eqnedit.php?latex=\rho(X,Y)&space;=&space;\frac{Cov(X,Y))}{\sqrt{Var(X)Var(Y)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rho(X,Y)&space;=&space;\frac{Cov(X,Y))}{\sqrt{Var(X)Var(Y)}}" title="\rho(X,Y) = \frac{Cov(X,Y))}{\sqrt{Var(X)Var(Y)}}" /></a>
+      - by Cauchy-Schewarz inequalty, rho is in the range of [-1,1]
+      - correlation measures **linearity** between X and Y
+      - rho(X,Y) = 1 we can get Y = aX + b where a = sigmay/sigmax
+      - rho(X,Y) = -1, we can get Y = ax+b where a = -sigmay/sigmax
+      - rho(X,Y) = 0, it means absense of linear relationship, note it does not mean independent. We say it is "uncorrelated"
+      
+      
        
