@@ -287,3 +287,12 @@
         - P(tie) = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{i=0}^{...}&space;P(X=i,&space;Y=i)&space;=&space;\sum&space;_{i=0}^{...}&space;P(X=i)P(Y=i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{...}&space;P(X=i,&space;Y=i)&space;=&space;\sum&space;_{i=0}^{...}&space;P(X=i)P(Y=i)" title="\sum _{i=0}^{...} P(X=i, Y=i) = \sum _{i=0}^{...} P(X=i)P(Y=i)" /></a>
      - what about X+Y=n?
        - similar idea: P(X+Y=n) = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{i=0}^{n}&space;P(X=i,&space;Y=n-i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{n}&space;P(X=i,&space;Y=n-i)" title="\sum _{i=0}^{n} P(X=i, Y=n-i)" /></a>
+
+- Covarance and Correlation
+  - the intent is to solve how each RV is related to each other
+  - sum of independent RVs
+    - for X ~ Bin(n1, p), Y ~ Bin(n2, p)
+       - X + Y ~ Bin(n1+n2, p)
+    - for X ~ Poi(lambda1), Y ~ Poi(lambda2)
+       - X + Y ~ Poi(lambda1 + lambda2)
+       
