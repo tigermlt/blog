@@ -260,9 +260,9 @@
       - <a href="https://www.codecogs.com/eqnedit.php?latex=f_{X,Y}(x,y)&space;=&space;\frac{1}{2&space;\pi&space;\sigma^2}e^{-\frac{[(x-\mu_x)^2&space;&plus;&space;(y-\mu_y)^2]}{2&space;\sigma^2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{X,Y}(x,y)&space;=&space;\frac{1}{2&space;\pi&space;\sigma^2}e^{-\frac{[(x-\mu_x)^2&space;&plus;&space;(y-\mu_y)^2]}{2&space;\sigma^2}}" title="f_{X,Y}(x,y) = \frac{1}{2 \pi \sigma^2}e^{-\frac{[(x-\mu_x)^2 + (y-\mu_y)^2]}{2 \sigma^2}}" /></a>
       - it is a 2D Gaussian
   - continuous conditional joint probability
-    - goal f(X=x, Y=y | D=d)
+    - goal ```f(X=x, Y=y | D=d)```
     - X and Y are Gaussian, we have f(X=x, Y=y) which is prior
-    - we have f(D=d | X=x, Y=y), D is observation
+    - we have ```f(D=d | X=x, Y=y) ```, D is observation
     - <a href="https://www.codecogs.com/eqnedit.php?latex=f(X=x,&space;Y=y&space;|&space;D=d)&space;=&space;\frac{f(D=d|X=x,&space;Y=y)f(X=x,&space;Y=y)}{f(D=d)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X=x,&space;Y=y&space;|&space;D=d)&space;=&space;\frac{f(D=d|X=x,&space;Y=y)f(X=x,&space;Y=y)}{f(D=d)}" title="f(X=x, Y=y | D=d) = \frac{f(D=d|X=x, Y=y)f(X=x, Y=y)}{f(D=d)}" /></a> where f(D=d) is just a constant for a given d because it is not based on x and y
   - expectation of multiple RVs
     - expectation over a joint isn't nicely defined because it is not clear how to compose the multiple variables
