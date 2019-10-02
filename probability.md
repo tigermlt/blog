@@ -287,7 +287,7 @@
         - P(tie) = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{i=0}^{...}&space;P(X=i,&space;Y=i)&space;=&space;\sum&space;_{i=0}^{...}&space;P(X=i)P(Y=i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{...}&space;P(X=i,&space;Y=i)&space;=&space;\sum&space;_{i=0}^{...}&space;P(X=i)P(Y=i)" title="\sum _{i=0}^{...} P(X=i, Y=i) = \sum _{i=0}^{...} P(X=i)P(Y=i)" /></a>
      - what about X+Y=n?
        - similar idea: P(X+Y=n) = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;_{i=0}^{n}&space;P(X=i,&space;Y=n-i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{n}&space;P(X=i,&space;Y=n-i)" title="\sum _{i=0}^{n} P(X=i, Y=n-i)" /></a>
-       - in continuous case: f(X+Y=alpha) = <a href="https://www.codecogs.com/eqnedit.php?latex=\int&space;_{-\infty}^{\infty}&space;f(X=k,&space;Y=\alpha&space;-&space;k)dk" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;_{-\infty}^{\infty}&space;f(X=k,&space;Y=\alpha&space;-&space;k)dk" title="\int _{-\infty}^{\infty} f(X=k, Y=\alpha - k)dk" /></a>
+       - in continuous case: f(X+Y=alpha) = <a href="https://www.codecogs.com/eqnedit.php ?latex=\int&space;_{-\infty}^{\infty}&space;f(X=k,&space;Y=\alpha&space;-&space;k)dk" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int&space;_{-\infty}^{\infty}&space;f(X=k,&space;Y=\alpha&space;-&space;k)dk" title="\int _{-\infty}^{\infty} f(X=k, Y=\alpha - k)dk" /></a>
 
 - Covarance and Correlation
   - the intent is to solve how each RV is related to each other
@@ -299,4 +299,14 @@
     - for normal distribution X ~ N(u1, sigma1^2),  Y ~ N(u2, sigma2^2)
        - X + Y ~ N(u1+u2, sigma1^2 + sigma2^2) notice this hold only if X and Y are independent
        - X is dependent on X, so 2X is not N(2u1, 2sigma1^2), instead it is N(2u1, 4sigma1^2)
+  - vary together
+    - (x-E[x])(y-E[y]) positive means x and y vary together
+  - Covariance of X and Y
+    - we are not only look at (x-E[x])(y-E[y]) but the expectation of it since (x-E[x])(y-E[y]) could cancel itself in a distribution
+    - Cov(X,Y) = E[(X-E[X])(Y-E[Y])]
+    - covariance is used to quantify how two RVs vary together
+    - simplify Cov(X,Y) = E[XY - E[X]Y - XE[Y] + E[Y]E[X]] = E[XY] - E[X]E[Y] - E[X]E[Y] + E[X]E[Y] = E[XY] - E[X]E[Y]
+    - if X and Y are independent, E[XY] = E[X]E[Y], so Cov(X,Y) = 0
+    - but **Cov(X,Y) = 0 does not mean X and Y are independent**
+    
        
