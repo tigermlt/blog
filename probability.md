@@ -310,7 +310,7 @@
     - but **Cov(X,Y) = 0 does not mean X and Y are independent**
     - properties
       - Cov(X,Y) = Cov(Y,X)
-      - Cov(X,X) = E[X^2] - E[X]E[X] - Var(X)
+      - Cov(X,X) = E[X^2] - E[X]E[X] = Var(X)
       - Cov(aX+b, Y) = aCov(X,Y)
       - <a href="https://www.codecogs.com/eqnedit.php?latex=Cov(\sum&space;_{i=1}&space;^n&space;X_i,&space;\sum&space;_{j=1}&space;^m&space;Y_j)&space;=&space;\sum_i^n&space;\sum_j^m&space;Cov(X_i,&space;Y_j)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Cov(\sum&space;_{i=1}&space;^n&space;X_i,&space;\sum&space;_{j=1}&space;^m&space;Y_j)&space;=&space;\sum_i^n&space;\sum_j^m&space;Cov(X_i,&space;Y_j)" title="Cov(\sum _{i=1} ^n X_i, \sum _{j=1} ^m Y_j) = \sum_i^n \sum_j^m Cov(X_i, Y_j)" /></a>
   - Correlation
