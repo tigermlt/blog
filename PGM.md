@@ -21,7 +21,7 @@
   - Semantics & Factorization
     - Construct Bayesian network for a student example, conditional probability distribution is used in a node that is linked by other nodes. For instance, we have P(D), P(I), P(G|I,D), P(S|I), P(L|G)
     - We can apply chain rule to get joint distribution of all the RVs. For example P(D,I,G,S,L) = P(D)P(I)P(G|D,I)P(S|I)P(L|G)
-    - So in general a Bayesian network is a acyclic graph and for each node Xi we have a CPD P(Xi|Parent(Xi)). The bayesian network represents a joint distribution via the chain rule for BN: <a href="https://www.codecogs.com/eqnedit.php?latex=P(X_1&space;...&space;X_n)&space;=&space;\prod&space;_{i}&space;P(X_i|Parent_G&space;(X_i))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X_1&space;...&space;X_n)&space;=&space;\prod&space;_{i}&space;P(X_i|Parent_G&space;(X_i))" title="P(X_1 ... X_n) = \prod _{i} P(X_i|Parent_G (X_i))" /></a>
+    - So in general a Bayesian network is a acyclic graph and for each node Xi we have a CPD P(Xi|Parent(Xi)). The bayesian network represents a joint distribution via the chain rule for BN: $P(X_1 ... X_n) = \prod _{i} P(X_i|Parent_G (X_i))$
     - some notation: let G be a graph over X1...Xn; P factorizes over G if <a href="https://www.codecogs.com/eqnedit.php?latex=P(X_1&space;...&space;X_n)&space;=&space;\prod&space;_{i}&space;P(X_i|Parent_G&space;(X_i))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(X_1&space;...&space;X_n)&space;=&space;\prod&space;_{i}&space;P(X_i|Parent_G&space;(X_i))" title="P(X_1 ... X_n) = \prod _{i} P(X_i|Parent_G (X_i))" /></a> hold
   - Reasoning pattern: used to adjust posterior probability
     - Causual reasoning: reason from top to down (condition on parent)
