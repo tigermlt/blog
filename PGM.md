@@ -1,5 +1,4 @@
 - Overview and Motivation
-- $e^{i \pi} + 1 = 0$
   - some of the usage: image segmentation, predisposing factors of symptoms, textual information extraction, multi-sensor integration (such as traffic)
   - what is model: The model is a declarative representation of our understanding of the world. So it is a representation within the computer that captures our understanding of what these variables are and how they interact with each other.
   - probabilistic -> uncertainty
