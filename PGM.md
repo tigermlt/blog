@@ -61,7 +61,7 @@
     - Naive Bayes
       - observe features (x1...xn) and infer class (C)
       - assumption: (xi \perpendicular xj | C) for all xi, xj
-      - P(C, X1, ..., Xn) = <a href="https://www.codecogs.com/eqnedit.php?latex=P(C)\prod&space;_{i}^{n}P(X_{i}|C)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(C)\prod&space;_{i}^{n}P(X_{i}|C)" title="P(C)\prod _{i}^{n}P(X_{i}|C)" /></a> where P(C) is the prior probability
+      - P(C, X1, ..., Xn) = $P(C)\prod _{i}^{n}P(X_{i}|C)$ where P(C) is the prior probability
       - used for text classification. Effective in domains with many weakly relevant features. Strong independence assumptions reduce performance when many features are strongly correlated.
     
     
