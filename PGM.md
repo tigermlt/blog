@@ -46,7 +46,7 @@
 - Bayesian networks independence
   - independence: P(a,b) = P(a)P(b); P(a|b) = P(a); P(b|a) = P(b). This applies for both a,b as events and RV
   - conditional independence:
-    - For random variables X,Y,Z, P |= (satisfy) <a href="https://www.codecogs.com/eqnedit.php?latex=(X&space;\bot&space;Y&space;|&space;Z)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(X&space;\bot&space;Y&space;|&space;Z)" title="(X \bot Y | Z)" /></a> if P(X,Y|Z) = P(X|Z)P(Y|Z); or P(X|Y,Z) = P(X|Z); or P(Y|X,Z) = P(Y|Z)
+    - For random variables X,Y,Z, P |= (satisfy) $(X \bot Y | Z)$ if P(X,Y|Z) = P(X|Z)P(Y|Z); or P(X|Y,Z) = P(X|Z); or P(Y|X,Z) = P(Y|Z)
     - conditioning can both give and lose independence
   - independencies in Bayesian networks
     - d-separation: X and Y are d-separated in G given Z if there is no active trail in G between X and Y given Z. Notation is d-sep_{G}(X,Y|Z). Theorem if p factorizes over G, and d-sep_{G}(X,Y|Z) then p satisfies (X \perpendicular Y | Z)
