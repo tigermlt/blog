@@ -7,7 +7,7 @@
   - Distribution:
     - Joint probability, independent (if there are 12 cases then 11 of them are independent because they sum to 1)
     - Conditioning: Reduction and renormalization
-    - Marginalization: sum over one RV of a joint probability: \sum _{I}P(I,D) = P(D)
+    - Marginalization: sum over one RV of a joint probability: $\sum _{I}P(I,D) = P(D)$
   - Factor:
     - fundamental building block for defining distributions in high-dimentional spaces
     - set of basic operations for manipulating these probability distributions
